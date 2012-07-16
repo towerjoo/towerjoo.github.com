@@ -8,15 +8,16 @@ title: Category
 
 
 <ul class="listing">
-{% for post in site.posts %}
-{% capture c %}{{post.category }}{% endcapture %}
-{% if category != c %}
-{% assign category = c %}
-<li class="listing-seperator">{{ site.custom.category[c] }}</li>
-{% endif %}
-<li class="listing-item">
-<small><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time></small>
-<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-</li>
+{% for cat in site.custom.categories  %}
+    <li class="listing-seperator">{{ cat.title }}</li>
+    {% for post in site.posts %}
+    {% capture c %}{{post.category }}{% endcapture %}
+    {% if c == cat.name %}
+    <li class="listing-item">
+    <small><time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time></small>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
 {% endfor %}
 </ul>
