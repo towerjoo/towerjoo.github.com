@@ -4,20 +4,20 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>找寻模式</title>
-	<link href="http://topman.github.com/atom.xml" rel="self" />
-	<link href="http://topman.github.com/" />
+	<link href="http://towerjoo.github.com/atom.xml" rel="self" />
+	<link href="http://towerjoo.github.com/" />
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
-	<id>http://topman.github.com/</id>
+	<id>http://towerjoo.github.com/</id>
 	<author>
-		<name>topman</name>
-		<email>topman@gmail.com</email>
+		<name>towerjoo</name>
+		<email>towerjoo@gmail.com</email>
 	</author>
 	{% for post in site.posts limit:10 %}
 	<entry>
 		<title>{{ post.title | xml_escape }}</title>
-		<link href="http://topman.github.com{{ post.url }}" />
+		<link href="http://towerjoo.github.com{{ post.url }}" />
 		<updated>{{ post.date | date_to_xmlschema }}</updated>
-		<id>http://topman.github.com{{ post.url }}</id>
+		<id>http://towerjoo.github.com{{ post.url }}</id>
 		<content type="html"><![CDATA[{{ post.content }}]]></content>
 	</entry>
 	{% endfor %}
