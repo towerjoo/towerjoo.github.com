@@ -11,14 +11,14 @@ tags: 知识管理 个人提高
 好的工具会让目标的达成更加的快捷，也会事半功倍。
 
 
-## 已知文件同步类
+## 书籍文件同步类
 
 使用 [快盘][kuaipan]，最主要的原因是因为它是我最早使用的国内云存储（dropbox
 被墙后）。
 
 ## 笔记类同步
 
-使用 [有道笔记][youdaobiji]，网易的产品还是值得依赖的，鉴于evernote的容易和我所
+使用 [有道笔记][youdaobiji]，网易的产品还是值得依赖的，鉴于evernote的容量限制以及和我所
 期待的界面的简洁不符， [有道笔记][youdaobiji] 在这个领域还算出色，再与
 网易阅读的打通，整体还是相当不错的。
 
@@ -76,7 +76,7 @@ techweb，以及目前使用的github，想想，博客最重要不是托管，�
 ## 一年一总结
 
 这个则更是一些重大的计划，或许是例如“装修房子”，“生小孩”这样的条目，
-以供年底时回顾时的比对，当然年的目标会在每个月、周、日的尺度上进行完成，
+以供年底回顾时的比对，当然年的目标会在每个月、周、日的尺度上进行完成，
 所以，每日的衡量是整个体系的基础。
 
 ## 方法
@@ -92,5 +92,5 @@ techweb，以及目前使用的github，想想，博客最重要不是托管，�
 
 [doit]: http://doit.im "Do it"
 [youdaobiji]: http://note.yodao.com "有道笔记"
-[kuaipan]: http://www.kuaipan.com "快盘"
+[kuaipan]: http://www.kuaipan.cn "快盘"
 [google calendar]: http://www.google.com/calendar/ "Google Calendar"

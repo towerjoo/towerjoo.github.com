@@ -23,3 +23,5 @@ scripts:
 <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
 <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r2.gif&amp;uid=89469" charset="utf-8"></script>
 <!-- JiaThis Button END -->
+
+<script type="text/javascript" src="/assets/js/site.js"></script>
