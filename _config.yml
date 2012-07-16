@@ -1,0 +1,33 @@
+markdown: kramdown
+pygments: true
+safe: false
+permalink: /blog/:year/:month/:day/:title
+exclude:
+  - README.md
+
+host: topman.github.com
+
+custom:
+    category:
+        reading: 阅读模式
+        non-tech: 人生模式
+        tech: 技术模式
+    categories:
+      - name:  reading
+        title: 阅读模式
+
+      - name:  non-tech
+        title: 人生模式
+
+      - name:  tech
+        title: 技术模式
+
+meta:
+    authors:
+      - name: Tower Joo
+        email: zhutao.iscas@gmail.com
+        gravatar: 1cd8c12591616d8c22aaa624f8c07834
+
+    gravatar:
+        base: http://www.gravatar.com/avatar/
+        param: ?s=
