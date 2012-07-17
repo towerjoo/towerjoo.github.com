@@ -1,0 +1,13 @@
+--- 
+layout: post
+tags: []
+
+type: post
+meta: {}
+
+published: true
+title: "\xE6\x8A\x98\xE8\x85\xBEAmazon Web Service(AWS) Free Tier"
+status: publish
+category: tech
+---
+<p>老早就知道amazon从11.1起就推出试用一年AWS服务的，到了1号也就兴冲冲的去注册，去折腾，不过最后因为信用卡没有验证通过就此暂时搁置，不过，这也扣掉了我1刀。</p>  <p>今天没事，也想着重新来申请下，于是又去要求amazon来验证我的账号，这又扣掉了我1刀，不过，还好总算是通过了，于是也就根据<a href="http://yinhm.appspot.com/2010/10/amazon-ec2-micro-instance-and-tunnel-guide" target="_blank">这篇博文</a>中的内容创建了一个instance，如果你想要折腾下amazon的服务，这篇文章可是必读。</p>  <p>因为我们公司也使用amazon的服务，所以登录配置什么的还是一切顺利，不一会儿也就搭起来了一个Django的<a href="http://demo.icatclaw.com/" target="_blank">小demo</a>,为后续自己的继续折腾做好准备。</p>  <p>最后简单说下需要注意的事项：</p>  <ol>   <li>美国西部的服务器应该是比较靠谱的（我后续的使用主要是面向美帝），从国内还是非常快的，我的ssh访问基本没有延迟</li>    <li>获得登录的key pair时注意登录时要用ec2-user作为登录名，而非root，linux下的ssh用下载的pem文件即可，如果在win下则可使用Puttygen来转换为Private key来登录</li>    <li>登录后，使用sudo可以获取root权限</li>    <li>因为是redhat(fedora)所以yum还是很好使的，记得yum search/yum install就没有什么大问题</li>    <li>当然还是要注意流量的，否则超出免费的部分amazon会从你的信用卡中扣钱的</li> </ol>  <p>那么AWS究竟能干些什么？</p>  <ol>   <li>翻墙（具体putty和ssh怎么翻，网上一大堆）</li>    <li>跑跑web应用</li>    <li>折腾目前最好的云服务</li>    <li>向别人炫耀（囧）</li> </ol>  <p>你不妨也去折腾吧！</p><p>&nbsp;</p><p>EDIT:</p><p>据说Amazon在验证信用卡时只是冻结了1刀，而非扣除，在验证通过后会解冻。当然我还没确认，确认后再更新本文。&nbsp;</p><p>&nbsp;</p>  <p>参考：</p>  <ol>   <li><a href="http://aws.amazon.com/free/" target="_blank">Amazon Web Service Free Tier</a></li>    <li><a href="http://yinhm.appspot.com/2010/10/amazon-ec2-micro-instance-and-tunnel-guide">Amazon AWS 漫游指南</a></li> </ol>
