@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="towerjoo" />
+<meta name="keywords" content="" />
+<title> 你真的知道一个HTML及资源是如何load的吗(了解各个部分是何时下载和执行的) / 找寻模式</title>
+<link href="http://towerjoo.github.com/feed.xml" rel="alternate" title="找寻模式" type="application/atom+xml" />
+
+<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
+</head>
+
+<body>
+
+
+
+<div class="container">
+<section id="main_content">
+
+<header>
+	<h1><a href="/" class="minor">找寻模式</a> / 你真的知道一个HTML及资源是如何load的吗(了解各个部分是何时下载和执行的)
+        </h1>
+	<p class="additional">阅读, 人生, 技术</p>
+    <div id="header_nav">
+    <a href="/category.html">Category</a>
+    <a href="/archive.html">Archive</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/links.html">Links</a>
+    <a href="/about.html">About</a>
+    </div>
+    <div id="search_box">
+    <form action="/search/" class="block block-search">
+    <input type="search" name="q" placeholder="回车搜索" />
+    </form>
+    </div>
+</header>
+
+
+<article>
+	<h1><a href="/blog/2009/12/02/%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%9F%A5%E9%81%93%E4%B8%80%E4%B8%AAhtml%E5%8F%8A%E8%B5%84%E6%BA%90%E6%98%AF%E5%A6%82%E4%BD%95load%E7%9A%84%E5%90%97%E4%BA%86%E8%A7%A3%E5%90%84%E4%B8%AA%E9%83%A8%E5%88%86">你真的知道一个HTML及资源是如何load的吗(了解各个部分是何时下载和执行的)</a></h1>
+	
+	<p class="meta">
+	<span class="datetime">2009-12-02</span> posted in [<a href="/category/tech" class="category">技术模式</a>] with tags: []
+</p>
+
+	<span class="Apple-style-span" style="font-family: Simsun; line-height: normal; font-size: medium; "><h1 class="title" style="text-align: center; ">你真的知道一个HTML及资源是如何load的吗(了解各个部分是何时下载和执行的)</h1><p>本博客所有内容采用&nbsp;<a class="reference external" href="http://creativecommons.org/about/licenses/meet-the-licenses" target="_blank">Creative Commons Licenses</a>&nbsp;许可使用. 引用本内容时，请保留&nbsp;<a class="reference external" href="http://sites.google.com/site/towerjoo" target="_blank">朱涛</a>,&nbsp;<a class="reference external" href="http://www.cnblogs.com/mindsbook" target="_blank">出处</a>&nbsp;，并且&nbsp;<strong>非商业</strong>&nbsp;.</p><p>点击&nbsp;<a class="reference external" href="http://feed.feedsky.com/MindsbookTowerJoo" target="_blank">订阅</a>&nbsp;来订阅本博客.(推荐使用&nbsp;<a class="reference external" href="http://reader.google.com/" target="_blank">google reader</a>, 如果你的浏览器不支持直接订阅,请直接在&nbsp;<a class="reference external" href="http://reader.google.com/" target="_blank">google reader</a>&nbsp;中手动添加).</p><p>点击&nbsp;<a class="reference external" href="http://groups.google.com/group/python-share/web/sequence_of_response.pdf" target="_blank">下载pdf阅读</a>&nbsp;(如果浏览器不支持直接打开,请点击右键另存)</p><div class="section" id="id1"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id14" style="text-decoration: none; color: black; " target="_blank">摘要</a></h1><p>本文主要介绍浏览器请求一个URI后, 相应的html及其包含的外部资源(如js/css/image/flash)的下载顺序及其执行顺序.</p><p>在文中会有一个具体的例子来说明.</p><div class="contents topic" id="contents" style="margin-top: 2em; margin-right: 2em; margin-bottom: 2em; margin-left: 2em; "><p class="topic-title first" style="margin-top: 0px !important; font-weight: bold; ">Contents</p><ul class="simple" style="margin-bottom: 1em; "><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id1" id="id14" target="_blank">摘要</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id2" id="id15" target="_blank">引入</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id3" id="id16" target="_blank">具体分析</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id4" id="id17" target="_blank">请求分析</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#firefoxchrome" id="id18" target="_blank">对Firefox和chrome的请求分析</a><ul><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#firefox" id="id19" target="_blank">Firefox</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#chrome" id="id20" target="_blank">chrome</a></li></ul></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id5" id="id21" target="_blank">有意思的一个插曲</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id6" id="id22" target="_blank">结论</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id7" id="id23" target="_blank">后记</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id8" id="id24" target="_blank">参考资料</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id9" id="id25" target="_blank">本文的源码</a></li></ul></div></div><div class="section" id="id2"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id15" style="text-decoration: none; color: black; " target="_blank">引入</a></h1><p>完成了若干个基于WEB的项目, 也了解了从前端的js,css,html到后端python/php等, 二者如何交互, 最终浏览器如何执行, 这些在心里也已经很明确了. 不过一个问题一直萦绕在心中,那就是:</p><p><strong>一个html有若干个外部资源(js,css,flash,image等),这些请求是何时下载的,又是何时执行的?</strong></p><p>不清楚,不明白, 所以也就不知道我写的js究竟何时执行的, 也就不知道为什么很多高性能的建议是要将js置于一个 html底端的&lt;/body&gt;之前.</p><p>如果你也不是很明确,请来和我一起学习吧.</p></div><div class="section" id="id3"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id16" style="text-decoration: none; color: black; " target="_blank">具体分析</a></h1><p>首先我们来看一个示例的html页面,如下:</p><div class="highlight"><pre><span style="color: #008000; font-weight: bold; ">&lt;html&gt;</span>
+  <span style="color: #008000; font-weight: bold; ">&lt;head&gt;</span>
+   <span style="color: #008000; font-weight: bold; ">&lt;script </span><span style="color: #7d9029; ">src=</span><span style="color: #ba2121; ">"/static/jquery.js"</span> <span style="color: #7d9029; ">type=</span><span style="color: #ba2121; ">"text/javascript"</span><span style="color: #008000; font-weight: bold; ">&gt;&lt;/script&gt;</span>
+   <span style="color: #008000; font-weight: bold; ">&lt;script </span><span style="color: #7d9029; ">src=</span><span style="color: #ba2121; ">"/static/abc.js"</span> <span style="color: #7d9029; ">type=</span><span style="color: #ba2121; ">"text/javascript"</span><span style="color: #008000; font-weight: bold; ">&gt;</span>
+   <span style="color: #008000; font-weight: bold; ">&lt;/script&gt;</span>
+   <span style="color: #008000; font-weight: bold; ">&lt;link</span> <span style="color: #7d9029; ">rel=</span><span style="color: #ba2121; ">"stylesheets"</span> <span style="color: #7d9029; ">type=</span><span style="color: #ba2121; ">"text/css"</span> <span style="color: #7d9029; ">href=</span><span style="color: #ba2121; ">"/static/abc.css"</span><span style="color: #008000; font-weight: bold; ">&gt;&lt;/link&gt;</span>
+   <span style="color: #008000; font-weight: bold; ">&lt;script&gt;</span>
+    $(<span style="color: #008000; ">document</span>).ready(<span style="color: #008000; font-weight: bold; ">function</span>(){
+     $(<span style="color: #ba2121; ">"#img"</span>).attr(<span style="color: #ba2121; ">"src"</span>, <span style="color: #ba2121; ">"/static/kkk.png"</span>);
+   });
+   <span style="color: #008000; font-weight: bold; ">&lt;/script&gt;</span>
+  <span style="color: #008000; font-weight: bold; ">&lt;/head&gt;</span>
+  <span style="color: #008000; font-weight: bold; ">&lt;body&gt;</span>
+  <span style="color: #008000; font-weight: bold; ">&lt;div&gt;</span>
+  <span style="color: #008000; font-weight: bold; ">&lt;img</span> <span style="color: #7d9029; ">id=</span><span style="color: #ba2121; ">"img"</span> <span style="color: #7d9029; ">src=</span><span style="color: #ba2121; ">"/static/abc.jpg"</span> <span style="color: #7d9029; ">style=</span><span style="color: #ba2121; ">"width:400px;height:300px;"</span><span style="color: #008000; font-weight: bold; ">/&gt;</span>
+  <span style="color: #008000; font-weight: bold; ">&lt;script </span><span style="color: #7d9029; ">src=</span><span style="color: #ba2121; ">"/static/kkk.js"</span> <span style="color: #7d9029; ">type=</span><span style="color: #ba2121; ">"text/javascript"</span><span style="color: #008000; font-weight: bold; ">&gt;&lt;/script&gt;</span>
+  <span style="color: #008000; font-weight: bold; ">&lt;/body&gt;</span>
+<span style="color: #008000; font-weight: bold; ">&lt;/html&gt;</span>
+</pre></div><p>它有如下几种资源:</p><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li>3个外部js文件,1个inline js代码</li><li>1个外部css文件, 1个inline css代码</li><li>1个image文件,及1个js请求的image</li></ol><p>总共是6个http request.</p><p>在分析之前,我们来看看firefox对这个html请求的结果, 如下图:</p><img alt="http://i48.tinypic.com/21n0hw7.jpg" src="http://i48.tinypic.com/21n0hw7.jpg" /><p>我们再看看chrome(linux)对这个html的请求结果,如下图(图比较小,可以在新标签中打开):</p><img alt="http://i48.tinypic.com/wck1ue.jpg" src="http://i48.tinypic.com/wck1ue.jpg" style="width: 700px; height: 128px; " /><p>我们先分析下,然后再去说明这2种请求结果的不同.</p></div><div class="section" id="id4"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id17" style="text-decoration: none; color: black; " target="_blank">请求分析</a></h1><p>首先说明下面这些描述主要是基于自己google, 咨询朋友和在&nbsp;<a class="reference external" href="http://www.stackoverflow.com/" target="_blank">SO</a>&nbsp;和&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Internet_Relay_Chat" target="_blank">IRC</a>&nbsp;上获得, 我并没有阅读相关的spec(当然我很想阅读,如果知道相关spec的朋友请留言谢谢), 不能保证其正确性和准确性,风险自担 :D.</p><p>基于相关的调研, 我的理解为, 对于一个URI请求, 浏览器会按照下面的请求和执行顺序进行:</p><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li>一个线程对DOM进行下载(也就是html, 而不去管html中的外部资源)</li><li>另外一个线程会开始分析已经下载的DOM, 并开始下载其中的外部资源(如js, css, image等)</li><li>第三个线程(如果有的话)会去下载2正在下载的以外的外部资源</li><li>如果允许更多的连接, 更多的线程会继续下载其它资源</li></ol><p>一个请求可以同时有多少个connection(线程), 取决于不同的浏览器,&nbsp;<a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html" target="_blank">http1.1</a>&nbsp;标准中规定的是对于同一个server/proxy(也就是hostname) 不超过2个connection, 但是在实际的浏览器实现中, 具体如下:</p><pre class="literal-block" style="margin-left: 2em; margin-right: 2em; ">Firefox 2: 2
+Firefox 3: 6
+Opera 9.26: 4
+Opera 9.5 beta: 4
+Safari 3.0.4 Mac/Windows: 4
+IE 7: 2
+IE 8: 6
+</pre><p>所以请根据这个实际情况来思考上面的下载顺序.</p><p>然后我们看执行顺序(js的执行, css的应用等):</p><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li>只要浏览器"看到了"了js代码,它就会执行</li><li>浏览器是从上到下,一行一行地执行</li><li>如果js代码位于一个函数或者对象中,则只有当函数或者对象被调用时才会执行</li><li>而所谓的direct code(不处于函数或者对象中的代码),则会从上到下顺序执行</li><li>当css文件下载完成时, 相应的样式也会应用到DOM上</li><li>onload或者jquery的$(document).ready()是在DOM下载完成后执行</li></ol><p>在实际的浏览器中, 一般遇到&lt;script&gt;标签会自动block住其它线程的下载, 如firefox, 这也是为什么 在web开发中常常推荐将&lt;script&gt;标签置于&lt;/body&gt;之前的原因.</p><p>但是并非所有的浏览器都block, 如chrome并不会block住其它的connection. 所以具体的load还需要参考具体的浏览器实现.</p><p>建议,&nbsp;<strong>将&lt;script&gt;&lt;/script&gt;标签置于&lt;/body&gt;之前, 这样可以在大多数情况下都得到较好的性能.</strong></p></div><div class="section" id="firefoxchrome"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id18" style="text-decoration: none; color: black; " target="_blank">对Firefox和chrome的请求分析</a></h1><p>我们回过头来看下上面2个图中的请求响应图.</p><div class="section" id="firefox"><h2><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id19" style="text-decoration: none; color: black; " target="_blank">Firefox</a></h2><p>有如下特征:</p><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li>首先下载html</li><li>html下载完成后, 从上到下依次下载外部文件(js, css,img)</li><li>js会block其它外部文件的下载</li><li>其它文件会并行下载</li></ol></div><div class="section" id="chrome"><h2><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id20" style="text-decoration: none; color: black; " target="_blank">chrome</a></h2><p>有如下特征:</p><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li>首先下载html</li><li>从上到下依次下载外部文件(js,css,img)</li><li>各个资源的下载顺序是并行的</li></ol><p>你可能会奇怪如果js可以并行下载,那么可能位于DOM下面的代码会先执行, 首先可以肯定的是&nbsp;<strong>即使下面的js先完成下载,也不会影响到整体的从上到下的执行顺序,浏览器会维护这种顺序的关系</strong>, chrome的这种方式也是未来浏览器的一种趋势, 而这也是为什么chrome能够更快的原因之一.</p></div></div><div class="section" id="id5"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id21" style="text-decoration: none; color: black; " target="_blank">有意思的一个插曲</a></h1><p>在提出这个问题后,我便多方入手, 向朋友咨询, 向&nbsp;<a class="reference external" href="http://www.stackoverflow.com/" target="_blank">SO</a>&nbsp;提出问题, 甚至去Firefox的&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Internet_Relay_Chat" target="_blank">IRC</a>&nbsp;进行了提问,</p><p>回答的朋友还都是很耐心的, 不过, 他们大多向我问了一个问题&nbsp;<strong>做WEB开发, 你为什么要了解这些细节</strong>.</p><p>对于这样的问题,我还是比较纳闷的, 我一直认为&nbsp;<strong>一个好的程序员,不仅需要知道how, 还要知道what, 甚至why</strong>,</p><p>知道how,只说明你是一个合格的码工,只会简单地使用别人提供的东西来开发.</p><p>知道what, 说明你开始去关注背后是如何实现的, 随着时间推进, 这时候你会逐渐成为一个有经验的程序员.</p><p>知道why, 说明你开始向hacker的路迈进了, 开始逐步走向了技术牛人的路线了,长此以往你会有很大的成长的. 参考&nbsp;<a class="reference external" href="http://www.catb.org/~esr/faqs/hacker-howto.html" target="_blank">How To Become A Hacker</a>.</p><p>让我们去享受细节,本质的快乐吧,而不是只停留在我会的层面那么表面的快乐.</p></div><div class="section" id="id6"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id22" style="text-decoration: none; color: black; " target="_blank">结论</a></h1><p>浏览器是各大厂商抢占的市场,无论是自主(Firefox, chrome, IE, Opera, Safari)或者基于一定的内核(遨游, 搜狗, TT, 360等), 但是可以肯定的是浏览器会更加强大, 遵守规范, 更快的响应等, 而我们WEB程序员的日子也会好过很多.</p><p>本文部分细节还是比较含糊, 后面可能还会在写一篇文章来进行更彻底,清晰的说明.</p><p>欢迎讨论.</p></div><div class="section" id="id7"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id23" style="text-decoration: none; color: black; " target="_blank">后记</a></h1><p>这次是不惜血本了, 之前积累了快400的&nbsp;<a class="reference external" href="http://www.stackoverflow.com/" target="_blank">SO</a>&nbsp;reputation score, 一下压出去了150个来寻找最满意的答案.</p><p>具体大家可以参考:</p><p><a class="reference external" href="http://stackoverflow.com/questions/1795438/load-and-execution-sequence-of-a-web-page" target="_blank">Load and execution sequence of a web page?</a></p><p>帖子中有较详细的回答,可以作为参考.</p></div><div class="section" id="id8"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id24" style="text-decoration: none; color: black; " target="_blank">参考资料</a></h1><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li><a class="reference external" href="http://stackoverflow.com/questions/1795438/load-and-execution-sequence-of-a-web-page" target="_blank">Load and execution sequence of a web page?</a></li><li><a class="reference external" href="http://stackoverflow.com/questions/1307929/javascript-dom-load-events-execution-sequence-and-document-ready" target="_blank">JavaScript DOM load events, execution sequence, and $(document).ready()</a></li><li><a class="reference external" href="http://javascript.about.com/od/hintsandtips/a/exeorder.htm" target="_blank">JavaScript Execution Order</a></li><li><a class="reference external" href="http://www.highdots.com/forums/cascading-style-sheets/newbie-when-css-applied-234177.html" target="_blank">Newbie - when is the CSS applied?</a></li></ol></div><div class="section" id="id9"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1615807#id25" style="text-decoration: none; color: black; " target="_blank">本文的源码</a></h1><p>本文的rst源码链接在&nbsp;<a class="reference external" href="http://groups.google.com/group/python-share/web/sequence_of_response.rst" target="_blank">这里</a>&nbsp;.</p><p>点击&nbsp;<a class="reference external" href="http://groups.google.com/group/python-share/web/sequence_of_response.pdf" target="_blank">下载pdf阅读</a>&nbsp;(如果浏览器不支持直接打开,请点击右键另存)</p></div></span>
+
+	
+	<!--<p class="permalink">永久链接：<a href="http://towerjoo.github.com/blog/2009/12/02/%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%9F%A5%E9%81%93%E4%B8%80%E4%B8%AAhtml%E5%8F%8A%E8%B5%84%E6%BA%90%E6%98%AF%E5%A6%82%E4%BD%95load%E7%9A%84%E5%90%97%E4%BA%86%E8%A7%A3%E5%90%84%E4%B8%AA%E9%83%A8%E5%88%86">http://towerjoo.github.com/blog/2009/12/02/%E4%BD%A0%E7%9C%9F%E7%9A%84%E7%9F%A5%E9%81%93%E4%B8%80%E4%B8%AAhtml%E5%8F%8A%E8%B5%84%E6%BA%90%E6%98%AF%E5%A6%82%E4%BD%95load%E7%9A%84%E5%90%97%E4%BA%86%E8%A7%A3%E5%90%84%E4%B8%AA%E9%83%A8%E5%88%86</a></p>-->
+</article>
+<div id="disqus_thread" class="comments"></div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r2.gif&amp;uid=89469" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'towerjoo'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+</section>
+</div>
+
+<footer>
+		<p>&copy; Since 2012 <a href="http://github.com/towerjoo" target="_blank">github.com/towerjoo</a></p>
+</footer>
+
+<div id="side_top">
+    <a href="#">Top</a>
+</div>
+
+</body>
+</html>

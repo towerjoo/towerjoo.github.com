@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="towerjoo" />
+<meta name="keywords" content="" />
+<title> 如何提高程序员的生产率(二) / 找寻模式</title>
+<link href="http://towerjoo.github.com/feed.xml" rel="alternate" title="找寻模式" type="application/atom+xml" />
+
+<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
+</head>
+
+<body>
+
+
+
+<div class="container">
+<section id="main_content">
+
+<header>
+	<h1><a href="/" class="minor">找寻模式</a> / 如何提高程序员的生产率(二)
+        </h1>
+	<p class="additional">阅读, 人生, 技术</p>
+    <div id="header_nav">
+    <a href="/category.html">Category</a>
+    <a href="/archive.html">Archive</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/links.html">Links</a>
+    <a href="/about.html">About</a>
+    </div>
+    <div id="search_box">
+    <form action="/search/" class="block block-search">
+    <input type="search" name="q" placeholder="回车搜索" />
+    </form>
+    </div>
+</header>
+
+
+<article>
+	<h1><a href="/blog/2009/11/13/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%94%9F%E4%BA%A7%E7%8E%87%E4%BA%8C">如何提高程序员的生产率(二)</a></h1>
+	
+	<p class="meta">
+	<span class="datetime">2009-11-13</span> posted in [<a href="/category/tech" class="category">技术模式</a>] with tags: []
+</p>
+
+	<span class="Apple-style-span" style="font-family: Sans; line-height: normal; font-size: medium; "><h1 class="title" style="text-align: center; ">如何提高程序员的生产率(二)</h1><p>本博客所有内容采用&nbsp;<a class="reference external" href="http://creativecommons.org/about/licenses/meet-the-licenses" target="_blank">Creative Commons Licenses</a>&nbsp;许可使用. 引用本内容时，请保留&nbsp;<a class="reference external" href="http://sites.google.com/site/towerjoo" target="_blank">朱涛</a>,&nbsp;<a class="reference external" href="http://www.cnblogs.com/mindsbook" target="_blank">出处</a>&nbsp;，并且&nbsp;<strong>非商业</strong>&nbsp;.</p><p>点击&nbsp;<a class="reference external" href="http://feed.feedsky.com/MindsbookTowerJoo" target="_blank">订阅</a>&nbsp;来订阅本博客.(推荐使用&nbsp;<a class="reference external" href="http://reader.google.com/" target="_blank">google reader</a>, 如果你的浏览器不支持直接订阅,请直接在&nbsp;<a class="reference external" href="http://reader.google.com/" target="_blank">google reader</a>&nbsp;中手动添加).</p><p>点击&nbsp;<a class="reference external" href="http://groups.google.com/group/python-share/web/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%94%9F%E4%BA%A7%E7%8E%87%28%E4%BA%8C%29.pdf" target="_blank">下载pdf阅读</a>&nbsp;（如果浏览器不支持直接打开pdf,请点击右键另存).</p><div class="section" id="id2"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id16" style="text-decoration: none; color: black; " target="_blank">摘要</a></h1><p>继续&nbsp;<a class="reference external" href="http://www.cnblogs.com/mindsbook/archive/2009/11/09/improve_porgammer_productivity_1.html" target="_blank">如何提高程序员的生产率(一)</a>&nbsp;, 除了&nbsp;<strong>命令行</strong>&nbsp;和&nbsp;<strong>快捷键</strong>&nbsp;外,我们在日常生活中还会遇到一些别的琐碎 的事情, 而这些事情通常就是决定一个程序员生产率高低的因素.</p><p>本文会主要谈&nbsp;<strong>如何自动化</strong>,&nbsp;<strong>编辑器的选择</strong>, 还有一些细节问题.</p><div class="contents topic" id="contents" style="margin-top: 2em; margin-right: 2em; margin-bottom: 2em; margin-left: 2em; "><p class="topic-title first" style="margin-top: 0px !important; font-weight: bold; ">Contents</p><ul class="simple" style="margin-bottom: 1em; "><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id2" id="id16" target="_blank">摘要</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id3" id="id17" target="_blank">引入</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id4" id="id18" target="_blank">自动化</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id5" id="id19" target="_blank">编辑器</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id6" id="id20" target="_blank">其它的细节</a><ul><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id7" id="id21" target="_blank">过犹不及</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id8" id="id22" target="_blank">合理判断</a></li></ul></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id9" id="id23" target="_blank">结论</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id10" id="id24" target="_blank">参考资料</a></li><li><a class="reference internal" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#rst" id="id25" target="_blank">本文的rst源码</a></li></ul></div></div><div class="section" id="id3"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id17" style="text-decoration: none; color: black; " target="_blank">引入</a></h1><p><a class="reference external" href="http://www.cnblogs.com/mindsbook/archive/2009/11/09/improve_porgammer_productivity_1.html" target="_blank">如何提高程序员的生产率(一)</a>&nbsp;写完后, 有几位朋友的留言我仔细阅读了下, 觉得还是值得拿出来说说的.</p><p><strong>路过的枫</strong>&nbsp;提到的:</p><pre class="literal-block" style="margin-left: 2em; margin-right: 2em; ">这些生产率的提高都是流于形式，能提高生产率的是如何带动员工的思考，并总结出自己的智慧。
+</pre><p>从某种意义上说我是赞同这个观点的, 上篇和本篇即将阐述的内容多是一些实务性的东西, 它没有思考层面 能够产生的对程序员本身认知的提高(当然也与程序员本身有关,其实追求高生产率从某个角度来看也是一种哲学层面的东西),它只是一些能够在相同条件下节省时间的一些有益的帮助. 个人认为 这种小的细节上的提高.加以时间参数的放大,所带来的效应也不能低估的, 所谓&nbsp;<strong>量变影响质变</strong>&nbsp;是也.</p><p>那么,我还是继续我这些实务性的介绍.</p></div><div class="section" id="id4"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id18" style="text-decoration: none; color: black; " target="_blank">自动化</a></h1><p>不知道你是否使用过&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Subversion_(software)" target="_blank">subversion</a>&nbsp;来作为版本控制工具,是否遇到过这样的情形,就是现在你不想再使用&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Subversion_(software)" target="_blank">subversion</a>&nbsp;了 我想改用&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Git_(software)" target="_blank">git</a>&nbsp;或者&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Mercurial_(software)" target="_blank">hg</a>&nbsp;这种分布式的版本控制. 于是一个问题出现了,&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Subversion_(software)" target="_blank">subversion</a>&nbsp;为我们的项目中的每个目录 下都生成了一个&nbsp;<em>.svn</em>&nbsp;目录,里面有相关的svn信息, 而显然我们不想把这些无关的目录引入我们新的代码库中的.</p><p><strong>我们决定删除这些无用的目录</strong>.</p><p>怎么删?</p><p>嗯,我笨,我用鼠标进入每个目录把每个.svn文件都删除了吧. 当然,这是没有问题的,</p><p>或者, 我看了你的上篇文章, 我想用命令行了, 于是你在进入每个目录&nbsp;<cite>rm -rf .svn</cite>&nbsp;进行删除. 恭喜你,你已经高效了很多.</p><p>不过,我们为什么不想着用程序去自动完成呢?</p><p>如果你在linux, 完全可以:&nbsp;<cite>find . -name .svn|xargs rm -rf</cite>&nbsp;一个操作即可.</p><p>如果你在Win下, 这时候管道可能不好使(我查了下相关的资料, 目前没有找到合适的办法, 大致会是&nbsp;<cite>dir /S | del</cite>&nbsp;, 但是 这个是不工作的, del接受不到管道来的数据).</p><p>于是有个办法了,我们写脚本吧, 一个简单的脚本如下(python):</p><div class="highlight"><pre><span style="color: #008000; font-weight: bold; ">import</span> <span style="color: #0000ff; font-weight: bold; ">os</span>
+<span style="color: #008000; font-weight: bold; ">import</span> <span style="color: #0000ff; font-weight: bold; ">shutil</span>
+
+curdir <span style="color: #666666; ">=</span> os<span style="color: #666666; ">.</span>path<span style="color: #666666; ">.</span>abspath(os<span style="color: #666666; ">.</span>path<span style="color: #666666; ">.</span>dirname(__file__))
+
+<span style="color: #008000; font-weight: bold; ">def</span> <span style="color: #0000ff; ">removedir</span>(dirname, name <span style="color: #666666; ">=</span> <span style="color: #ba2121; ">".svn"</span>):
+    <span style="color: #008000; font-weight: bold; ">if</span> os<span style="color: #666666; ">.</span>path<span style="color: #666666; ">.</span>isdir(dirname):
+        <span style="color: #008000; font-weight: bold; ">for</span> <span style="color: #008000; ">file</span> <span style="color: #aa22ff; font-weight: bold; ">in</span> os<span style="color: #666666; ">.</span>listdir(dirname):
+            <span style="color: #008000; font-weight: bold; ">if</span> os<span style="color: #666666; ">.</span>path<span style="color: #666666; ">.</span>isdir(os<span style="color: #666666; ">.</span>path<span style="color: #666666; ">.</span>join(dirname, <span style="color: #008000; ">file</span>)) <span style="color: #aa22ff; font-weight: bold; ">and</span> <span style="color: #008000; ">file</span> <span style="color: #666666; ">==</span> name:
+                thedir <span style="color: #666666; ">=</span> os<span style="color: #666666; ">.</span>path<span style="color: #666666; ">.</span>join(dirname, name)
+                shutil<span style="color: #666666; ">.</span>rmtree(thedir)
+                <span style="color: #008000; font-weight: bold; ">print</span> <span style="color: #ba2121; ">"."</span>,
+            <span style="color: #008000; font-weight: bold; ">else</span>:
+                removedir(os<span style="color: #666666; ">.</span>path<span style="color: #666666; ">.</span>join(dirname, <span style="color: #008000; ">file</span>))
+</pre></div><p>不过几行的命令, 但是这个脚本只要是装有python的平台都能够顺利运行成功, 当然win也不例外.</p><p>于是我们评估下这三种方法的生产率:</p><p>假设.svn的目录数是100个,我们假定所有的.svn都在二级目录下,也就是下面这样</p><pre class="literal-block" style="margin-left: 2em; margin-right: 2em; ">project
+   A
+     .svn
+   B
+     .svn
+   ...
+</pre><p>这样一直有100个.svn目录, 那么 第一种情况, 操作数为:　(1次点击A目录+1次del键+1次回到上一目录)*100=200次鼠标操作+100次输入操作,</p><p>第二种情况, 操作数为:　(rm -rf A/.svn) + (光标向上+5次光标向右+1次退格+输入B)*99=13+8*99=805次输入操作</p><p>第三种情况, 我们以后者的脚本为比较对象(比较通用), 共计442个源码字符+10个左右的命令行字符=452个输入操作</p><p>假设, 每秒3次键盘输入操作, 1次鼠标操作, 那么,用时分别为:</p><p>第一种情况, 200/1+100/3=233秒</p><p>第二种情况: 805/3=268秒</p><p>第三种情况: 452/3 + 3*60 = 330秒</p><p>当然第一种情况还存在鼠标操作和键盘操作的切换时间, 第三种情况加入的思考算法的时间可能不准确(比较熟悉python的程序员应该不会超过3分钟).</p><p>从而,对于上面这种场景,我们得到的结果是:</p><pre class="literal-block" style="margin-left: 2em; margin-right: 2em; ">第一种情况&lt;第二种情况&lt;第三种情况
+</pre><p>你可能会说, 这结果怎么和你的论点是相反的, 或者你开始庆幸自己每次都是使用鼠标来干.</p><p>那么让我们来继续这个场景, 如果我们的项目变了,我们不再是100个目录,而是10000个.</p><p>第一种情况, 20000/1+10000/3=23333秒</p><p>第二种情况: 80005/3=26668秒</p><p>第三种情况: 10/3 = 3秒(因为我们的脚本第一次都写好了, 始终要记得DRY)</p><p>哇, 这种量级的差别可就不是一点半点, 在这种情况下1,2方式基本不可行.</p><p>你会很奇怪,为会什么第二种方法会这么差劲呢?</p><p>其实不然,请不要忽略了我们的假设前提, 是很简单的目录结构, 如果我们是有多级嵌套的结构,那么第二种情况会比第一种情况要好很多. 读者不妨自行估算下.</p><p>而随着新的类似需求的出现,自动化的力量和效率会愈加突显出来.</p><p>所以, 还等什么,赶紧反思下自己老做哪些重复的事情,是否可以写个脚本? 动手去写吧!</p></div><div class="section" id="id5"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id19" style="text-decoration: none; color: black; " target="_blank">编辑器</a></h1><p>作为程序员的你我, 无论你使用的是VS, Eclipse还是Emacs,&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;等, 你最主要面对的还是一个编辑窗口, 你需要向其中输入字符, 继而成为你工作的体现.</p><p>既然我们每天都在使用编辑器,那么编辑器当然会在很大程度上影响程序员的工作效率.</p><p>在这个论点上我不发表任何结论性的意见,我只是想从我个人的角度来分享下我的心得.</p><p>从大学开始学习计算机起, 用过VC, VS, eclipse,&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;, 记事本等大大小小不下数十种的编辑器, 从启动速度和执行效率上来分, 基本上可以分为&nbsp;<strong>重型</strong>&nbsp;和&nbsp;<strong>轻型</strong>&nbsp;两种, 例如 VC, VS, eclipse这样的IDE可以归为重型, 而&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;, 记事本, Emacs(稍显重了些) 可以归为后者.</p><p>相比于重型的编辑,我更加青睐轻型的编辑器, 我个人是受不了漫长的启动过程, 占用过多的内存(影响其它程序的响应), 容易崩溃(越复杂 的程序当然越容易崩溃)等等.</p><p>那么,我个人是比较喜欢号称编辑器之王的&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;(如果你是第一次听说,那么不妨现在就开始学习吧,相信你一定会喜欢上的), 我们不去 讨论究竟和Emacs相比哪个更好(随便google vi vs emacs),我只想说说我喜欢&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;的几点:</p><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li>轻便(启动速度,响应速度)</li><li>多平台支持(无论是Win, LInux, 我都使用)</li><li>解放鼠标(基本你不用去动鼠标,从而提高的生产率,请参考&nbsp;<a class="reference external" href="http://www.cnblogs.com/mindsbook/archive/2009/11/09/improve_porgammer_productivity_1.html" target="_blank">如何提高程序员的生产率(一)</a>&nbsp;中的部分说明)</li><li>强大的功能(只有你想不到,没有你办不到,如正则替换, 大量的提高效率的键盘绑定等)</li><li>插件支持(如各种plugin, colorscheme, 如果你不了解这些名词,可以google之)</li></ol><p>等等.如果你用过&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;超过3年,你再回头看这篇文章时,你可能会会意的微笑,弃IDE而从&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;.</p><p>其实现在很多的软件也都是将&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;作为光标导航的标准,如j,h,k,l四个键的作用等.</p><p>参考&nbsp;<a class="reference external" href="http://stackoverflow.com/questions/1697214/vim-like-tools-and-softwares-collection" target="_blank">VIM like tools and softwares Collection</a>&nbsp;了解更多&nbsp;<a class="reference external" href="http://www.vim.org/" target="_blank">VI</a>&nbsp;相关的工具.</p></div><div class="section" id="id6"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id20" style="text-decoration: none; color: black; " target="_blank">其它的细节</a></h1><p>基本上如果你能够在这2篇博文中提到的几点注意起来, 会在实际的程序生活中大大提高生产率, 提高工作效率.</p><p>那么,最后我想简单说明几个比较重要的观点.</p><div class="section" id="id7"><h2><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id21" style="text-decoration: none; color: black; " target="_blank">过犹不及</a></h2><p>在生活中注意去高效的思维和高效的工作,但是不要"过"了,这里所谓的"过",是指诸如你绑定了100多个快捷键, 你事无巨细都写脚本来完成,你收集和学习所有的捷径(甚至在应该去完成工作时)等等等等.</p><p>合理的度是,你能够自如,感觉舒适地应对,也无需特别刻意地去将自己的效率达到所谓的最高.</p></div><div class="section" id="id8"><h2><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id22" style="text-decoration: none; color: black; " target="_blank">合理判断</a></h2><p>有时候自动化一个东西并非是最经济,最高效的方法,在完成一个工作之前你先花2分钟在脑中评估下(有&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Getting_Things_Done" target="_blank">GTD</a>&nbsp;的意思了, 呵呵),</p><p>你可以问:</p><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li>这项工作后面还会遇到吗?</li><li>这项工作可以自动化吗?</li><li>如果要自动化,得有多少时间投入?</li><li>这个时间预估,我能接受吗?</li></ol><p>明确这几个问题后,我想无论是自动化或者手动都会是合理而高效的.</p></div></div><div class="section" id="id9"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id23" style="text-decoration: none; color: black; " target="_blank">结论</a></h1><p>在世界是平的的今天,程序员的日子也不好过了(呵呵,有如此多的程序员啊),而且 国内的技术氛围也不是太好(君不见国内过35的还有几个人coding而乐此不疲?), 如何不断学习,提高自己,我想是每个不甘于人后的程序员都要反思的.</p><p>欢迎交流.&nbsp;</p><h1>后记&nbsp;</h1><p>感谢<span class="Apple-style-span" style="font-family: Verdana, 'Lucida Grande', Geneva, Arial, sans-serif; line-height: 18px; font-size: 12pt; "><a href="http://www.cnblogs.com/ownwaterloo/" target="_blank">OwnWaterloo</a>的留言, 在Win下使用搜索然后手动删除也不失为一种好方法.</span></p><p>&nbsp;</p><p>当然上面提到的svn的场景也只是一个例子, 我更加希望不要只就事论事,而是向更广的思考, 思考</p><p>如何能够自动化自己每日不断重复的琐事 ,从而提高生产率.</p></div><div class="section" id="id10"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id24" style="text-decoration: none; color: black; " target="_blank">参考资料</a></h1><ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; "><li><a class="reference external" href="http://www.cnblogs.com/mindsbook/archive/2009/11/09/improve_porgammer_productivity_1.html" target="_blank">如何提高程序员的生产率(一)</a></li><li><a class="reference external" href="http://www.vim.org/" target="_blank">VI</a></li><li><a class="reference external" href="http://stackoverflow.com/questions/1697214/vim-like-tools-and-softwares-collection" target="_blank">VIM like tools and softwares Collection</a></li></ol></div><div class="section" id="rst"><h1><a class="toc-backref" href="http://www.cnblogs.com/mindsbook/admin/EditPosts.aspx?postid=1602412#id25" style="text-decoration: none; color: black; " target="_blank">本文的rst源码</a></h1><p>本文的源码链接在&nbsp;<a class="reference external" href="http://groups.google.com/group/python-share/web/improve_programmer_productivity_2.rst" target="_blank">这里</a>&nbsp;.</p><p>点击&nbsp;<a class="reference external" href="http://groups.google.com/group/python-share/web/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%94%9F%E4%BA%A7%E7%8E%87%28%E4%BA%8C%29.pdf" target="_blank">下载pdf阅读</a>.</p></div></span>
+
+	
+	<!--<p class="permalink">永久链接：<a href="http://towerjoo.github.com/blog/2009/11/13/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%94%9F%E4%BA%A7%E7%8E%87%E4%BA%8C">http://towerjoo.github.com/blog/2009/11/13/%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%94%9F%E4%BA%A7%E7%8E%87%E4%BA%8C</a></p>-->
+</article>
+<div id="disqus_thread" class="comments"></div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r2.gif&amp;uid=89469" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'towerjoo'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+</section>
+</div>
+
+<footer>
+		<p>&copy; Since 2012 <a href="http://github.com/towerjoo" target="_blank">github.com/towerjoo</a></p>
+</footer>
+
+<div id="side_top">
+    <a href="#">Top</a>
+</div>
+
+</body>
+</html>

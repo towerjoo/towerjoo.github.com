@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="towerjoo" />
+<meta name="keywords" content="" />
+<title> 社交游戏（Social Game）开发简单教程与粗略总结之基础篇 / 找寻模式</title>
+<link href="http://towerjoo.github.com/feed.xml" rel="alternate" title="找寻模式" type="application/atom+xml" />
+
+<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
+</head>
+
+<body>
+
+
+
+<div class="container">
+<section id="main_content">
+
+<header>
+	<h1><a href="/" class="minor">找寻模式</a> / 社交游戏（Social Game）开发简单教程与粗略总结之基础篇
+        </h1>
+	<p class="additional">阅读, 人生, 技术</p>
+    <div id="header_nav">
+    <a href="/category.html">Category</a>
+    <a href="/archive.html">Archive</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/links.html">Links</a>
+    <a href="/about.html">About</a>
+    </div>
+    <div id="search_box">
+    <form action="/search/" class="block block-search">
+    <input type="search" name="q" placeholder="回车搜索" />
+    </form>
+    </div>
+</header>
+
+
+<article>
+	<h1><a href="/blog/2010/08/28/%E7%A4%BE%E4%BA%A4%E6%B8%B8%E6%88%8F%EF%BC%88social-game%EF%BC%89%E5%BC%80%E5%8F%91%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B%E4%B8%8E%E7%B2%97%E7%95%A5%E6%80%BB%E7%BB%93%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87">社交游戏（Social Game）开发简单教程与粗略总结之基础篇</a></h1>
+	
+	<p class="meta">
+	<span class="datetime">2010-08-28</span> posted in [<a href="/category/non-tech" class="category">人生模式</a>] with tags: []
+</p>
+
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 为了使得整个系列文章的逻辑性更加严密，本文旨在介绍一些社交游戏的相关基础，当前的市场状况，发展情况，以及对未来的展望。当然文中的一些数字与表述可能不太准确，在不影响传达数字表意的前提下，读者可对数字做一些上下浮动的估量，或许会更准确些<img style="border-bottom-style: none; border-right-style: none; border-top-style: none; border-left-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/wlEmoticon-smile_2.png" />。</p>  <h2>引入</h2>  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当无数人在谈论<a href="http://tech.qq.com/a/20100828/000111.htm" target="_blank">微博时代的到来</a>和<a href="http://www.chinanews.com.cn/it/2010/08-05/2448090.shtml" target="_blank">中国SNS去泡沫化</a>之时，依附于SNS平台之上的社交游戏也开始展露出头角，在互联网的大蛋糕上寻找着自己的那块cheese，而随着<a href="http://it.sohu.com/20100726/n273764043.shtml" target="_blank">年利润达若干亿美元的zynga</a>高调地宣称<a href="http://finance.qq.com/a/20100816/004363.htm" target="_blank">自己的玩家过亿</a>时，大家才真正开始注意起这个不起眼的蓝海来，当然如今已是大红海了（下文会详细的说明）。</p>  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 当facebook定义了SNS时，zynga也定义了社交游戏，随后便是数不尽的跟随者，如myspace,orkut，开心网，如playdom,6waves，五分钟等，当然也只有facebook和zynga赚的盆满钵满，跟随只能有残羹剩饭的份，但是那已是相当诱人的了。</p>  <h2>与其它游戏形式的关系</h2>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 那么社交游戏又是一种怎样的游戏类型，它与传统游戏、网络游戏、网页游戏有什么不同，下面对这几个问题加以分析。</p>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 社交游戏，即social game，从组词来看它由soical和game组成，game决定了其只是游戏的一个类别而已，与其它游戏类别也并无大的差别；而关键是social，也即说明社交游戏是基于社会关系之上的一种游戏新类型，其建立在依附的SNS平台庞大的用户群之上，在具有某种社会关系的玩家之间，基于一定的社交元素来保证与这些玩家之间的互动，最终<strong>将游戏的趣味娱乐性本质延展至社交层次</strong>。所以说，除了需要具有游戏本身的趣味性、娱乐性等基本元素外，<strong>将用户的游戏行为导向为社交行为则是一款社交游戏能否成功的根本因素</strong>，例如风靡的&#8220;偷菜&#8221;，许多玩家偷的已不是菜，而是一种社交目的，如暧昧，亲昵，友谊等。</p>  <p>&nbsp;&nbsp;&nbsp; 当然你也许会说，网游也具有同样互动的因素呀，且不闻借某款游戏来赢得一辈子幸福的同学也不在少数哈，还有大量的公会，还有&#8220;贾君鹏，你妈喊你吃饭&#8221;，这不是社交吗？我不否认这种网游建立起的关系的存在和普遍性，但相比于建立在已有大量关系基础上的社交游戏，网游的社交性显得少了许多。试想，你去玩偷菜时，你的邻居列表都是自己所熟知的人，其中不乏自己喜欢或者厌恶的人，你不是更有欲望去他们地里做些什么动作吗？当你去偷菜时只是为了简单的得到经验和升级吗？显然，网游这方面具有先天的单薄性。总之，网游的社交性相比于社交游戏更显松弛和单薄。</p>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 同样，有很多同学或许也称开心网上的游戏为网页游戏，所以有必要区分下这两个概念。从词的范畴来说，网页游戏与社交游戏定义的角度不同，前者是基于游戏的呈现载体，而后者是基于游戏的功能目的，其从属关系可从下图简单说明。</p>  <p><a href="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/web_vs_social_game_2.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="web_vs_social_game" border="0" alt="web_vs_social_game" src="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/web_vs_social_game_thumb.png" width="237" height="154" /></a></p>  <p>&nbsp;&nbsp;&nbsp; 其中相交的部分即是定义的角度相同时二者的重合关系，换句话说，以社交为目的的网页游戏即是社交游戏，而以网页形式为呈现载体的社交游戏也是网页游戏，当然，网页游戏也可只是单机版，而同样社交游戏也可出现在ipad，ps等载体上。</p>  <p>&nbsp;&nbsp;&nbsp; 作为本小节的结束语，社交游戏从传统游戏的追求游戏的乐趣与娱乐的基础上，延展至追求一种实际社会关系的某种影响上，而马斯洛的五种需求层次之中的&#8220;社交需求&#8221;也正解释了为什么社交游戏会得到强劲的发展的原因。看图不说话。</p>  <p><a href="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/%E6%B8%B8%E6%88%8F%E4%B8%8E%E9%9C%80%E6%B1%82_2.png"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="游戏与需求" border="0" alt="游戏与需求" src="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/%E6%B8%B8%E6%88%8F%E4%B8%8E%E9%9C%80%E6%B1%82_thumb.png" width="310" height="105" /></a></p>  <h2>市场状况</h2>  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 市场容量的分析通常由第三方的咨询公司来给出，这里引用相关的新闻（或者&#8220;所谓的&#8221;新闻）来给个直观的感受：</p>  <ol>   <li>美国社交游戏的市场在2012年<a href="http://www.examiner.com/girl-gamer-in-national/social-game-market-to-surpass-2-billion-by-2012" target="_blank">超过20亿美元</a> </li>    <li>zynga今年收入<a href="http://it.sohu.com/20100726/n273764043.shtml" target="_blank">将达8.5亿美元，明年将达10亿美元</a> </li>    <li>日本社交游戏市场规模<a href="http://www.techweb.com.cn/news/2010-07-30/651916.shtml">将达10亿美元</a> </li>    <li>据艾瑞统计，2008年中国休闲类社交网络市场规模为1.9亿元，较2007年的1.2亿元增长64.0%。2009年达到3.7亿元，<a href="http://games.sina.com.cn/y/n/2010-08-10/1039425887.shtml" target="_blank">并在2012年达到16.1亿元</a>。这个增幅是每一个淘金者都会看红眼的。 </li> </ol>  <p>&nbsp;&nbsp;&nbsp; 除此而外，我们可以看看下面艾瑞关于社交游戏市场规模的一些预测，虽然各个版本的数字有一定的差异，但总体趋势是相同的。</p>  <p>&nbsp;<a href="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/%E7%A4%BE%E4%BA%A4%E6%B8%B8%E6%88%8F%E5%B8%82%E5%9C%BA%E8%A7%84%E6%A8%A1_2.gif"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="社交游戏市场规模" border="0" alt="社交游戏市场规模" src="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/%E7%A4%BE%E4%BA%A4%E6%B8%B8%E6%88%8F%E5%B8%82%E5%9C%BA%E8%A7%84%E6%A8%A1_thumb.gif" width="494" height="433" /></a></p>  <p align="center">本图引用自<a href="http://www.iresearch.com.cn/View/121267.html">http://www.iresearch.com.cn/View/121267.html</a></p>  <p>&nbsp;&nbsp; 而在CNNIC的<a href="http://www.cnnic.net.cn/uploadfiles/pdf/2010/5/27/175549.pdf">2010年中国网页游戏调查报告</a>有如下一段研究发现：</p>  <blockquote>   <ol>     <li>中国网页游戏用户规模达1.05 亿，其中社交类网页游戏用户规模最大，达到9209        <br />，大型网页游戏用户规模2384万，网页单机游戏用户规模3791 万。 </li>      <li>19岁到 30 岁用户构成网页游戏最大用户群体，比例为64.5%。 </li>      <li>网页游戏用户的有收入人群比例较大，为77.1%， 其中平均月收入在1000元到 3000        <br />的用户比例最大，占到总体用户的43.7%。 </li>      <li>朋友介绍与搜索引擎是网页游戏信息获取的主要渠道，比例均为71.5%。 </li>   </ol> </blockquote>  <p>推荐朋友可以阅读下<a href="http://www.cnnic.net.cn/uploadfiles/pdf/2010/5/27/175549.pdf" target="_blank">CNNIC的报告</a>。</p>  <h2>营利模式</h2>  <p>&nbsp;&nbsp;&nbsp; 社交游戏在营利上也采取与当下免费网游同样的策略，即游戏本身免费，而以出售道具或者增值产品来获得收入，当然随着游戏本身的发展相应的营利模式也在不断拓展，例如植入广告，周边产品的开发。具体可用下表来总结：</p>  <table border="1" cellspacing="0" cellpadding="2" width="401"><tbody>     <tr>       <td width="133" align="center">营利方式</td>        <td width="133" align="center">典型示例</td>        <td width="133" align="center">备注</td>     </tr>      <tr>       <td width="133" align="center">道具出售</td>        <td width="133" align="center"><a href="http://apps.renren.com/happyfarm" target="_blank">开心农场</a>的道具</td>        <td width="133" align="center">如种子等</td>     </tr>      <tr>       <td width="133" align="center">植入广告</td>        <td width="133" align="center"><a href="http://apps.facebook.com/tiki-island/" target="_blank">tikiisland</a>中的可口可乐广告</td>        <td width="133" align="center">还有开心网的相关广告植入等。</td>     </tr>      <tr>       <td width="133" align="center">周边产品</td>        <td width="133" align="center"><a href="http://apps.renren.com/paopaoyu/" target="_blank">泡泡鱼</a>的淘宝店</td>        <td width="133" align="center">不过似乎销售不是特别理想。</td>     </tr>   </tbody></table>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 当然，社交游戏的社交性决定其必须依附于具有大量用户的SNS网络，如国外的facebook,myspace，国内的开心网，人人网等，平台商自不会看着你独自享用这样的赢利机会，于是人人网，facebook等平台相继收取30%左右分成来压榨开发商的利润空间，这也是之前不久<a href="http://tech.163.com/10/0508/13/665Q90S7000915BF.html" target="_blank">zynga与facebook之间</a>以生<a href="http://tech.163.com/10/0519/07/671I2ITG000915BF.html" target="_blank">掐架</a>的原因。</p>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 除了平台商的分成外，如果开发商使用第三方的支付系统，仍需向其提供10%左右不等的分成。</p>  <p>&nbsp;&nbsp; 当然上面是说开发商自己开发，自己运营所涉及到的额外支出，如果开发商是通过第三方的发布商来在某个平台上进行发布（原因是开发商的人力和财力所限，或者发布商与平台商的关系等），那么发布商通常要分去50%左右的分成（如plinga在VZ上发布游戏），所以到头来能够回到游戏开发商的收入已是少之又少了。</p>  <h2>市场发展情况</h2>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 正如文首说所的，社交游戏市场已经从蓝海变成了血腥的红海，而随着EA对playfish，Disney对playdom以及zynga对若干公司的收购，整个社交游戏市场已经开始了新一轮的格局调整，在此过程中竞争力差的公司会相继出局，遗留的只能是那些有大量资源（流量，高质量产品）的开发商、发布商等。</p>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 在如今的市场环境下，大量的开发商不再试图去创新，而是所谓的&#8220;山寨&#8221;（当然我们公司也逃不出），zynga出了款挖宝的游戏，国内的厂商开始也开发；playdom出了款城市建造的游戏，国内连忙跟进，于是市场上充斥了大量的同类型的城市类游戏。更为可怕的是，其它领域在市场格局调整时的惨剧也同样在社交游戏上上演&#8212;&#8212;恶性的竞争与拷贝，这点在社交游戏上更为突出。从技术角度来讲，社交游戏前端通常采用flash，而拥有网络的任一个人都可将其下载，使用反编译工具查看相关的源码，如果下载反编译的是一个公司，那么后果可想而知，原厂家用6个月心血开发而来的游戏，你（或者某个厂家）只用几周调通前端写个后端即可，当然技术的话题可留作本系列文章的技术篇中细说。</p>  <p>&nbsp;&nbsp;&nbsp; 在市场不断成熟的条件下，开发商的日子并不好过，特别是话语权低的小开发商，你不断要受到<a href="http://www.cnblogs.com/mindsbook/archive/2010/08/26/1809529.html" target="_blank">平台商的无理压榨</a>，甚至<a href="http://www.cnblogs.com/mindsbook/archive/2010/08/26/1808830.html" target="_blank">随时删除你的游戏</a>，也要小心同行的恶意拷贝，在受尽压榨的处境下充满中成为另一个中国zynga的美好梦想，当然或许仅是梦想而已。</p>  <h2>未来的展望</h2>  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 一次去中关村买移动硬盘时，发现了一个有趣的事情，我循着海龙各个商贩的展台过时，看到的是各个店员&#8220;忙时则招揽生意，闲时则偷偷菜&#8221;，甚至我询问生意的声音也没能把沉迷的店员从泡泡龙中拉出来。</p>  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 市场仍在向好发展，社会对社交游戏的认可也越来越高，对于购买道具也越来越习惯和接受（应该感谢QQ的市场培育），而且购买渠道也十分畅通（各个第三方的支付系统），相信社交游戏市场在剧烈的调整下正在逐步走向成熟和稳定，并且会构成游戏中的一个重要的分支。</p>  <p>&nbsp;&nbsp;&nbsp;&nbsp; 当然，未来社交游戏的属性也会有一定的调整，除了更少的急功近利和恶性竞争，还需要建立起一定的行业标准，以及协调与各个利益方的关系，这样整个社交游戏产业才能更好的、保持良性的发展。</p>  <p>&nbsp;&nbsp;&nbsp; 最后说一个小故事，说，某一天，大家都在公司上班，为成为中国的zynga在努力，突然一个同事震惊地要我们去看个东西，原来是在人人上看到了一款与social city完全一样的游戏（叫A游戏吧），美工UI等完全相同（显然是直接拿人家的），不同的只是语言和开发商署名，我们在好奇版权问题时，这时一个同事冒出个句，&#8220;人人网是山寨，A游戏也是山寨，山寨上的山寨，山寨中的山寨，严格的审核不是自己抽自己？&#8221;于是我们大呼经典继而继续努力。</p>  <p>&nbsp;&nbsp; 最后附一张世界sns的布局图，当然或许太过粗略，也不完全符合实际，但是欣欣向荣的形势还是看得见的。</p>  <p><a href="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/world-social-network-map_2.jpg"><img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto; padding-top: 0px" title="world-social-network-map" border="0" alt="world-social-network-map" src="http://images.cnblogs.com/cnblogs_com/mindsbook/WindowsLiveWriter/SocialGame_792D/world-social-network-map_thumb.jpg" width="732" height="429" /></a></p>  <p align="center">本图摘自<a href="http://www.mapsofworld.com/images/world-social-network-map.jpg">http://www.mapsofworld.com/images/world-social-network-map.jpg</a></p>  <h2>更多参考</h2>  <ol>   <li><a href="http://www.mapsofworld.com/images/world-social-network-map.jpg" target="_blank">全世界sns平台图</a> </li>    <li><a href="http://www.iresearch.com.cn/View/121267.html" target="_blank">social game的市场规模</a> </li>    <li><a href="http://www.cnnic.net.cn/uploadfiles/pdf/2010/5/27/175549.pdf">2010年中国网页游戏调查报告</a> </li> </ol> <!-- JiaThis Button BEGIN --><script type="text/javascript" src="http://www.jiathis.com/code/jiathis_r.js?type=left&amp;move=0&amp;uid=89469" charset="utf-8"></script><!-- JiaThis Button END -->
+
+	
+	<!--<p class="permalink">永久链接：<a href="http://towerjoo.github.com/blog/2010/08/28/%E7%A4%BE%E4%BA%A4%E6%B8%B8%E6%88%8F%EF%BC%88social-game%EF%BC%89%E5%BC%80%E5%8F%91%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B%E4%B8%8E%E7%B2%97%E7%95%A5%E6%80%BB%E7%BB%93%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87">http://towerjoo.github.com/blog/2010/08/28/%E7%A4%BE%E4%BA%A4%E6%B8%B8%E6%88%8F%EF%BC%88social-game%EF%BC%89%E5%BC%80%E5%8F%91%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B%E4%B8%8E%E7%B2%97%E7%95%A5%E6%80%BB%E7%BB%93%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%AF%87</a></p>-->
+</article>
+<div id="disqus_thread" class="comments"></div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r2.gif&amp;uid=89469" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'towerjoo'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+</section>
+</div>
+
+<footer>
+		<p>&copy; Since 2012 <a href="http://github.com/towerjoo" target="_blank">github.com/towerjoo</a></p>
+</footer>
+
+<div id="side_top">
+    <a href="#">Top</a>
+</div>
+
+</body>
+</html>

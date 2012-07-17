@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="towerjoo" />
+<meta name="keywords" content="技术,vim,技巧" />
+<title> vim的字体设置 / 找寻模式</title>
+<link href="http://towerjoo.github.com/feed.xml" rel="alternate" title="找寻模式" type="application/atom+xml" />
+
+<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
+</head>
+
+<body>
+
+
+
+<div class="container">
+<section id="main_content">
+
+<header>
+	<h1><a href="/" class="minor">找寻模式</a> / vim的字体设置
+        </h1>
+	<p class="additional">阅读, 人生, 技术</p>
+    <div id="header_nav">
+    <a href="/category.html">Category</a>
+    <a href="/archive.html">Archive</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/links.html">Links</a>
+    <a href="/about.html">About</a>
+    </div>
+    <div id="search_box">
+    <form action="/search/" class="block block-search">
+    <input type="search" name="q" placeholder="回车搜索" />
+    </form>
+    </div>
+</header>
+
+
+<article>
+	<h1><a href="/blog/2011/04/16/vim%E7%9A%84%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE">vim的字体设置</a></h1>
+	
+	<p class="meta">
+	<span class="datetime">2011-04-16</span> posted in [<a href="/category/tech" class="category">技术模式</a>] with tags: [技术, vim, and 技巧]
+</p>
+
+	<a href="/assets/images/vim.png"><img class="alignnone size-medium wp-image-163" src="/assets/images/vim.png" alt="" width="300" height="300" /></a>
+
+在各个系统下都习惯了 <a class="reference external" href="http://www.vim.org/">vim</a> 这个编辑器，但是基于win下的gvim的默认字体是 fixedsys，显示中文时实在是磕碜的不行，而直接在vimrc中写入中文名的 字体配置又不行（如新宋体），经过确认要么将encoding设置为cp936，要么 使用中文字体的英文名称，还好有一篇博文有详细的记录，参考： <a class="reference external" href="http://blog.163.com/logotools@126/blog/static/44362656200971302246860/">常见系统中文字体的英文名</a>, 简单摘录如下：
+<div id="mac-os" class="section">
+<h1>Mac OS的一些：</h1>
+<pre>华文细黑：STHeiti Light [STXihei]
+华文黑体：STHeiti
+华文楷体：STKaiti
+华文宋体：STSong
+华文仿宋：STFangsong
+儷黑 Pro：LiHei Pro Medium
+儷宋 Pro：LiSong Pro Light
+標楷體：BiauKai
+蘋果儷中黑：Apple LiGothic Medium
+蘋果儷細宋：Apple LiSung Light</pre>
+</div>
+<div id="windows" class="section">
+<h1>Windows的一些：</h1>
+<pre>新細明體：PMingLiU
+細明體：MingLiU
+標楷體：DFKai-SB
+黑体：SimHei
+宋体：SimSun
+新宋体：NSimSun
+仿宋：FangSong
+楷体：KaiTi
+仿宋_GB2312：FangSong_GB2312
+楷体_GB2312：KaiTi_GB2312
+微軟正黑體：Microsoft JhengHei
+微软雅黑体：Microsoft YaHei</pre>
+</div>
+<div id="office" class="section">
+<h1>装Office会生出来的一些</h1>
+<pre>隶书：LiSu
+幼圆：YouYuan
+华文细黑：STXihei
+华文楷体：STKaiti
+华文宋体：STSong
+华文中宋：STZhongsong
+华文仿宋：STFangsong
+方正舒体：FZShuTi
+方正姚体：FZYaoti
+华文彩云：STCaiyun
+华文琥珀：STHupo
+华文隶书：STLiti
+华文行楷：STXingkai
+华文新魏：STXinwei</pre>
+所以我在vimrc中将guifont配置为"NSimSun"即可（新宋体）。</div>
+
+	
+	<!--<p class="permalink">永久链接：<a href="http://towerjoo.github.com/blog/2011/04/16/vim%E7%9A%84%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE">http://towerjoo.github.com/blog/2011/04/16/vim%E7%9A%84%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE</a></p>-->
+</article>
+<div id="disqus_thread" class="comments"></div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r2.gif&amp;uid=89469" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'towerjoo'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+</section>
+</div>
+
+<footer>
+		<p>&copy; Since 2012 <a href="http://github.com/towerjoo" target="_blank">github.com/towerjoo</a></p>
+</footer>
+
+<div id="side_top">
+    <a href="#">Top</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="towerjoo" />
+<meta name="keywords" content="技术,git,mercurial,SCM,svn" />
+<title> Git vs. Mercurial vs. Subversion / 找寻模式</title>
+<link href="http://towerjoo.github.com/feed.xml" rel="alternate" title="找寻模式" type="application/atom+xml" />
+
+<link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/pygment_trac.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
+</head>
+
+<body>
+
+
+
+<div class="container">
+<section id="main_content">
+
+<header>
+	<h1><a href="/" class="minor">找寻模式</a> / Git vs. Mercurial vs. Subversion
+        </h1>
+	<p class="additional">阅读, 人生, 技术</p>
+    <div id="header_nav">
+    <a href="/category.html">Category</a>
+    <a href="/archive.html">Archive</a>
+    <a href="/projects.html">Projects</a>
+    <a href="/links.html">Links</a>
+    <a href="/about.html">About</a>
+    </div>
+    <div id="search_box">
+    <form action="/search/" class="block block-search">
+    <input type="search" name="q" placeholder="回车搜索" />
+    </form>
+    </div>
+</header>
+
+
+<article>
+	<h1><a href="/blog/2011/02/13/git-vs-mercurial-vs-subversion">Git vs. Mercurial vs. Subversion</a></h1>
+	
+	<p class="meta">
+	<span class="datetime">2011-02-13</span> posted in [<a href="/category/tech" class="category">技术模式</a>] with tags: [技术, git, mercurial, SCM, and svn]
+</p>
+
+	<div id="id1">
+<div id="id1">
+<h1>两类版本控制工具简单说明</h1>
+这三种版本控制工具，我都有用过，目前项目中使用最多的是 <a href="http://mercurial.selenic.com/">Mercurial</a>, 而一些自己的项目也分布在 <a href="http://github.com">Github</a> ( <a href="http://git-scm.com/">Git</a> )或者 <a href="https://bitbucket.org/">Bitbucket</a> ( <a href="http://mercurial.selenic.com/">Mercurial</a> )上。
+
+比较而言， <a href="http://git-scm.com/">Git</a> 和 <a href="http://mercurial.selenic.com/">Mercurial</a> 是一类版本控制工具，即分布式的版本控制工具， 而 <a href="http://subversion.tigris.org/">Subversion</a> 是集中式的版本控制工具，如果用一句话来概括二类的不同，则 为： <strong>使用分布式版本控制工具检出的版本，包含完整的版本、历史等与代码 相关的信息，而集中式的版本控制工具检出的版本，通常只包含最新的一个版本 的代码</strong> ， 所以分布式版本控制工具能够极大地减少网络通信（如与服务器）， 大大地提高效率。一个简单的例子例如要查看一个文件的log，用 <a href="http://subversion.tigris.org/">Subversion</a> 时就得和集中 的服务器通信来获得，获取的延时取决于网络通信等因素，而 <a href="http://git-scm.com/">Git</a> 或者 <a href="http://mercurial.selenic.com/">Mercurial</a> 则 只是一个本地的操作。
+
+下面简单对比了下二类版本控制工具的优势：
+<table border="1"><col width="15%"></col><col width="39%"></col><col width="46%"></col>
+<thead>
+<tr>
+<th></th>
+<th>分布式版本控制工具</th>
+<th>集中式版本控制工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>
+<ol>
+	<li>减少网络通信</li>
+	<li>去中心化，提高可靠性</li>
+	<li>更利于分布式协作</li>
+	<li>生产率(productivity)相对较高</li>
+</ol>
+</td>
+<td>
+<ol>
+	<li>单次检出的成本低</li>
+	<li>较适合二进制文件（相比）</li>
+	<li>掌握的人更多</li>
+	<li>命令流程简单</li>
+	<li>相关配套软件成熟（如IDE集成）</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>
+<ol>
+	<li>首次检出代码时代价高</li>
+	<li>不适合二进制文件</li>
+	<li>掌握的人较少</li>
+	<li>命令流程相对复杂</li>
+	<li>相关配套软件不成熟</li>
+</ol>
+</td>
+<td>
+<ol>
+	<li>大量的网络通信</li>
+	<li>可靠性较低（信赖于中心结点）</li>
+	<li>不太利于分布式开发</li>
+</ol>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="id2">
+<h1>三种常用版本控制工具的命令对比</h1>
+据说，IT行业跳槽率是很高的一个行业，特别是开发人员，面对一个新的公司、新的同事、新的开发环境、 新的版本控制工具等的机率是很高的，而一个有较高素养的开发人员，应该对于主流的版本控制工具有一定 的了解，特别是对于常用的一些基本操作有能够较熟练的掌握。下面，我就简单总结下不同的操作目标下 三种不同工具的具体操作方式和命令。
+<table border="1"><col width="25%"></col><col width="23%"></col><col width="24%"></col><col width="28%"></col>
+<thead>
+<tr>
+<th></th>
+<th>Subversion</th>
+<th>Mercurial</th>
+<th>Git</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>检出新的代码库</td>
+<td>svn co repos_path wc</td>
+<td>hg clone repos_path wc</td>
+<td>git clone repos_path wc</td>
+</tr>
+<tr>
+<td>更新已有的代码库</td>
+<td>svn up</td>
+<td>hg pull -u</td>
+<td>git pull</td>
+</tr>
+<tr>
+<td>查看本地的修改</td>
+<td>svn st</td>
+<td>hg st</td>
+<td>git status</td>
+</tr>
+<tr>
+<td>提交本地的修改</td>
+<td>
+<ol>
+	<li>svn add files</li>
+	<li>svn ci -m "comments"</li>
+</ol>
+</td>
+<td>
+<ol>
+	<li>hg add files</li>
+	<li>hg ci -m "comments"</li>
+	<li>hg push</li>
+</ol>
+</td>
+<td>1.git add files 2.git commit -m "comments" -a 3.git push</td>
+</tr>
+<tr>
+<td>查看log</td>
+<td>svn log file</td>
+<td>hg log file</td>
+<td>git log file</td>
+</tr>
+<tr>
+<td>恢复某个文件到某个版本</td>
+<td>svn merge -c -REV file</td>
+<td>hg revert -rREV file</td>
+<td>git checkout REV file</td>
+</tr>
+<tr>
+<td>恢复整个代码库到某个版本</td>
+<td>svn up -rREV</td>
+<td>hg up -rREV</td>
+<td>git checkout REV</td>
+</tr>
+<tr>
+<td>比较文件</td>
+<td>svn diff -rREV:REV file</td>
+<td>hg diff -rREV:REV file</td>
+<td>git -rREV:REV file</td>
+</tr>
+</tbody></table>
+当然上面只是最最基本的使用说明，不过大致已经涵盖了开发人员90%以上的日常操作，诸如branch,tag等应用， 你大体上可以通过"svn/hg/git help"来获得信息。
+
+当然倘若你能够熟练地掌握其中之一，那也自成为你的瑞士军刀。
+
+<img src="/assets/images/ruishijundao.jpg" alt="/assets/images/ruishijundao.jpg" /></div>
+<div id="id3">
+<h1>关于二进制文件的版本控制</h1>
+当然通常你会说没有这个必要来将二进制文件纳入到版本控制之中，我们大可选择ftp等覆盖方式来完成。 在实际的开发中，我们也有类似的方法，例如flash生成的二进制文件的swf和音乐文件mp3等，前者我们 还是使用 <a href="http://mercurial.selenic.com/">Mercurial</a> 而后者我通常就使用 <a href="http://linux.about.com/od/commands/l/blcmdl1_scp.htm">scp</a> 等命令来完成了覆盖。
+
+这时候，分布式版本控制工具的劣势就显现出来了，因为二进制文件每次更新基本上是一个完全新文件的更新， 而非增量，举个例子，假设一个分布式版本控制工具（ <a href="http://git-scm.com/">Git</a> /<a href="http://mercurial.selenic.com/">Mercurial</a>)的代码库中只有一个10M的swf文件， 那么经过100个版本更新后，大小大致为10*100M=1G(大约，同样假设每次更新后的新文件大小也为10M）。如此一来， 当我们在服务器上部署时，首次的网络通信成本就非常巨大！记得在我们实际的一次项目经历中，一次更新了2个小时才 完成了更新。当然后续的更新相对成本较低。
+
+同样的例子，如果改为使用 <a href="http://subversion.tigris.org/">Subversion</a> ，中心结点（服务器）上的代码库的大小大致也是1G左右，但是当我们部署时， 只需要大致10M左右的网络通信即可（取版本号为100的一次更新），所以成本则显得很低，后续的更新成本也相对较低。
+
+当然，分布式版本控制工具下的代码库在线上时，如果需要恢复到某个特定版本，则无需网络通信即可完成，而集中式的 版本控制工具则成本相对较高。
+
+总之，如果二进制文件的大小较小、版本更新频率较低，则选择二者差别不大，对于二进制文件较大、版本更新频率较多的 代码库，则选择集中式版本控制工具更为高效。</div>
+<div id="hosting">
+<h1>常用的代码hosting服务</h1>
+这三类代码控制工具都有很好的第三方的hosting解决方案，下面只列举最常用的几个：
+<ol>
+	<li><a href="https://bitbucket.org/">Bitbucket</a> (针对 <a href="http://mercurial.selenic.com/">Mercurial</a> , 支持免费private repos)</li>
+	<li><a href="http://code.google.com/projecthosting/">Google Code</a> (针对 <a href="http://subversion.tigris.org/">Subversion</a> 和 <a href="http://mercurial.selenic.com/">Mercurial</a> , 不支持免费private repos)</li>
+	<li><a href="http://github.com">Github</a> (针对 <a href="http://git-scm.com/">Git</a> , 不支持免费private repos)</li>
+</ol>
+现在应该说发展比较好的是 <a href="http://github.com">Github</a>, 大家不妨可注册一个玩玩。</div>
+<div id="id4">
+<h1>相关的链接</h1>
+<ol>
+	<li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">git magic</a></li>
+	<li><a href="http://svnbook.red-bean.com/en/1.5/index.html">svn book</a></li>
+	<li><a href="http://mercurial.selenic.com/guide/">mercurial guide</a></li>
+	<li><a href="http://stackoverflow.com/questions/tagged/git">git tag on SO</a> (相关的对比和分析）</li>
+</ol>
+</div>
+</div>
+<div id="id4"></div>
+
+	
+	<!--<p class="permalink">永久链接：<a href="http://towerjoo.github.com/blog/2011/02/13/git-vs-mercurial-vs-subversion">http://towerjoo.github.com/blog/2011/02/13/git-vs-mercurial-vs-subversion</a></p>-->
+</article>
+<div id="disqus_thread" class="comments"></div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jiathis_r.js?move=0&amp;btn=r2.gif&amp;uid=89469" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'towerjoo'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+</section>
+</div>
+
+<footer>
+		<p>&copy; Since 2012 <a href="http://github.com/towerjoo" target="_blank">github.com/towerjoo</a></p>
+</footer>
+
+<div id="side_top">
+    <a href="#">Top</a>
+</div>
+
+</body>
+</html>
