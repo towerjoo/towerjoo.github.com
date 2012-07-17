@@ -1,0 +1,99 @@
+--- 
+layout: post
+title: !binary |
+  Um9ib3RsZWdzIEhlbGxvIFdvcmxk6K+m57uG5pWZ56iL
+
+published: true
+meta: 
+  _encloseme: "1"
+  _edit_last: "14125"
+  _edit_lock: "1305678584"
+  _pingme: "1"
+tags: 
+- !binary |
+  5oqA5pyv
+
+- robotlegs
+- !binary |
+  5pWZ56iL
+
+type: post
+status: publish
+category: tech
+---
+<div id="id1" class="section">
+<h1>摘要</h1>
+本文详细说明了使用 <a class="reference external" href="http://www.flashdevelop.org/wikidocs/index.php?title=Main_Page">flashdevelop</a> 基于 <a class="reference external" href="http://www.robotlegs.org/">Robotlegs</a> flash框架完成一个Hello World示例的 教程，这个示例包括完整的MVC（及Service）。 本示例可以 <a class="reference external" href="https://github.com/topman/blog_code/tree/master/RobotLegsHelloWorld">下载源代码</a> 。</div>
+<div id="id2" class="section">
+<h1>正文</h1>
+<a href="/assets/images/robotlegs_logo.png"><img class="alignnone size-medium wp-image-222" src="/assets/images/robotlegs_logo.png" alt="" width="300" height="244" /></a>
+<div id="id3" class="section">
+<h2>开始之前</h2>
+本文已经假定你具备下面的知识：
+<ol class="arabic simple">
+	<li>阅读过类似于 <a class="reference external" href="http://book.douban.com/subject/2140652/">Essential Actionscript 3.0</a> 这样的书籍，对于Actionscript语言和flash基本显示体系、事件等有一定了解</li>
+	<li>能够较熟练地使用 <a class="reference external" href="http://www.flashdevelop.org/wikidocs/index.php?title=Main_Page">flashdevelop</a> flash IDE</li>
+	<li>阅读过 <a class="reference external" href="http://www.robotlegs.org/">Robotlegs</a> 的文档 <a class="reference external" href="https://github.com/robotlegs/robotlegs-framework/wiki/Best-Practices">Robotlegs Best Practice</a></li>
+</ol>
+</div>
+<div id="id4" class="section">
+<h2>下载相关的库</h2>
+<ol class="arabic simple">
+	<li>下载 <a class="reference external" href="http://www.robotlegs.org/">Robotlegs</a> 相关的swc库，可以从 <a class="reference external" href="http://downloads.robotlegs.org/robotlegs-framework-v1.4.0.zip">http://downloads.robotlegs.org/robotlegs-framework-v1.4.0.zip</a> 下载</li>
+	<li>解压后，在bin目录下有个 <em>robotlegs-framework-v1.4.0.swc</em> 以及libs目录下有个 <em>SwiftSuspenders-v1.5.1.swc</em></li>
+	<li>上面两个swc就是我们需要的</li>
+</ol>
+</div>
+<div id="id5" class="section">
+<h2>建立项目</h2>
+<ol class="arabic simple">
+	<li>打开 <em>flashdevelop</em></li>
+	<li>建立一个名为 <em>RobotLegsHelloWorld</em> 的AS3 Project</li>
+	<li>将上一步中的两个swc拷贝到新建成项目中lib目录下（IDE左侧的文件结构列表中）</li>
+	<li>在拷贝好的文件上点击右键，选择Add To Library，将两个swc都加入到library中</li>
+</ol>
+这时基本的结构就好了，我们开始写代码。</div>
+<div id="id6" class="section">
+<h2>定义需求</h2>
+这个例子是个完整的说明 <a class="reference external" href="http://www.robotlegs.org/">Robotlegs</a> 框架的例子，所以会涉及到框架的各个主要部分，包括Model, View, Controller，为此 我们定义了这个例子所要完成的需求如下：
+
+用户登录系统的过程，包括：用户输入名字和密码，提交表单，后端进行验证(简化起见，不作真正的验证），并返回成功与否的结果。</div>
+<div id="id7" class="section">
+<h2>整个结构</h2>
+根据上面的需求定义，我们可以有下面的组织架构：
+
+<a href="/assets/images/robotlegs_helloworld.png"><img class="alignnone size-full wp-image-223" src="/assets/images/robotlegs_helloworld.png" alt="" width="286" height="582" /></a>
+具体的各个角色（actor）的功能，参考代码中的注释。
+
+需要说明的是：
+<ol class="arabic simple">
+	<li>在理解代码和框架时，最好了解如单例模式等设计模式</li>
+	<li>对于 <a class="reference external" href="http://www.cnblogs.com/xingyukun/archive/2007/10/20/931331.html">依赖注入</a> 有一定理解</li>
+	<li>对于 <a class="reference external" href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> 有一定理解</li>
+</ol>
+其它应该还是比较容易理解的。</div>
+</div>
+<div id="id8" class="section">
+<h1>总结</h1>
+从最开始使用 <a class="reference external" href="http://puremvc.org/">pureMVC</a> 到这个项目使用 <a class="reference external" href="http://www.robotlegs.org/">Robotlegs</a> ，两个框架都挺好的，在整个项目的进展中，更加觉得要控制住代码质量并不 取决于框架本身，而是取决于使用框架的人，各位程序员们要加油了。
+
+另外，也可以参考我的另一篇博客 <a class="reference external" href="http://towerjoo.blog.techweb.com.cn/archives/210.html">RobotLegs简介</a> .</div>
+<div id="id9" class="section">
+<h1>下载原文</h1>
+可从 <a class="reference external" href="https://github.com/topman/blog/tree/master/2011/may/robotlegs_helloworld.rst">此处</a> 查看或者下载。</div>
+<div id="id11" class="section">
+<h1>下载源代码</h1>
+可从 <a class="reference external" href="https://github.com/topman/blog_code/tree/master/RobotLegsHelloWorld">下载源代码</a> 查看或者下载。</div>
+<div id="id12" class="section">
+<h1>参考资料</h1>
+<ol class="arabic simple">
+	<li><a class="reference external" href="http://www.flashdevelop.org/wikidocs/index.php?title=Main_Page">flashdevelop</a></li>
+	<li><a class="reference external" href="http://puremvc.org/">pureMVC</a></li>
+	<li><a class="reference external" href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a></li>
+	<li><a class="reference external" href="http://book.douban.com/subject/2140652/">Essential Actionscript 3.0</a></li>
+	<li><a class="reference external" href="http://www.cnblogs.com/xingyukun/archive/2007/10/20/931331.html">依赖注入</a></li>
+	<li><a class="reference external" href="https://github.com/robotlegs/robotlegs-framework/wiki/Best-Practices">Robotlegs Best Practice</a></li>
+	<li><a class="reference external" href="http://www.robotlegs.org/">Robotlegs</a></li>
+	<li><a class="reference external" href="http://towerjoo.blog.techweb.com.cn/archives/210.html">Robotlegs简介</a></li>
+</ol>
+</div>

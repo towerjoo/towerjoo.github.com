@@ -1,0 +1,151 @@
+--- 
+layout: post
+title: !binary |
+  5YWz5LqOcHVyZU1WQ+eahG5vdGlmaWNhdGlvbuWHoOS4qumXrumimOS4juin
+  o+etlA==
+
+published: true
+meta: 
+  _encloseme: "1"
+  _edit_last: "14125"
+  _edit_lock: "1301989469"
+  _pingme: "1"
+tags: 
+- !binary |
+  5oqA5pyv
+
+- actionscript
+- puremvc
+- !binary |
+  5oC757uT
+
+type: post
+status: publish
+category: tech
+---
+因为工作需要,最近也开始学习和使用 <a class="reference external" href="http://puremvc.org/">pureMVC</a> , 之前也写过一个 <a class="reference external" href="http://towerjoo.blog.techweb.com.cn/archives/142.html">pureMVC Hello World教程</a>, 算是开始入门这个框架和AS这种语言.经过两周多的学习和使用,生出了几个疑问, 和公司的做AS的同事 沟通时,发觉他也并不能清楚地说出所以然来,所以决定自行研究这些问题,并尝试给出解答.
+
+问题大致有下面几个:
+<ol class="arabic simple">
+	<li>如果一个notification有多个订阅者,那么这多个订阅者之前的执行顺序是怎么样的?</li>
+	<li>一段代码在执行时,如果发出一个notification,是等待相应的notification订阅者处理结束再继续呢,还是 直接继续,相应的notification订阅者异步地执行?</li>
+	<li>一个notification的多个订阅者之间的执行是异步的,还是顺序执行的?</li>
+	<li>是否可能出现notification死循环的问题? (即notification A的订阅者X发出notification B,B的订阅者 又发出notification A,形成一个没有出口的循环)</li>
+</ol>
+<a href="/assets/images/notification.jpg"><img class="alignnone size-medium wp-image-160" src="/assets/images/notification.jpg" alt="" width="300" height="228" /></a>
+<div id="id1" class="section">
+<h1>研究和解决上述问题</h1>
+为了准确研究出上述的问题和答案,我采用的方法包括两种: 实验和源代码阅读(其实只要阅读源代码即可).
+<div id="id2" class="section">
+<h2>实验</h2>
+相关的代码可从 <a class="reference external" href="https://github.com/topman/blog_code/tree/master/TestPureMVC">TestPureMVC</a> 下载.
+
+这个程序主要是如下的流程:
+
+Startup -&gt; StartUpCommand -&gt; registerMediator(AMediator, BMediator, CMediator) -&gt; sendNotification(Test) -&gt; CMediator(Test) -&gt; sendNotification(Second) -&gt;CMediator(Second) -&gt;sendNotification(Test)
+
+从而形成了一个循环,另外,也可简单地在StartUpCommand类中更改来测试其它的情况.
+
+从代码中能够说明(对应于本文最初的4个问题):
+<ol class="arabic simple">
+	<li>notification的多个订阅者的执行顺序是按照其注册的顺序执行的,也就是全局的view中维护的mediator数组中的顺序</li>
+	<li>因为AS中没有类似于sleep的方法,所以无法确定2(具体结果参考下文,代码分析部分)</li>
+	<li>同2</li>
+	<li>会出现死循环,最终会出现栈溢出的错误</li>
+</ol>
+</div>
+<div id="id3" class="section">
+<h2>源代码分析</h2>
+因为Command和Mediator都可以处理和发送notification,所以这里只以Mediator的处理为例来说明.
+
+我们先看notification是如何通知的:
+<pre>// org.puremvc.as3.core.Views.as
+public function notifyObservers( notification:INotification ) : void
+{
+    if( observerMap[ notification.getName() ] != null ) {
+
+        // Get a reference to the observers list for this notification name
+        // 获得这个notification的所有订阅者数组
+        var observers_ref:Array = observerMap[ notification.getName() ] as Array;
+
+        // Copy observers from reference array to working array,
+        // since the reference array may change during the notification loop
+        //  notification的循环中可能增加新的订阅者,所以这里深度拷贝一份
+        // 注意顺序并没有更改
+        var observers:Array = new Array();
+        var observer:IObserver;
+        for (var i:Number = 0; i &lt; observers_ref.length; i++) {
+            observer = observers_ref[ i ] as IObserver;
+            observers.push( observer );
+        }
+
+        // Notify Observers from the working array
+        // 根据数组中的顺序依次来通知相应的订阅者
+        // 注意这里是顺序执行的
+        for (i = 0; i &lt; observers.length; i++) {
+            observer = observers[ i ] as IObserver;
+            observer.notifyObserver( notification );
+        }
+    }
+}</pre>
+接着来看事件是如何注册的,从而形成订阅者的数组:
+<pre>// org.puremvc.as3.core.Views.as
+public function registerMediator( mediator:IMediator ) : void
+{
+    // do not allow re-registration (you must to removeMediator fist)
+    if ( mediatorMap[ mediator.getMediatorName() ] != null ) return;
+
+    // Register the Mediator for retrieval by name
+    mediatorMap[ mediator.getMediatorName() ] = mediator;
+
+    // Get Notification interests, if any.
+    var interests:Array = mediator.listNotificationInterests();
+
+    // Register Mediator as an observer for each of its notification interests
+    if ( interests.length &gt; 0 )
+    {
+        // Create Observer referencing this mediator's handlNotification method
+        var observer:Observer = new Observer( mediator.handleNotification, mediator );
+
+        // Register Mediator as Observer for its list of Notification interests
+        for ( var i:Number=0;  i&lt;interests.length; i++ ) {
+            // 注意: 这里是根据Mediator有兴趣的notification来分别加入到对应的订阅者数组中
+            // 而加入的次序正好是根据这个Mediator的注册顺序
+            registerObserver( interests[i],  observer );
+        }
+    }
+
+    // alert the mediator that it has been registered
+    mediator.onRegister();
+
+}
+
+// registerObserver的具体实现
+public function registerObserver ( notificationName:String, observer:IObserver ) : void
+{
+    var observers:Array = observerMap[ notificationName ];
+    if( observers ) {
+        // 顺序加入到对应的订阅者数组中
+        observers.push( observer );
+    } else {
+        observerMap[ notificationName ] = [ observer ];
+    }
+}</pre>
+我们再看通知给订阅者时的处理逻辑:
+<pre>public function notifyObserver( notification:INotification ):void
+{
+    // 根据notification传过来的上下文来执行相应的处理逻辑
+    this.getNotifyMethod().apply(this.getNotifyContext(),[notification]);
+}</pre>
+到此,从我们对源代码的分析上,我们就可以完整的回答本文初始的4个问题:
+<ol class="arabic simple">
+	<li>如果一个notification有多个订阅者,那么多个订阅者之间是按照注册的顺序来执行的</li>
+	<li>在AS中不存在异步的执行,所以,当前的代码的执行会等待所有的notification按照1中 的顺序执行完成后,才开始继续执行当前的代码(相当于调用一个函数)</li>
+	<li>一个notification的多个订阅者之间是顺序执行的,顺序是按照1中的说明</li>
+	<li>存在死循环的可能,因为如2中说明,sendNotification相当于根据注册的顺序来顺序执行 相应的处理逻辑,如果在处理逻辑中又包含触发sendNotification的事件,则整个执行 会成为一个死循环,从而导致栈溢出</li>
+</ol>
+</div>
+</div>
+<div id="id4" class="section">
+<h1>总结</h1>
+通过对本文开始4个问题的分析,弄清楚了 <a class="reference external" href="http://puremvc.org/">pureMVC</a> 核心的notification机制的几个 核心问题,对于后续的工作和学习都是很有益处的.</div>

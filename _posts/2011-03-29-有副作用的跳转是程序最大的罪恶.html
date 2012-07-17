@@ -1,0 +1,74 @@
+--- 
+layout: post
+title: !binary |
+  5pyJ5Ymv5L2c55So55qE6Lez6L2s5piv56iL5bqP5pyA5aSn55qE572q5oG2
+
+published: true
+meta: 
+  _encloseme: "1"
+  _edit_last: "14125"
+  _edit_lock: "1301412543"
+  _pingme: "1"
+tags: 
+- !binary |
+  5oqA5pyv
+
+- !binary |
+  5Y+N5oCd
+
+- !binary |
+  56iL5bqP
+
+- !binary |
+  56iL5bqP5ZGY
+
+type: post
+status: publish
+category: tech
+---
+最近开始写一些ActionScript的代码，因为是基于 <a class="reference external" href="http://puremvc.org/">pureMVC</a> ，所以 经常看到一处代码突然又sendNotification去通知处理另外的动作， 看了看处理的逻辑，很多竟然是有副作用的。于是想到了最初学习 程序语言时，书中云Goto语句是程序的一大罪恶来源，当时并不理解， 也不知道各个语言大师为何如何痛恨，今天当自己面对这个问题，才 更加贴切地理解了这里面的痛苦，也就明白了为什么当下主流的现代语言 都去掉了Goto语句。
+
+<a href="/assets/images/side-effect.jpg"><img class="alignnone size-medium wp-image-146" src="/assets/images/side-effect.jpg" alt="" width="300" height="294" /></a>
+
+本文就想探讨下类似于Goto语句这样的跳转对于程序会带来什么后果，特别 会讨论具有副作用的跳转语句。
+
+在讨论之前，我们先定义下 <strong>程序的副作用</strong>, 根据 <a class="reference external" href="http://en.wikipedia.org/wiki/Side_effect_(computer_science)">wikipedia</a> 中的定义为：
+<pre>In computer science, a function or expression
+is said to have a side effect if, in addition to producing a value,
+it also modifies some state or has an observable interaction
+with calling functions or the outside world.</pre>
+也就是说：
+<pre>一个函数或者一段代码除了返回值外，还会更改程序的状态或与调用函数
+或者外部世界有明显的交互。</pre>
+简单地说就是一段代码改变了程序的状态或者调用函数的状态。举个例子，在下面的 伪代码中，
+<pre>a = 10;
+do_something_with_side_effect(a, other_args);
+handle(a);</pre>
+如果在第二行的代码中对a作了一定的修改，则在第三行的代码中总是会依赖于这次更改， 从而导致你必须了解do_something_with_side_effect这个函数究竟做了什么，会对a有什么 影响等,从而丧失了程序的封装性（即无须了解函数的细节）。
+
+下面我想说说这种具有副作用的程序流程跳转会对整个程序和程序员带来哪些影响。
+<div id="id2" class="section">
+<h1>对程序的影响</h1>
+副作用的代码对于程序本身的影响通常是出现运行时的错误，或者不符合我们预期的结果。 因为程序流程的改变，而这种改变又会影响到程序的状态，所以在编译时很难预估出准确的 程序结果，或者预估错误。
+
+当然， <strong>程序只会做程序员让它做的事</strong> 所以最终的结果对于计算机而言，也只是忠实地去 实现既定的逻辑和跳转，至于其中是否有副作用，就像牛看见林志玲与凤姐一样的感觉。
+
+<a href="/assets/images/lin_vs_feng.jpg"><img class="alignnone size-medium wp-image-147" src="/assets/images/lin_vs_feng.jpg" alt="" width="300" height="215" /></a></div>
+<div id="id3" class="section">
+<h1>对程序员的影响</h1>
+对程序员的影响是显而易见的，而且对程序员的影响是这种跳转最令人诟病的所在。程序员也是人， 当他在读取代码时，他没法像计算机那样轻易的设置断点，进入另一个上下文，继而返回断点继续 当前的上下文，程序员只能靠记忆或者简单的书签，但因为记忆的驻留性会导致这种断点的切换成本 非常高，继而导致程序员对这些代码的理解产生偏差甚至错误。久而久之，程序员在经历若干次这种 错误后，会变得对于这些代码只是试图打补丁，而不是从本质或者更深层次理解优化，从而这段代码 便成了人人不敢动的legacy code.
+
+<strong>程序是写给程序员而不是电脑的</strong> 这是一个合格程序员基本的意识，所以程序的功能和性能相比于可读性， 大多时候后者是更重要的，特别是如今CPU的进步以及我们通常应用场景的普通。
+
+<a href="/assets/images/legacy_code.gif"><img class="alignnone size-medium wp-image-148" src="/assets/images/legacy_code.gif" alt="" width="300" height="93" /></a></div>
+<div id="id4" class="section">
+<h1>教训</h1>
+那么我想程序员在进步和成长过程中总是会面对这样类似的问题，例如从喜欢全局变量的强大性到 痛恨全局变量的不可维护性，从追求代码的trick到追求代码的易读，我们总是在不断学习和进步。
+
+那么具体到这一点，我的想法是：
+<ol class="arabic simple">
+	<li>让子程序（例如跳转，函数等）无副作用（参考上面对副作用的定义）</li>
+	<li>减少导致程序出现流程异常跳转的可能(如Goto语句）</li>
+	<li>减少具有副作用的代码</li>
+</ol>
+当然，上面的三条是逐条递近的，当达到上述的几点时，维护你的程序的程序员他会打心眼里感谢你的。</div>
