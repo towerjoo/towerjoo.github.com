@@ -1,0 +1,63 @@
+--- 
+layout: post
+tags: []
+
+type: post
+meta: {}
+
+published: true
+title: !binary |
+  5YWz5LqOTXlTUUznmoTlrp7miJjkuIDvvJrln7rmnKznmoTms6jmhI/kuovp
+  obk=
+
+status: publish
+category: tech
+---
+<p>最近一直在和Mysql的调优打交道，遇到了不少的问题，一些和自己预期的不太一样，当然一些性能上的问题甚至导致游戏当机了若干个小时，在不断的学习和总结中对Mysql也有了一定的熟悉，无论是在数据库层面，还是在应用层面都有了更深的认识，不防记录于此，供朋友参考和自己备忘。</p>  <p>此篇是基本篇，是在实际中遇到最常见的问题。</p>  <h2>一、数据库层面</h2>  <p>对于像游戏的这种heavy write类型的数据库，<a href="http://dev.mysql.com/doc/refman/5.1/en/innodb.html" target="_blank">InnoDB</a>是更优于<a href="http://dev.mysql.com/doc/refman/5.0/en/myisam-storage-engine.html" target="_blank">MyISAM</a>型的，所以在开始不妨将数据库的引擎设置为InnoDB，至于InnoDB与MyISAM的区别，可参考<a href="http://stackoverflow.com/questions/20148/myisam-versus-innodb" target="_blank">文档</a>。</p>  <p>除此而外，在设置数据库的buffer时也不能太大，例如我们的亚马逊服务器是8G内存我们设置了2G作为buffer，而connection数也不能太小，1000左右基本能够满足一般的并发要求。</p>  <p>在实际中可能还会遇到，例如出现 &#8220;InnoDB: Error: cannot allocate 2147500032 bytes of&#8230;&#8221;而不能启动mysql，则说明mysql设置的buffer太大，将其调小就可解决。</p>  <p>有时也会出现，&#8220;Incorrect key file for table '/tmp/#sql_4681_11.MYI'; try to repair it&#8221;这样的错误，这是因为/tmp/目录已经磁盘满了，无法写入，通常可以将mysql的目录指向一个大一点的磁盘区间即可。</p>  <p>如果你的应用和我们类似要支持像德语这样的字符集，则Mysql最初就必须设置为utf8，否则后面你会死的很惨（大堆的问号？？？），最好在配置文件中已经设置好。</p>  <p>最后就是要时常的备份数据，信息化社会的今天，数据是最重要的，备份以保证数据的安全，从而避免可能出现的数据丢失等。</p>  <h2>二、应用层面</h2>  <p>应用层面如果用一句话来概括，即是：<strong>对于并非紧急重要的查询，可用简化的查询来实现逻辑上的替换。</strong>一个实际的例子是我们最近10W用户的<a href="http://www.meinvz.net/Gadgets/Install/4231" target="_blank">PopCool</a>,它是一个挑战类竞技游戏，其中有一处的逻辑的最初设计是显示最新的10名玩家，因为我们用户的挑战记录在Game表中，用户的信息在Player表中，并且Game表中分别有指向Player表的两个外键，所以最初要实现这个逻辑的查询为（取自slow query）：</p>  <div>   <pre class="csharpcode"><span class="kwrd">SELECT</span> `games_game`.`id`, `games_game`.`mini_game_id`, `games_game`.`user_a_id`, <br />`games_game`.`user_b_id`, `games_game`.`score`, `games_game`.`challenge_time`, <br />`games_game`.`is_challenged_back`, T3.`id`, T3.`sns_id`, T3.`name`, T3.`sex`, <br />T3.`img_url`, T3.`status`, T3.`<span class="kwrd">level</span>`, T3.`top_score`, T3.`top_score_level`, <br />T3.`coins`, T3.`neighbor_num`, T3.`last_login_time`, T3.`reg_date`, T3.`last_bonus_time`,</pre>
+</div>
+
+<div>
+  <pre class="csharpcode"> `player_player`.`id`, `player_player`.`sns_id`, <br />`player_player`.`name`, `player_player`.`sex`, `player_player`.`img_url`, <br />`player_player`.`status`, `player_player`.`<span class="kwrd">level</span>`, `player_player`.`top_score`, <br />`player_player`.`top_score_level`, `player_player`.`coins`,<br /> `player_player`.`neighbor_num`, `player_player`.`last_login_time`, <br />`player_player`.`reg_date`, `player_player`.`last_bonus_time`<br /> <span class="kwrd">FROM</span> `games_game` <strong><span class="kwrd">INNER</span> <span class="kwrd">JOIN</span></strong> `player_player`<br /> <span class="kwrd">ON</span> (`games_game`.`user_b_id` = `player_player`.`id`) <br /><strong><span class="kwrd">INNER</span> <span class="kwrd">JOIN</span></strong> `player_player` T3 <span class="kwrd">ON</span> (`games_game`.`user_a_id` = T3.`id`) <br /><br /><span class="kwrd">WHERE</span> (`games_game`.`user_b_id` = N  <span class="kwrd">AND</span> `games_game`.`is_challenged_back` = N <br /> <span class="kwrd">AND</span> <span class="kwrd">NOT</span> (`games_game`.`user_a_id` = N ))</pre>
+</div>
+
+<div>
+  <pre class="csharpcode">&nbsp;</pre>
+</div>
+
+<div>
+  <pre class="csharpcode"><br /></pre>
+</div>
+
+<div>上面的SQL显得有些冗长，但是不难发现有两个INNER JOIN连表操作，当Player表有10W+数据时，查询的效率可想而知。于是我们做出如下的调整：我们使用<strong>最近登录的10个用户替换之前的10位最近玩家的信息，</strong>于是查询就变成了：</div>
+
+<div>&nbsp;</div>
+
+<div>Select player_player.name, &#8230;, from player_player order by last_login_time DESC limit 10;</div>
+
+<div>&nbsp;</div>
+
+<div>而其中并不涉及连表操作。当然请注意，使用的前提是：<strong>不影响产品的整体功能和用户的体验</strong>，对于此例，最新用户显示的只是供当前玩家挑战的可选玩家，所以求其次的最近登录玩家并不会影响用户的体验。</div>
+
+<div>&nbsp;</div>
+
+<div>推而广之，<strong>产品的实现可不用过于拘泥于产品的设计，合理的平衡二者能够起到意想不到的效果</strong>。</div>
+
+<div>&nbsp;</div>
+
+<div>P.S 因为这个改变，游戏玩家的反应好了很多，游戏的响应和速度有了明显的改善。</div>
+
+<div>&nbsp;</div>
+
+<div>另一方面，在应用层面，要尽量使用整形而非字符型，同样是我们的PopCool,因为我们游戏所处的是<a href="http://meinvz.net/" target="_blank">VZ</a>,它的用户id是20位左右的字符串，所以，我们最初在查询时使用的是这种字符的匹配，而后面的优化时，因为我们的自增主键id是整形，我们对于同样的查询使用整形后，查询的效率有了明显的提高。</div>
+
+<div>另外，在应用和数据库之间可使用<a href="http://memcached.org/" target="_blank">Memcached</a>来进行缓存，Memcached的操作是比较容易的set,get,delete等，但是设置一个好的过期时间显得比较重要和需要技巧，如何既能保证数据的有效性又能尽大可能地提高性能，这通常需要你对自己的产品有十分深入的理解。我们的PopCool中涉及到排行，而排行对时间的要求并不高，所以我们设置期过期时间为1小时，基本算是比较恰当的了。</div>
+
+<div>&nbsp;</div>
+
+<div>凡此等等，要注意避免一些常见的慢查询，当然使用<a href="http://dev.mysql.com/doc/refman/5.0/en/slow-query-log.html" target="_blank">slow query</a>和<a href="http://www.cnitblog.com/aliyiyi08/archive/2008/09/09/48878.html" target="_blank">explain</a>来分析也是非常重要。</div>
+
+<div>&nbsp;</div>
+
+<div>最后，不妨可以阅读下<a href="http://forge.mysql.com/wiki/Top10SQLPerformanceTips" target="_blank">MySql performance tips</a>以避免常见的性能问题。
+
+  <br /></div>
