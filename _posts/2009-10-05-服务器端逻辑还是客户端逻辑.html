@@ -1,0 +1,187 @@
+--- 
+layout: post
+tags: []
+
+type: post
+meta: 
+  _encloseme: "1"
+published: true
+title: !binary |
+  5pyN5Yqh5Zmo56uv6YC76L6R6L+Y5piv5a6i5oi356uv6YC76L6RPw==
+
+status: publish
+category: tech
+---
+<span style="font-family: Simsun; line-height: normal; font-size: medium; ">
+<h1 class="title" style="text-align: center; ">服务器端逻辑还是客户端逻辑?</h1>
+<p>本博客所有内容采用&nbsp;<a class="reference external" href="http://creativecommons.org/about/licenses/meet-the-licenses">Creative Commons Licenses</a>&nbsp;许可使用. 引用本内容时，请保留&nbsp;<a class="reference external" href="http://sites.google.com/site/towerjoo">朱涛</a>,&nbsp;<a class="reference external" href="http://www.cnblogs.com/mindsbook">出处</a>&nbsp;，并且&nbsp;<strong>非商业</strong>&nbsp;.</p>
+<p>点击&nbsp;<a class="reference external" href="http://feed.feedsky.com/MindsbookTowerJoo">订阅</a>&nbsp;来订阅本博客.(推荐使用&nbsp;<a class="reference external" href="http://reader.google.com/">google reader</a>, 如果你的浏览器不支持直接订阅,请直接在&nbsp;<a class="reference external" href="http://reader.google.com/">google reader</a>&nbsp;中手动添加).</p>
+<p>你也可以选择&nbsp;<a class="reference external" href="http://sites.google.com/site/towerjoo/download/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E9%80%BB%E8%BE%91%E8%BF%98%E6%98%AF%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%BB%E8%BE%91.pdf?attredirects=0">下载pdf</a>&nbsp;来阅读.</p>
+<div class="section" id="id2">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id18" style="text-decoration: none; color: black; ">摘要</a></h1>
+<p>做过几个基于web的项目,无论是游戏,网站等, 在这个过程中也遇到了一些问题和疑惑,但是 通常在朋友或者google的帮助下,都能够顺利解决.但是一个问题却一直困惑着自己:</p>
+<p><strong>在实现同一个功能时, 我们应该选择服务器端逻辑还是客户端的逻辑?</strong></p>
+<p>本文就此问题展开一些讨论. 同时,本文相关的讨论也可见&nbsp;<a class="reference external" href="http://stackoverflow.com/questions/1516852/client-side-logic-or-server-side-logic">SO</a>,&nbsp;<a class="reference external" href="http://groups.google.com/group/python-cn/browse_thread/thread/40c88d0ce3fce836#">CPyUG</a>,&nbsp;<a class="reference external" href="http://groups.google.com/group/pongba/browse_thread/thread/40c88d0ce3fce836">TopLanguage</a>.</p>
+<p>欢迎大家一起来讨论.</p>
+<div class="contents topic" id="contents" style="margin-top: 2em; margin-right: 2em; margin-bottom: 2em; margin-left: 2em; ">
+<p class="topic-title first" style="margin-top: 0px !important; font-weight: bold; ">Contents</p>
+<ul class="simple" style="margin-bottom: 1em; ">
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id2" id="id18">摘要</a></li>
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id3" id="id19">问题引入</a></li>
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id4" id="id20">回答的总结</a></li>
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id5" id="id21">具体的分析</a>
+    <ul>
+        <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id6" id="id22">安全性</a></li>
+        <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id7" id="id23">用户体验</a></li>
+        <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id8" id="id24">适用性和可用性</a></li>
+        <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id9" id="id25">成本</a></li>
+        <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id10" id="id26">扩展性</a></li>
+    </ul>
+    </li>
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id11" id="id27">结论</a></li>
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id12" id="id28">后记</a></li>
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id13" id="id29">参考资料</a></li>
+    <li><a class="reference internal" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#rst" id="id30">本文的rst源码</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id3">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id19" style="text-decoration: none; color: black; ">问题引入</a></h1>
+<p>下面是我发自&nbsp;<a class="reference external" href="http://groups.google.com/group/python-cn/browse_thread/thread/40c88d0ce3fce836#">CPyUG</a>&nbsp;和&nbsp;<a class="reference external" href="http://groups.google.com/group/pongba/browse_thread/thread/40c88d0ce3fce836">TopLanguage</a>&nbsp;上的问题, 想看英文版的可点击&nbsp;<a class="reference external" href="http://stackoverflow.com/questions/1516852/client-side-logic-or-server-side-logic">SO</a>.</p>
+<pre class="literal-block" style="margin-left: 2em; margin-right: 2em; ">在做过几个基于web的项目后, 碰到了一个比较难把握的问题: 在实现同一个功能时, 我们应该选择服务器端逻辑还是客户端的逻辑?
+举个简单的例子:
+功能: 我现在想动态地显示一个页面
+方案1: 服务器端的逻辑: 从数据库里取出数据使用服务器端代码(PHP,python)来生成格式化后的页面,返回给客户端,
+然后客户端直接显示.(所谓的more server side logic, less client side logic)
+方案2: 客户端的逻辑: 从数据库里直接取出数据, 并不格式化,而是以json或者xml返回给客户端,
+让客户端的代码(javascript)来格式化,继而显示(所谓的more client side logic, less server side logic)
+当然上面只是一个简单的例子, 可以推广到各种ajax的动态请求场景.
+从用户的角度来看,二者的结果是一致的,但是程序员在处理时却是截然不同的. 所以出现了下面的几个问题:
+我们应该优先选择哪种?
+哪种有更好的performance?
+哪种更user-friendly?
+</pre>
+</div>
+<div class="section" id="id4">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id20" style="text-decoration: none; color: black; ">回答的总结</a></h1>
+<p>目前&nbsp;<a class="reference external" href="http://stackoverflow.com/questions/1516852/client-side-logic-or-server-side-logic">SO</a>&nbsp;有8个左右的回复, 我简单总结如下.</p>
+<p>支持服务器端逻辑:</p>
+<ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; ">
+    <li>安全性</li>
+    <li>搜索引擎友好</li>
+    <li>有更好的accessibility</li>
+    <li>更好的适应性(无论用户使用的是支持js或者不支持的)</li>
+    <li>用户体验的稳定性(由于不知道用户使用的是什么浏览器,也就不能确定js引擎的解析速度,所以可能某些浏览器用户会觉得很友好, 而某些会觉得很慢,而使用服务器端则取决于网络)</li>
+    <li>硬件成本的降低(这也是可预期的)</li>
+</ol>
+<p>支持客户端逻辑:</p>
+<ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; ">
+    <li>用户友好(不需要refresh,而且通常会有更好的异步处理,所谓的ajax)</li>
+    <li>节省带宽,减少成本(当然传输pure data的json肯定会比格式化好的html节省更多的带宽)</li>
+    <li>扩展性(这点可能比较有争议,但是保持服务器端逻辑的简洁对于扩展性还是很有帮助的)</li>
+    <li>现代浏览器的发展(IE,FF, chrome相继宣称自己有更快的js引擎,所以js的解析速度会有大幅度的提升,而且使用老浏览器的用户也是极少的)</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id21" style="text-decoration: none; color: black; ">具体的分析</a></h1>
+<p>那我们不妨简单分析下这些答案.</p>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id22" style="text-decoration: none; color: black; ">安全性</a></h2>
+<p><strong>永远不要相信用户的输入</strong>, 这是web开发的一个重要原则.为什么呢?因为客户端的输入我们是没法控制的, 恶意的用户会尝试&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a>,&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/SQL_injection">sql injection</a>&nbsp;等, 甚至你的用户根本就不是人,而是一个机器人(模板浏览器行为).</p>
+<p>举个例子,面对一个表单, 80%的用户会按照我们的预期填写相关的信息, 这时我们只需要客户端加入一些验证即可, 如(email验证, 表项是否为空验证等), 但是倘若用户使用的是恶意的机器人,这些验证都会失效,用户完全可以 绕开这些验证而直接提交给服务器. 这时便有了&nbsp;<strong>安全性</strong>&nbsp;问题. 所以更好的办法是,&nbsp;<strong>除了客户端的验证外,我们 还需要服务器端的验证</strong></p>
+<p>当然,这只是一个简单的示例, 可以推广到更宽更广, 但是有一个原则是:</p>
+<p><strong>只要状态发生更改, 都需要服务器端的验证</strong>.</p>
+<p>这里所谓的&nbsp;<strong>状态发生更改</strong>, 可以理解为数据库的读写操作, 用户状态的更改等.</p>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id23" style="text-decoration: none; color: black; ">用户体验</a></h2>
+<p>用户体验是个很重要的问题, 随着&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Ajax_(programming)">ajax</a>&nbsp;等技术的出现, 无刷新的类似于桌面应用的体验越来越受到用户的认可, 所以在我们的实际项目中,必须要考虑用户的体验.</p>
+<p>针对于本文的主题, 这里就有2个方面的内容:</p>
+<ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; ">
+    <li>服务器端的因素</li>
+    <li>客户端的因素</li>
+</ol>
+<p>服务器端,我们应该减少request,减少数据量, 节省带宽, 从而提高响应的速度. 那么从这个角度来看, 我们就应该减少服务器端的处理逻辑,而使用pure data来返回给用户.</p>
+<p>客户端, 我们应该提高客户端代码的执行速度(javascript, css的解析), 那么相应的从这个角度来看, 我们就应该减少客户端的处理逻辑,而使得浏览器的引擎有更好的解析速度.</p>
+<p>显然二者是一个矛盾!</p>
+<p>但是可以考量的是, 随着硬件成本的降低和性能的提升, 服务器端的性能会相应的提升(增加服务器数量等), 同样,随着各大主流浏览器厂商的浏览器引擎性能的提升, 客户端的解析速度同样会大幅提升(IE, FF, chrome不是 相继声称自己的解析引擎是最快的吗?)</p>
+<p>那么,我们就无法从用户体验的角度来得到一个统一的答案.</p>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id24" style="text-decoration: none; color: black; ">适用性和可用性</a></h2>
+<p><strong>这个世界对于程序员来讲并不完美</strong>, 客户端并不是单一的一种, 浏览器也不是单一的一种,所以程序员得考虑&nbsp;<strong>适用性和可用性</strong>.</p>
+<p>大致可以将用户分为如下几类:</p>
+<ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; ">
+    <li>现代的浏览器(有完整的javascript/css支持)</li>
+    <li>老式的浏览器(无或者对javascript/css没有很好的支持,或者禁用了javascript的现代浏览器)</li>
+    <li>搜索引擎的机器人(如google的bot等)</li>
+    <li>移动终端(较小的显示设备,不完整的javascript/css支持)</li>
+    <li>特殊人群(如一些残障人士等)</li>
+</ol>
+<p>从大的方面来看,也就是是否对javascript/css有良好的支持两类.</p>
+<p>有很好支持的客户端: 那么我们如果用大量的客户端代码,则在用户体验等方面会有比较大的提高, ajax,无刷新,drag and drop等桌面应用的体验也会让用户倍觉舒心.</p>
+<p>但是,另一类,如果客户端没有很好的支持: 那么对于无刷新的动态生成的内容,搜索引擎无法索引, 没有javascript/css很好支持的用户则无法使用相应的功能,那么可用性就大打折扣!</p>
+<p>如何平衡?</p>
+<p>我觉得还是得看应用的场景,如果是类似于游戏的这种频繁触发的应用, 就需要以用户的体验为中心, 使用ajax等技术来让用户得到更好的体验,宁可让那些没有javascript/css支持的用户不可用(我们 放弃这部分用户). 如果是基于内容的应用(如新浪的新闻,bbs等),则要强调可用,及尽少地依赖客户端的 机制,让各种客户端都能够很好地处理(手机,搜索引擎等).</p>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id25" style="text-decoration: none; color: black; ">成本</a></h2>
+<p>说起这个还有个比较有意思的事情, 记得研一时去IBM面试实习生, 与和蔼的面试官沟通时,谈到了硬件的成本 问题, 我当时自以为是地认为硬件成本已经很低了云云(2008年年初), 面试官和蔼地纠正了我, 并且以IBM 为实际的例子, 自此后,我便对于硬件的成本很敏感了.</p>
+<p>回复正题, 既然硬件成本也是很关键的因素, 那么我们从这个角度来看下我们的主题.</p>
+<p>减少服务器端的逻辑,减少传输的数据量, 毫无疑问可以减少带宽, 降低硬件开销(同等用户体验的前提下), 那么我们是否就应该更多依赖于客户端的逻辑?</p>
+<p>其实归根结底是&nbsp;<strong>成本和用户体验的平衡</strong>, 同等的硬件环境下, 更多地使用客户端逻辑,自然会导致相应的 解析时间增加, 用户体验下降. 同样,同等的用户体验下, 增加服务器数量和性能,势必会增加相应的硬件成本, 从而导致更多的开销.</p>
+<p>但是一点是比较清楚的:</p>
+<p><strong>成本的控制是我们可控的, 而客户端的解析效率是我们无法控制的</strong>, 前者我们可以增加更多的服务器,提高服务器 的性能等,后者我们只能寄希望于用户有个好的,更快的浏览器. 所以,从这个角度来看, 如果你需要更多的掌控, 那前者不失为一种好办法 .</p>
+</div>
+<div class="section" id="id10">
+<h2><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id26" style="text-decoration: none; color: black; ">扩展性</a></h2>
+<p>扩展性,即&nbsp;<a class="reference external" href="http://en.wikipedia.org/wiki/Scalability">scalability</a>&nbsp;, 参见&nbsp;<a class="reference external" href="http://wikipedia.org/">wikipedia</a>&nbsp;中的定义:</p>
+<pre class="literal-block" style="margin-left: 2em; margin-right: 2em; ">In telecommunications and software engineering, scalability is a desirable property of a system, a network, or a process,
+which indicates its ability to either handle growing amounts of work in a graceful manner or to be readily enlarged.
+</pre>
+<p>也就是说,系统能够很优美地处理不断增长的需求.</p>
+<p>那么, 我们可以假设, 我们的应用很受欢迎, 一周内PV不断增加, 这时,我们看看采用服务器端逻辑和客户端逻辑各自的结果.</p>
+<ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; ">
+    <li>服务器端逻辑: 随着用户数量的增加, 数据量急剧增加(因为单个请求的数据量比较大),如果要保持一定的用户体验,就必须增加硬件的投资</li>
+    <li>客户端逻辑: 随着用户数量的增加, 数据量一定的增加(因为单个请求的数据库量较小),而客户端的代码的执行速度并不下降,这时只需要添加少量的 硬件设备即可.</li>
+</ol>
+<p>我们量化地描述下, 记纯数据(json)的数据量为: T, 服务器端处理时增加的数据量为 A, 网速 S, 客户端代码量 C, 客户端解析引擎处理速度 K,请求数N</p>
+<p>我们假定用下面的数据来表示服务器端的相关信息:</p>
+<p>T, A1, S, C1, K, N</p>
+<p>那么,对应的响应时间为: total1 = ((T+A1)/S+C1/K)*N</p>
+<p>相应地,我们假定用下面的数据来表示客户端的相关信息:</p>
+<p>T, A2, S, C2, K, N</p>
+<p>那么,对应的响应时间为: total2 = ((T+A2)/S+C2/K)*N = (T/S+C2/K)*N</p>
+<p>那么U = total1-total2 = (A1/S+(C1-C2)/K)*N, 这里C2通常会是C1的数倍, 而A1/S服务器端处理逻辑所增加的响应时间,通常会是客户端逻辑所增加的处理 时间的若干倍, 而随着N的增加,U会急剧增加,在不增加服务器的前提下, 相比较客户端的逻辑, 服务器端的逻辑的方案在响应速度和用户体验方面会差好多.</p>
+<p>那么这样就比较清楚了, 客户端的逻辑会在这种情况下具有较大的优势(当然我们假定的是不涉及安全性和客户端支持等).</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id27" style="text-decoration: none; color: black; ">结论</a></h1>
+<p>从上面的分析来看,用一句话来总结就是:</p>
+<p><strong>我们要根据实际的应用场景来选择具体的方案</strong>.</p>
+<p>那么怎样的应用场景, 适合不同的方案呢?</p>
+<p>我个人的见解是除了下面几种情况外,我都会优先使用客户端的逻辑:</p>
+<ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; ">
+    <li>安全性(如一些验证, 也就是状态更改相关的)</li>
+    <li>特殊人群(可能某些人群具有特殊的属性,如果我们的服务是针对这些人的,可能就要好好权衡)</li>
+</ol>
+</div>
+<div class="section" id="id12">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id28" style="text-decoration: none; color: black; ">后记</a></h1>
+<p>上面提到的几个讨论的帖子仍旧处于活跃状态,请大家可以随时留意,也欢迎大家留言讨论.</p>
+<p>谢谢.</p>
+</div>
+<div class="section" id="id13">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id29" style="text-decoration: none; color: black; ">参考资料</a></h1>
+<ol class="arabic simple" style="margin-bottom: 1em; list-style-type: decimal; list-style-position: initial; list-style-image: initial; ">
+    <li><a class="reference external" href="http://stackoverflow.com/questions/1516852/client-side-logic-or-server-side-logic">SO</a></li>
+    <li><a class="reference external" href="http://groups.google.com/group/python-cn/browse_thread/thread/40c88d0ce3fce836#">CPyUG</a></li>
+    <li><a class="reference external" href="http://groups.google.com/group/pongba/browse_thread/thread/40c88d0ce3fce836">TopLanguage</a></li>
+</ol>
+</div>
+<div class="section" id="rst">
+<h1><a class="toc-backref" href="file:///D:/svn/learning-note/blog-zh/source/web-development/zhutao.html#id30" style="text-decoration: none; color: black; ">本文的rst源码</a></h1>
+<p>本文的源码链接在&nbsp;<a class="reference external" href="http://sites.google.com/site/towerjoo/download/server-logic-or-client-logic.rst?attredirects=0">这里</a>&nbsp;.</p>
+</div>
+</span>
