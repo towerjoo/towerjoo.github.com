@@ -9,4 +9,36 @@ logoType: -90x30
 
 {% include header.tpl %}
 
-<div id="cse">Loading</div>
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+google.setOnLoadCallback(function() {
+        var customSearchOptions = {};
+        var orderByOptions = {};
+        orderByOptions['keys'] = [{label: 'Relevance', key: ''},{label: 'Date', key: 'date'}];
+        customSearchOptions['enableOrderBy'] = true;
+        customSearchOptions['orderByOptions'] = orderByOptions;
+        var imageSearchOptions = {};
+        imageSearchOptions['layout'] = google.search.ImageSearch.LAYOUT_POPUP;
+        customSearchOptions['enableImageSearch'] = true;
+        customSearchOptions['imageSearchOptions'] = imageSearchOptions;  var customSearchControl = new google.search.CustomSearchControl(
+            '001159418307054042214:uv4-7w5gr_k', customSearchOptions);
+        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+        customSearchControl.draw('cse');
+
+        var url = window.location.href; 
+        var query = url.split("?q=");
+        var param = "";
+        if (query.length == 2){
+            param = query[1];
+        }
+
+        if (param) {
+            param = decodeURIComponent(param);
+            document.title = "搜索:" + param + " / 找寻模式";
+            customSearchControl.execute(param);
+        }   
+        }, true);
+</script>
+
