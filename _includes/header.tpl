@@ -1,6 +1,8 @@
 <header>
 	<h1>{% if page.title %}<a href="/" class="minor">找寻模式</a> / {{ page.title }}
-        {% else %}找寻模式 <a href="http://towerjoo.github.com/feed.xml"><img src="/assets/images/rss.gif"></img></a>{% endif %}</h1>
+        {% else %}找寻模式 <a href="http://towerjoo.github.com/feed.xml"><img src="/assets/images/rss.gif"></img></a>
+        <iframe width="63" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=63&height=24&uid=1068998583&style=1&btn=red&dpc=1"></iframe>
+        {% endif %}</h1>
 	<p class="additional">阅读, 人生, 技术</p>
     <div id="header_nav">
     <a href="/category.html">Category</a>
