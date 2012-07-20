@@ -8,6 +8,22 @@ body {
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 
+a:link{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+
+a.title{
+    font-size:20px;
+}
+
+span.title_date{
+    font-size:15px;
+    color:#B5E853;
+}
+
 /* General & 'Reset' Stuff */
 
 .container {

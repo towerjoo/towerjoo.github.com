@@ -82,20 +82,7 @@ and also the screens(plugins) and corresponding animation will be available.
 
 <p>In this file, it will load the needed javascript/css to make the infrastructure. </p>
 
-<pre><code>{% for key, screen in screens.items %}
-</code></pre>
-
-<p>                &lt;div id='{{screen.hash}}' class='screen'&gt;</p>
-
-<p>                    {% with screen.hash as screenHash %}</p>
-
-<p>                        {% include screen.template %}</p>
-
-<p>                    {% endwith %}</p>
-
-<p>                &lt;/div&gt;</p>
-
-<p>     {% endfor %}</p>
+<script src="https://gist.github.com/3150152.js?file=gistfile1.py"></script>
 
 <p>And the above code snippet will include each screen&rsquo;s specific html into the main html.</p>
 
