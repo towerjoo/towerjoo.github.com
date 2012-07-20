@@ -11,7 +11,7 @@ tags: 三体 科幻
 记得在看着太阳系毁灭时，又翻看了地理书上的太阳系各个行星的位置关系，也
 翻看了大刘提到的梵高的《星空》。
 
-![星空] (/assets/images/xingkong.jpg)
+![星空](/assets/images/xingkong.jpg)
 
 # 女人
 
@@ -108,7 +108,7 @@ tags: 三体 科幻
 
 # 时间线
 
-![时间线] (/assets/images/threebody.png)
+![时间线](/assets/images/threebody.png)
 
 
 (忽略上面的时间标记）
