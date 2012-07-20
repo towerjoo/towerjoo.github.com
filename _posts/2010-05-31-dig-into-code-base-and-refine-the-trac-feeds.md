@@ -40,21 +40,7 @@ Then let's go to the template.
 
 In this file, it will load the needed javascript/css to make the infrastructure. 
 
-{% raw %}
-    {% for key, screen in screens.items %}
-
-                <div id='{{screen.hash}}' class='screen'>
-
-                    {% with screen.hash as screenHash %}
-
-                        {% include screen.template %}
-
-                    {% endwith %}
-
-                </div>
-
-     {% endfor %}
-{% endraw %}
+<script src="https://gist.github.com/3150152.js?file=gistfile1.py"></script>
 
 And the above code snippet will include each screen's specific html into the main html.
 
