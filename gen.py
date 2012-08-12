@@ -4,7 +4,7 @@ layout: post
 title: %(title)s
 category: %(category)s
 tags: 
---"""
+---"""
 from optparse import OptionParser
 import os, sys
 
