@@ -5,9 +5,9 @@ category: reading
 tags: 经济 曼昆
 ---
 
-![经济学原理](/assets/images/jingjixue.jpg)
+![经济学原理](/assets/images/weiguanjingjixue.jpg)
 　　 
-断断续续读完了曼昆的《经济学原理》宏观部分，基于经济人的假设提出的十大原理，基本上贯穿了整个篇章。 
+断断续续读完了曼昆的《经济学原理》微观部分，基于经济人的假设提出的十大原理，基本上贯穿了整个篇章。 
 　　 
 ## 关于经济人 
 　　 
