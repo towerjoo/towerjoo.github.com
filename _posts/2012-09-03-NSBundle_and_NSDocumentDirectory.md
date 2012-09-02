@@ -26,7 +26,7 @@ tags: iOS 安全 sandbox
 ## why
 
 
-![ios sandbox](/assets/images/ios_app_layout.png)
+![ios sandbox](/assets/images/ios_app_layout.jpg)
 
 阅读官方文档总是最好的办法, 请看[苹果官方文档][1]中关于文件结构的说明:
 
