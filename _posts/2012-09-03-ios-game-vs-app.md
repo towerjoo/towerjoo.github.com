@@ -37,7 +37,8 @@ x.position=ccp(x,y)来定位。无果后，想着这或许是人生的最大悲�
 
 我做个简单的对比，当然都是个人的感受，或许不太客观，当然也只能尽力而为了。
 
-<table border=1>
+
+<table border="1">
     <tr>
         <td></td>
         <td>游戏</td>
@@ -46,35 +47,36 @@ x.position=ccp(x,y)来定位。无果后，想着这或许是人生的最大悲�
     </tr>
     <tr>
         <td>开发难度</td>
-        <td>&#9733&#9733&#9733</td>
-        <td>&#9733&#9733&#9733&#9733</td>
+        <td>☆☆☆</td>
+        <td>☆☆☆☆</td>
         <td>iOS太多的hook，以及美术与程序员的耦合太强(想想IB)，内存管理也比较头疼</td>
     </tr>
     <tr>
         <td>入门难度</td>
-        <td>&#9733&#9733&#9733</td>
-        <td>&#9733&#9733&#9733&#9733</td>
+        <td>☆☆☆</td>
+        <td>☆☆☆☆</td>
         <td>tab/navigation等切换和嵌套，元素的复用等，在iOS的开发模式中都需要时日才能掌握</td>
     </tr>
     <tr>
         <td>动态效果定制</td>
-        <td>&#9733&#9733&#9733&#9733</td>
-        <td>&#9733&#9733&#9733</td>
+        <td>☆☆☆☆</td>
+        <td>☆☆☆</td>
         <td>App的开发必须要遵循Apple的Guide并且只能使用有限的动态效果，cocos2d则完全自由</td>
     </tr>
     <tr>
         <td>开发资源</td>
-        <td>&#9733&#9733&#9733</td>
-        <td>&#9733&#9733&#9733&#9733&#9733</td>
+        <td>☆☆☆</td>
+        <td>☆☆☆☆☆</td>
         <td>当然Apple的文档和社区要远大于cocos2d，相关的参考源代码也更加易用</td>
     </tr>
     <tr>
         <td>整体评价</td>
-        <td>&#9733&#9733&#9733&#9733</td>
-        <td>&#9733&#9733&#9733&#9733</td>
+        <td>☆☆☆☆</td>
+        <td>☆☆☆☆</td>
         <td>各自当然是更适合各自的场景，在各自的场景二者都是比较完美的解决方案</td>
     </tr>
 </table>
+
 
 # 我的几个游戏
 
@@ -84,13 +86,14 @@ x.position=ccp(x,y)来定位。无果后，想着这或许是人生的最大悲�
 2. [Gem Town HD(iPad Version)][Gem Town iPad]
 3. [Gem Town Lite(iPhone Version)][Gem Town iPhone Lite]
 
+![Gem Town](/assets/images/gemtown.jpg)
+
 简单的介绍：
 
 > Gem Town is a 60 second gem rush: click colorful gems, unleash magic diamonds and active the magic fire to achieve a high score.
 >
 > You can level up, earn bonus to make higher score and more!
 
-![Gem Town](/assets/images/gemtown.jpg)
 
 
 
