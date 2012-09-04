@@ -195,11 +195,6 @@ merge有2中情况：1)自动merge成功，则会自动commit
 的commit不再存在。
 
 
-
-
-
-## SVN和Mercurial用户
-
 ## 参考资料
 
 1. [Github Git Tutorial][Github_tutoral] 
@@ -208,3 +203,7 @@ merge有2中情况：1)自动merge成功，则会自动commit
 
 [Github_tutoral]: http://learn.github.com/p/intro.html
 [Git Scientist]: http://eagain.net/articles/git-for-computer-scientists/
+[Git]: http://git-scm.com/ 
+[write blog]: http://towerjoo.github.com/blog/2012/07/16/refine-my-knowledge-management-tech/
+[SVN]: http://subversion.tigris.org/
+[Mercurial]:http://mercurial.selenic.com/
