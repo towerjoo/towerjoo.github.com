@@ -16,11 +16,38 @@ tags: Git tutorial
 
 ## 哲学
 
+1. Commit early, commit often (其实所有的VCS基本都是这么要求的，可是实际的项目中有几人能够做到？目前自己在这方面持续努力）
+2. One commit reprsents one snapshot（必须要保证commit的代码是正常工作的，不能break the repo)
+3. Enjoy playing with branches(因为分支的易用，所以使用分支是非常推荐的。)
+4. Stage/Index can make you more proficient(stage的概念一方面让git更加复杂，但是也让一些流程成为可能）
+
 ## 主要特色
 
 1. Git是snapshot based,意味着，它存储的是当期项目的一份简单快照，而不是其它VCS的基于
 文件补丁或者更改的方式
 2. Branch更加容易和安全, 所谓的killer feature
+3. Stage/Index may be a good idea,当然如果习惯于svn/mercurial的开发者也完全可以跳过，*git commit -a*
+
+## 关键概念
+
+### stage/index
+
+在我的理解，这两个应该是一个概念，在Git的帮助或者显示中也是混用的，如git status时看到的提示是*stage/unstage*,
+在*git help add*看到的第一个解释却是*add file contents to the index*.
+
+所以，二者可以作为是一个概念，也叫做*cached area*，是一个缓冲区。
+
+当然，stage更多是当作动词来使用,index则是名词，可以翻译为*将...加到缓冲区（舞台)*和*缓冲区(舞台)*
+
+参考 [Understanding the stage area, index and cache in git][Git stage]和[Git workflow][Git workflow].
+
+### remote
+
+不同于当前本地repo的repo，这个remote repo可以在本机，也可以在任何其它的机器，它指是指向的是
+关联的repos.例如：
+
+1. git remote add ~/work/another_repo  // same computer
+2. git remote add http://github.com/towerjoo/towerjoo.github.com  // a real "remote" computer
 
 ## 操作
 
@@ -185,6 +212,10 @@ merge有2中情况：1)自动merge成功，则会自动commit
 
 上面说的基本涵盖了日常的90%的使用情况，需要更多的了解，可以参考下面的FAQ部分。
 
+下面这张图对整个workflow的交互过程有比较直观的描述（quote from [Git workflow][Git workflow])
+
+![Git data transport](/assets/images/git-transport.png)
+
 ## Git FAQ
 
 1. 如何回复本地删除的文件？  *git checkout -- filename* // 其中的--是为了
@@ -199,6 +230,7 @@ merge有2中情况：1)自动merge成功，则会自动commit
 
 1. [Github Git Tutorial][Github_tutoral] 
 2. [Git for Computer Scientist][Git Scientist]
+3. [Git workflow][Git workflow]
 
 
 [Github_tutoral]: http://learn.github.com/p/intro.html
@@ -207,3 +239,5 @@ merge有2中情况：1)自动merge成功，则会自动commit
 [write blog]: http://towerjoo.github.com/blog/2012/07/16/refine-my-knowledge-management-tech/
 [SVN]: http://subversion.tigris.org/
 [Mercurial]:http://mercurial.selenic.com/
+[Git workflow]: http://osteele.com/archives/2008/05/my-git-workflow
+[Git stage]: http://raflabs.com/blogs/silence-is-foo/2011/04/07/staging-area-index-cache-git/
