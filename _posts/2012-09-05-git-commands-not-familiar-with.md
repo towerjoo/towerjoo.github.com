@@ -41,11 +41,11 @@ tags: Git Git命令
 
 例如，
 
->      B<-B1<-B2
->
->     /
->
-> A<-A1<-A2<-A3
+<p>
+      B<-B1<-B2
+     /
+ A<-A1<-A2<-A3
+ </p>
 
 假设A分支是master，B分支是dev分支，B分支在A1 commit时建立，并且master/dev分别进行了多次commit,
 那么执行:
@@ -55,16 +55,17 @@ tags: Git Git命令
 
 执行后的结果应该为:
 
->                         B
->
->                        /
->
-> A<-A1(B)<-B1<-B2<-A2<-A3  (当然期间合并过程中可能某些commit会合并)
+<p>
+
+                         B
+                        /
+ A<-A1<-B<-B1<-B2<-A2<-A3  (当然期间合并过程中可能某些commit会合并)
+ </p>
 
 (从base的角度来看，dev分支的base与master的HEAD同步了，也就是rebase了)
 
 对于*git rebase master*它实际的操作过程应该是:1)先将master分支的代码与当前工作分支dev的代码
-的commit进行对比，确认差别的起始位置（即上面的A1/B点) 2)将master中自差别的起始位置到HEAD的
+的commit进行对比，确认差别的起始位置（即上面的A1点) 2)将master中自差别的起始位置到HEAD的
 所有commit依次与当前分支dev的代码进行合并，合并完成即可。
 
 注意合并期间可能会有冲突，手动解决后，可执行*git rebase --continue*来继续rebase.
@@ -73,7 +74,27 @@ tags: Git Git命令
 可参考[Git Rebase and Merge][git rebase and merge].
 
 
-Git Reset
+### Git Reset
+
+Git Reset通常是用来取消一些本地的commit，对于已经push的commit不建立使用*git reset --hard*，因为这样会修改
+整个的commit history，一些commit会从历史上完全消失。
+
+通常的使用场景:
+
+1) 回溯到某次commit,保留commit中的修改文件（不会删除文件)
+
+1. *git commit ...*
+2. *git reset --soft HEAD^* // 回溯到上次的commit,与那个版本不相关的文件会保留，并处于unstage状态
+
+2) 取消某次stage
+
+1. *git add abc.py*
+2. *git reset \<filename\>* // unstage filename
+
+3) 回溯到某次commit,删除与回溯版本无关的文件（会删除文件）
+
+1. *git commit ...*
+2. *git reset --hard HEAD^^* //回溯到上上一次commit，删除那个版本不相关的文件和修改
 
 
 ## 参考资料
