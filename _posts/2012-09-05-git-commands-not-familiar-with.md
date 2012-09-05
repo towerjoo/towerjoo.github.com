@@ -41,11 +41,7 @@ tags: Git Git命令
 
 例如，
 
-<p>
-      B<-B1<-B2
-     /
- A<-A1<-A2<-A3
- </p>
+![Before Rebase](/assets/images/git_rebase1.png)
 
 假设A分支是master，B分支是dev分支，B分支在A1 commit时建立，并且master/dev分别进行了多次commit,
 那么执行:
@@ -55,12 +51,9 @@ tags: Git Git命令
 
 执行后的结果应该为:
 
-<p>
+![After Rebase](/assets/images/git_rebase2.png)
 
-                         B
-                        /
- A<-A1<-B<-B1<-B2<-A2<-A3  (当然期间合并过程中可能某些commit会合并)
- </p>
+(当然期间合并过程中可能某些commit会合并)
 
 (从base的角度来看，dev分支的base与master的HEAD同步了，也就是rebase了)
 
