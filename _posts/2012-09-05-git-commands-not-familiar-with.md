@@ -42,7 +42,9 @@ tags: Git Git命令
 例如，
 
 >      B<-B1<-B2
+>
 >     /
+>
 > A<-A1<-A2<-A3
 
 假设A分支是master，B分支是dev分支，B分支在A1 commit时建立，并且master/dev分别进行了多次commit,
@@ -54,7 +56,9 @@ tags: Git Git命令
 执行后的结果应该为:
 
 >                         B
+>
 >                        /
+>
 > A<-A1(B)<-B1<-B2<-A2<-A3  (当然期间合并过程中可能某些commit会合并)
 
 (从base的角度来看，dev分支的base与master的HEAD同步了，也就是rebase了)
@@ -72,6 +76,13 @@ tags: Git Git命令
 Git Reset
 
 
-[git rebase]: http://www.cnblogs.com/kym/archive/2010/08/12/1797937.html
+## 参考资料
+
+1. [Git Rebase说明][git rebase intro]
+2. [intro to rebase][intro to rebase]
+3. [Git Rebase and Merge][git rebase and merge]
+
+
+[git rebase intro]: http://www.cnblogs.com/kym/archive/2010/08/12/1797937.html
 [git rebase and merge]: http://gitguru.com/2009/02/03/rebase-v-merge-in-git/
 [intro to rebase]: http://gitready.com/intermediate/2009/01/31/intro-to-rebase.html
