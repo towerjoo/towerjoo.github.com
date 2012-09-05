@@ -137,7 +137,7 @@ Git所支持的与代码库服务器通信的协议比较多，常用的三种: 
 
 1. 对于unstaged的修改，我们直接使用*git diff*(所有unstaged的变更)或者*git diff filename*
 2. 对于staged但未commit的修改，我们可以使用*git diff --staged*(所有staged的变更)或者*git --staged filename*
-3. 对于commit过的，可以使用*git diff <commit> <commit> tree/filename* (其中<commit>是指commit
+3. 对于commit过的，可以使用*git diff \<commit\> \<commit\> tree/filename* (其中\<commit\>是指commit
 的hash)
 
 
@@ -221,8 +221,8 @@ merge有2中情况：1)自动merge成功，则会自动commit
 1. 如何回复本地删除的文件？  *git checkout -- filename* // 其中的--是为了
     避免与切换branch的歧义
 2. 如何撤销本地的修改?  *git checkout -- filename* or *git checkout .*
-3. 如何撤销一次commit? 1)如果并不修改history，则使用 *git revert <commit>*
-2) 如果想要修改history(tree)，则可以 *get reset --hard <commit>*, 则被撤销
+3. 如何撤销一次commit? 1)如果并不修改history，则使用 *git revert \<commit\>*
+2) 如果想要修改history(tree)，则可以 *get reset --hard \<commit\>*, 则被撤销
 的commit不再存在。
 
 

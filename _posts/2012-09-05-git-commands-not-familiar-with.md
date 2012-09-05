@@ -29,8 +29,8 @@ tags: Git Git命令
 
 1. *git stash* //将本地的个性暂存起来，work space revert到HEAD
 2. *git stash list* //查看当前所有的stash
-3. *git stash apply <stash>* //将<stash>合并到当前workspace
-4. *git stash drop <stash>* // 删除stash
+3. *git stash apply \<stash\>* //将<stash>合并到当前workspace
+4. *git stash drop \<stash\>* // 删除stash
 
 
 ### Git Rebase
@@ -52,6 +52,7 @@ tags: Git Git命令
 2. *git rebase master* //将dev的分支起始点(base)重新定位到合并后的HEAD(所谓的re-base)
 
 执行后的结果应该为:
+
 >                         B
 >                        /
 > A<-A1(B)<-B1<-B2<-A2<-A3  (当然期间合并过程中可能某些commit会合并)
