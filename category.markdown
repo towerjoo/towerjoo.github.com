@@ -7,6 +7,7 @@ title: Category
 {% assign list = site.posts %}
 
 
+<div id="main">
 <ul class="listing">
 {% for cat in site.custom.categories  %}
     <li class="listing-seperator">{{ cat.title }}</li>
@@ -21,3 +22,4 @@ title: Category
     {% endfor %}
 {% endfor %}
 </ul>
+</div>

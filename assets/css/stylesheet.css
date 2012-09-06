@@ -21,7 +21,8 @@ a.title{
 
 span.title_date{
     font-size:15px;
-    color:#B5E853;
+    /*color:#B5E853;*/
+	color:gray;
 }
 
 /* General & 'Reset' Stuff */
@@ -83,6 +84,19 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
+#header_nav a{
+  font-weight: bold;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  /*color: #b5e853;*/
+  color: #63c0f5;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+               0 0 5px rgba(181, 232, 83, 0.1),
+               0 0 10px rgba(181, 232, 83, 0.1);
+  letter-spacing: -1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+
 header h1:before {
   content: "./ ";
   font-size: 24px;
@@ -114,7 +128,7 @@ section img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  color: #b5e853;
+  color: blue;
   letter-spacing: -0.03em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
                0 0 5px rgba(181, 232, 83, 0.1),
@@ -163,7 +177,7 @@ ul li:before {
   content: ">>";
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 13px;
-  color: #b5e853;
+  color: #333;
   margin-left: -37px;
   margin-right: 21px;
   line-height: 16px;
@@ -253,9 +267,20 @@ hr {
 */
 
 a {
+  /*color: #63c0f5;*/
+  color: blue;
+  /*text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);*/
+}
+
+header h1 a {
   color: #63c0f5;
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
+h2, h3, h4, h5, h6 a{
+	color:black;
+	font-weight:bold;
+}
+
 
 /* Clearfix */
 
@@ -288,3 +313,24 @@ li.listing-seperator {
     font-weight: bold; }
 #side_top{position:fixed;bottom:0;z-index:1000;right:0;}
 #side_top a{text-decoration: none;size:15px;color:gray;}
+
+#main{
+	position: relative;
+	background-color: white;
+	z-index: 2;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 480px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-o-border-radius: 8px;
+	box-shadow: 1px 2px 5pxblack;
+	-moz-box-shadow: 1px 2px 5px#000;
+	-webkit-box-shadow: 1px 2px 5pxblack;
+	-o-box-shadow: 1px 2px 5px#000;
+	color: #333;
+	padding: 20px;
+	overflow: visible;
+}

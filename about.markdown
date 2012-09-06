@@ -5,6 +5,7 @@ title: About
 
 {% include header.tpl %}
 
+<div id="main">
 Tower Joo 朱涛，一名程序员，现就职于一家社交游戏公司。 现在西安创业,主要领域是社交游戏和智能终端应用.
 
 <stroke>家乡是古城西安，也属于北漂一族，此处浪迹，三五载后回家，想必那时自有另一番如同陌生城市的阵痛。</stroke>
@@ -31,3 +32,4 @@ Tower Joo 朱涛，一名程序员，现就职于一家社交游戏公司。 现
 最后,本博客所有文字使用 <a href="http://creativecommons.org/licenses/">CC</a>（署名-非商业性使用-相同方式共享）协议.
 
 ![warking](/assets/images/walking.jpg)
+</div>

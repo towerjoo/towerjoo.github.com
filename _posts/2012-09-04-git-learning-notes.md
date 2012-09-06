@@ -108,15 +108,7 @@ Git所支持的与代码库服务器通信的协议比较多，常用的三种: 
 
 例如，我们修改了a.py和b.py,那么执行*git status*时:
 
-># On branch master
-># Changes not staged for commit:
->#   (use "git add <file>..." to update what will be committed)
->#   (use "git checkout -- <file>..." to discard changes in working directory)
->#
->#   modified:   a.py
->#   modified:   b.py
->#
->no changes added to commit (use "git add" and/or "git commit -a")
+![git status result](/assets/images/git_status_result.png)
 
 有两个*not staged*修改，如果我们想一次提交则: *git commit -a*或者
 *git add .*和*git commit*即可。

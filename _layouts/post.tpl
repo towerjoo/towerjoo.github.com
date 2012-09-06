@@ -10,14 +10,14 @@ scripts:
 
 {% include header.tpl %}
 
-<article>
+<div id="main">
 	<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
 	{% assign post = page %}
 	{% include meta.tpl %}
 	{{ content }}
 	{% capture permaurl %}http://{{site.host}}{{ page.url }}{% endcapture %}
 	<!--<p class="permalink">永久链接：<a href="{{ permaurl }}">{{ permaurl }}</a></p>-->
-</article>
+</div>
 <div id="disqus_thread" class="comments"></div>
 <!-- JiaThis Button BEGIN -->
 <script type="text/javascript">var jiathis_config = {data_track_clickback:true};</script>
