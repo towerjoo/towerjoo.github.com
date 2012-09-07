@@ -99,8 +99,8 @@ _gaq.push(['_trackPageview']);
 		<td>Page Navigation</td>
 		<td class="key_td">c</td>
 		<td>Go to Blog's Category Page</td>
-		<td></td>
-		<td></td>
+		<td>h</td>
+		<td>Show this help</td>
 	</tr>
 </table>
 </div>
