@@ -39,7 +39,13 @@ _gaq.push(['_trackPageview']);
 </div>
 
 <footer>
-		<p>&copy; Since 2012 <a href="http://github.com/towerjoo" target="_blank">github.com/towerjoo</a></p>
+		<p>&copy; Since 2009 <a href="http://github.com/towerjoo" style="color:white" target="_blank">github.com/towerjoo</a></p>
+		<p>
+			<img src="/assets/images/firefox.png" style="border:0"></img>
+			<img src="/assets/images/chrome.png" style="border:0"></img>
+			<img src="/assets/images/safari.png" style="border:0"></img>
+			<img src="/assets/images/opera.png" style="border:0"></img>
+		</p>
 </footer>
 
 <div id="side_top">
