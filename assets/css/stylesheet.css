@@ -358,7 +358,8 @@ li.listing-seperator {
 	position:fixed;
 	vertical-align:middle;
 	top:35%;
-	left:35%;
+	left:0;
+    right:0;
 	z-index:103;
 	display:none;
 }
