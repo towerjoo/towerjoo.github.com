@@ -10,6 +10,7 @@
     <a href="/projects.html">Projects</a>
     <a href="/links.html">Links</a>
     <a href="/about.html">About</a>
+    <a href="/misc.html">Misc</a>
     </div>
     <div id="search_box">
     <form action="/search/" class="block block-search">
