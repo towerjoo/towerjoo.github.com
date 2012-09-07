@@ -17,6 +17,16 @@ scripts:
 	{{ content }}
 	{% capture permaurl %}http://{{site.host}}{{ page.url }}{% endcapture %}
 	<!--<p class="permalink">永久链接：<a href="{{ permaurl }}">{{ permaurl }}</a></p>-->
+	<div id="prevnext">
+	{% if post.previous %}
+		<span><a id="prevpost" href="{{ post.previous.url }}" title="{{ post.previous.title }}">&lt;&lt; Previous</a></span>
+		{% endif %}
+
+		{% if post.next %}
+		<span><a id="nextpost" href="{{ post.next.url }}" title="{{ post.next.title }}">Next &gt;&gt;</a></span>
+		{% endif %}
+	</div>
+
 </div>
 <div id="disqus_thread" class="comments"></div>
 <!-- JiaThis Button BEGIN -->

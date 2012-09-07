@@ -334,3 +334,69 @@ li.listing-seperator {
 	padding: 20px;
 	overflow: visible;
 }
+#shortcuts_tips{
+	font-size:10px;
+	position: relative;
+	background-color: white;
+	z-index: 2;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	height : 280px;
+	min-height: 180px;
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-o-border-radius: 8px;
+	box-shadow: 1px 2px 5pxblack;
+	-moz-box-shadow: 1px 2px 5px#000;
+	-webkit-box-shadow: 1px 2px 5pxblack;
+	-o-box-shadow: 1px 2px 5px#000;
+	color: black;
+	padding: 20px;
+	overflow: visible;
+	position:fixed;
+	vertical-align:middle;
+	top:35%;
+	left:35%;
+	z-index:103;
+	display:none;
+}
+#mask{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:3;
+	background-color:black;
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	display:none;
+}
+
+#prevnext{
+	text-align:center;
+}
+td.key_td{
+	color:green;
+	font-size:20px;
+}
+table.shortcut td, table.shortcut th{
+	text-align:left;
+	vertical-align:middle;
+	padding:5px;
+	border:1px solid #98bf21;
+}
+table.shortcut{
+	border-collapse:collapse;
+}
+
+#shortcuts_tips h3{
+	text-align:center;
+}
+#keyboard{
+	width:32px;
+	height:32px;
+	border:0;
+}

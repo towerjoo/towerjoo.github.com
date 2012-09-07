@@ -11,6 +11,9 @@
     <a href="/links.html">Links</a>
     <a href="/about.html">About</a>
     <a href="/misc.html">Misc</a>
+	<a href="javascript:void(0)" onclick="showhelp()" title="Keyboard shortcuts are supported">
+		<img src="/assets/images/keyboard.png" id="keyboard"></img>
+	</a>
     </div>
     <div id="search_box">
     <form action="/search/" class="block block-search">
