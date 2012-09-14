@@ -10,7 +10,7 @@
 {% endfor %}
 <link rel="stylesheet" type="text/css" href="/assets/css/stylesheet.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="/assets/css/pygment_trac.css" media="screen" />
-<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" media="screen" />
 <script type="text/javascript" src="/assets/js/shortcuts.js"></script>
 <script type="text/javascript">
 
