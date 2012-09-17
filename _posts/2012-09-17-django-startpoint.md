@@ -56,3 +56,4 @@ Check [To Do List][todo] here.
 [todo]: https://github.com/towerjoo/django_startpoint/issues?labels=TODO&page=1&state=open
 [report_issues]:https://github.com/towerjoo/django_startpoint/issues?state=open 
 [project_path]: https://github.com/towerjoo/django_startpoint 
+[django]: http://www.djangoproject.com
