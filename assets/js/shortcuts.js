@@ -1,5 +1,6 @@
 SCROLL_STEP = 20;
 isHelpShown = false;
+isFocusInInput = false;
 function scroll(direction){
 	var step;
 	if (direction == "up"){
@@ -110,6 +111,9 @@ function handleShortcut(key){
 }
 
 function shortcuts(e){
+    if (isFocusInInput){
+        return;
+    }
 	var x;
 	var evtobj = window.event ? event : e;
 	x = evtobj.charCode ? evtobj.charCode : evtobj.keyCode;

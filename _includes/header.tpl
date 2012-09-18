@@ -17,7 +17,7 @@
     </div>
     <div id="search_box">
     <form action="/search/" class="block block-search">
-    <input type="search" name="q" placeholder="回车搜索" />
+    <input type="search" onfocus="isFocusInInput=true" onblur="isFocusInInput=false" id="search_input" name="q" placeholder="回车搜索" />
     </form>
     </div>
 </header>
