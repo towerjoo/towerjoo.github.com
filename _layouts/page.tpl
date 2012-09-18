@@ -102,6 +102,13 @@ _gaq.push(['_trackPageview']);
 		<td class="key_td">?</td>
 		<td>Show this help</td>
 	</tr>
+	<tr>
+		<td>Misc</td>
+		<td class="key_td">s</td>
+		<td>Go to Search Box</td>
+		<td class="key_td">q</td>
+		<td>hide the help</td>
+	</tr>
 </table>
 </div>
 

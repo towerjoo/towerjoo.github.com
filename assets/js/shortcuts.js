@@ -38,6 +38,12 @@ function supportNextPrevShortcut(){
 	return document.getElementById("nextpost") || document.getElementById("prevpost");
 }
 
+function gotoSearch(){
+	window.scrollTo(0, 0);
+    var elem = document.getElementById("search_input");
+    elem.value = "";
+    elem.focus();
+}
 		
 function handleShortcut(key){
 	if (key == "q"){
@@ -107,6 +113,9 @@ function handleShortcut(key){
 		case "i":
 			showindex();
 			break;
+        case  "s":
+            gotoSearch();
+            break;
 	}
 }
 
