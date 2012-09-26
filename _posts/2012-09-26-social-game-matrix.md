@@ -16,7 +16,6 @@ tags:
 
 
 [The Secret Glossary of Social Games Analytics][social_game_mtatrix]
-http://www.wavedash.net/2010/04/the-secret-glossary-of-social-games-analytics/
 
 
 
