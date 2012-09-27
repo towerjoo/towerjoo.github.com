@@ -5,14 +5,14 @@ category: reading
 tags: 定位 财管
 ---
 
-最近有空读了下[dingwei][定位]这本书，除了对此书有一些小想法外，对于
+最近有空读了下[定位][dingwei]这本书，除了对此书有一些小想法外，对于
 这一类书籍也有些想法，记录至此。
 
 ## 关于《定位》
 
 ![定位](/assets/images/dingwei.jpg)
 
-[dingwei][定位]讲的是市场策略的问题，有几点还是值得一说的：
+[定位][dingwei]讲的是市场策略的问题，有几点还是值得一说的：
 
 1. 进入顾客的心智空间是重要的
 2. 顾客的心智空间的容量是有限的
@@ -66,8 +66,8 @@ tags: 定位 财管
 
 
 ## 参考资料
-1. [dingwei][定位]
+1. [定位][dingwei]
 
 
-[定位]:http://book.douban.com/subject/5421787/
+[dingwei]:http://book.douban.com/subject/5421787/
 
