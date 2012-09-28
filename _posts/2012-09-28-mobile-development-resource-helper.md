@@ -5,7 +5,7 @@ category: tech
 tags: 
 ---
 
-Android有若干个厂商，每个厂商出的产品的屏幕分辨率、DPI等都不尽相同，而且同一厂商不同型号
+Android产品有若干个厂商，每个厂商出的产品的屏幕分辨率、DPI等都不尽相同，而且同一厂商不同型号
 的产品通常也不相同；一贯以体验统一的苹果，在推出iPhone5后，其旗下的产品的分辨率也有5种之多，
 包括:iPhone(320x480), iPhone Retina(640x960)，iPad(1024x768), iPad Retina(2048x1536),
 iPhone 5(1136x640),这样在制作universal app时通常会需要制作不同尺寸的资源图片。
