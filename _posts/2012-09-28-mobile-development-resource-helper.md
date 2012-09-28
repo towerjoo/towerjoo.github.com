@@ -18,7 +18,7 @@ iPhone 5(1136x640),这样在制作universal app时通常会需要制作不同尺
 显然，当资源文件比较多，所支持的设备比较多时，此项工作显得机械、无趣和易出错，于是
 便有了我的这个项目。
 
-**Laziness is the biggest virtue to a programmer*  -- I　can't agree more with this!
+*Laziness is the biggest virtue to a programmer*  -- I　can't agree more with this!
 
 ## 项目介绍
 
