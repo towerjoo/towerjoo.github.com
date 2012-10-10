@@ -437,7 +437,8 @@ div.dropdown-menu li:before{
 }
 
 span.subtitle{
-    font-size:15px;
+    font-size:12px;
+    color:gray;
 }
 
 div.project{
@@ -556,4 +557,7 @@ div.hide{
 
 div.detail{
     padding-top:40px;
+    font-size:12px;
+    font-weight:700;
+    color:blue;
 }
