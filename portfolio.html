@@ -1,0 +1,233 @@
+---
+layout: staticlist
+title: Portfolio
+---
+
+{% include header.tpl %}
+<script type="text/javascript">
+$(function(){
+    $("div.toggle").toggle(function(){
+        $(this).parent().find(".detail").removeClass("hide");
+        $(this).find("a").text("Hide Detail");
+    },
+    function(){
+        $(this).parent().find(".detail").addClass("hide");
+        $(this).find("a").text("Show Detail");
+    });
+    var config = {
+        preload: true,
+        preloadImage: '/assets/images/projects/loading.gif',
+		hoverPause: true,
+        play: 5000,
+        pause: 2500,
+        generatePagination: true,
+        animationStart: function(current){
+            $('.caption').animate({
+                bottom:-35
+            },100);
+            if (window.console && console.log) {
+                // example return of current slide number
+                console.log('animationStart on slide: ', current);
+            };
+        },
+        animationComplete: function(current){
+            $('.caption').animate({
+                bottom:0
+            },200);
+            if (window.console && console.log) {
+                // example return of current slide number
+                console.log('animationComplete on slide: ', current);
+            };
+        },
+        slidesLoaded: function() {
+            $('.caption').animate({
+                bottom:0
+            },200);
+        }
+    };
+    $("#gemtown_slides").slides(config);
+    $("#pat_slides").slides(config);
+});
+</script>
+
+<div id="topnav">
+<ul>
+<li>
+<a href="#" data-dropdown="#dropdown-ios" title="iOS related Projects">
+<img src="/assets/images/xcode.png"></img>
+</a>
+</li>
+<li>
+<a href="#" data-dropdown="#dropdown-python" title="Python related Projects">
+<img src="/assets/images/python.png"></img>
+</a>
+</li>
+</div>
+
+<div id="dropdown-ios" class="dropdown-menu has-tip">
+    <ul>
+        <li><a href="#gemtown">Gem Town</a></li>
+        <li><a href="#pat">PAT</a></li>
+    </ul>
+</div>
+<div id="dropdown-python" class="dropdown-menu has-tip">
+    <ul>
+        <li><a href="#freshfanatic">FreshFanatic</a></li>
+    </ul>
+</div>
+
+<div id="main">
+
+<div id="ios" class="project">
+<h1>
+<img src="/assets/images/xcode.png"></img>
+iOS Related Projects</h1>
+<!-- Gem Town start -->
+<div class="list" id="gemtown">
+    <h2>Gem Town</h2>
+    <div id="gemtown_slides" class="slides landscape_slides">
+            <div class="slides_container landscape">
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/gemtown1.jpg"></img></a>
+						<div class="caption" style="bottom:0">
+							<p>Gaming</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/gemtown2.jpg"></img></a>
+						<div class="caption">
+							<p>Stage</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/gemtown3.jpg"></img></a>
+						<div class="caption">
+							<p>Level</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/gemtown4.jpg"></img></a>
+						<div class="caption">
+							<p>Adventure Mode</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/gemtown5.jpg"></img></a>
+						<div class="caption">
+							<p>Game Result</p>
+						</div>
+                </div>
+            </div>
+				<a href="#" class="prev"><img src="/assets/images/projects/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="/assets/images/projects/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+        </div>
+    <div class="toggle floatright">
+        <a class="btn btn-primary" href="javascript:void(0)">
+        Show Detail
+        </a>
+    </div>
+    <div class="detail hide">
+        <div>
+            <span class="subtitle">Title:</span>  
+            Gem Town(an iOS game)
+        </div>
+        <div>
+        <span class="subtitle">Date:</span>   08/03/2011
+        </div>
+        <div>
+            <span class="subtitle">Description:</span>   
+        This is a classic match-3 board game, which has iPhone/iPad versions, and developed based on cocos2d.
+    I developed it for about 10 days with graphics outsourcing, and it is great to launch a game in App Store and watch the downloads each day.
+    It's not so good in revenue, but it proves something in App Store marketing, and leads me to the correct way in developing a good game.
+        </div>
+        <div>
+            <span class="subtitle">Links:</span>
+            <ul>
+                <li>
+                    iPhone: <a href="http://itunes.apple.com/tr/app/gem-town/id455175115?mt=8">iPhone Version</a>
+                </li>
+                <li>
+                    iPad: <a href="http://itunes.apple.com/cn/app/gem-town-hd/id456580956?mt=8">iPad Version</a>
+                </li>
+        </div>
+    </div>
+</div>
+<!-- Gem Town end -->
+<!-- Perceptual Ability Test start -->
+<div class="list" id="pat">
+    <h2>Perceptual Ability Test</h2>
+    <div id="pat_slides" class="slides portrait_slides">
+            <div class="slides_container portrait">
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/pat1.jpg"></img></a>
+						<div class="caption" style="bottom:0">
+							<p>Splash Page</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/pat2.jpg"></img></a>
+						<div class="caption">
+							<p>Angle Ranking</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/pat3.jpg"></img></a>
+						<div class="caption">
+							<p>Cubes Counting</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/pat4.jpg"></img></a>
+						<div class="caption">
+							<p>Game Result</p>
+						</div>
+                </div>
+                <div class="slide">
+                    <a href="javascript:void(0)"><img src="/assets/images/projects/pat5.jpg"></img></a>
+						<div class="caption">
+							<p>Game Menu</p>
+						</div>
+                </div>
+            </div>
+				<a href="#" class="prev"><img src="/assets/images/projects/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="/assets/images/projects/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+        </div>
+    <div class="toggle floatright">
+        <a class="btn btn-primary" href="javascript:void(0)">
+        Show Detail
+        </a>
+    </div>
+    <div class="detail hide">
+        <div>
+            <span class="subtitle">Title:</span>  
+            Perceptual Ability Test
+        </div>
+        <div>
+        <span class="subtitle">Date:</span>   08/03/2011
+        </div>
+        <div>
+            <span class="subtitle">Description:</span>   
+            Perceptual Ability Test app has angle ranking, cube counting, top-front-end, hole punch and pattern folding. Hundreds of practice problems to get you ready for the DAT exam. Perceptual ability testing has never been more enjoyable! You will be ready for the PAT portion of the DAT test in no time.
+        </div>
+        <div>
+            <span class="subtitle">Links:</span>
+            <ul>
+                <li>
+            <a href="http://itunes.apple.com/cn/app/pat-perceptual-ability-test/id481136093?mt=8">iPhone Version</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Perceptual Ability Test end -->
+</div>
+
+<div id="python">
+<h1>
+<img src="/assets/images/python.png"></img>
+Python Related Projects
+</h1>
+
+</div>
+
+</div>

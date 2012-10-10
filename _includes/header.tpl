@@ -8,7 +8,7 @@
     <a href="/category.html">Category</a>
     <a href="/archive.html">Archive</a>
     <a href="/projects.html">Projects</a>
-    <a href="/links.html">Links</a>
+    <a href="/portfolio.html">Portfolios</a>
     <a href="/about.html">About</a>
     <a href="/misc.html">Misc</a>
 	<a href="javascript:void(0)" onclick="showhelp()" title="Keyboard shortcuts are supported, press ? to show the help">

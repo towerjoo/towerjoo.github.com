@@ -169,11 +169,11 @@ dt {
   font-weight: bold;
 }
 
-ul li {
+ul.listing li {
   list-style: none;
 }
 
-ul li:before {
+ul.listing li:before {
   content: ">>";
   font-family: Monaco, "Lucida Console", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 13px;
@@ -405,4 +405,155 @@ table.shortcut{
 .floatright
 {
     float:right;
+}
+
+#topnav{
+    position:fixed;
+    z-index:100000;
+    right:50px;
+    top:50%;
+}
+#topnav a{
+    color:white;
+}
+#topnav ul{
+    list-style-type:none;
+    text-align:right;
+}
+
+#topnav li:before{
+  content: "";
+  font-family: Monaco, "Lucida Console", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+#topnav li{
+    padding:5px;
+}
+div.dropdown-menu li:before{
+  content: "";
+  font-family: Monaco, "Lucida Console", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 20px;
+}
+
+span.subtitle{
+    font-size:15px;
+}
+
+div.project{
+    font-size:13px;
+}
+.landscape div.slide {
+	width:480px;
+	height:320px;
+	display:block;
+}
+
+.portrait div.slide {
+	width:320px;
+	height:480px;
+	display:block;
+}
+
+div.slides{
+    z-index:100;
+}
+
+div.frame{
+    z-index:0;
+}
+
+div.slides{
+    position:relative;
+    top:10px;
+    left:40px;
+}
+div.landscape_slides a.prev img{
+    position:absolute;
+    top:160px;
+    left:-23px;
+    z-index:1000;
+}
+
+div.landscape_slides a.next img{
+    position:absolute;
+    top:160px;
+    left:480px;
+    z-index:1000;
+}
+
+div.portrait_slides a.prev img{
+    position:absolute;
+    top:240px;
+    left:-23px;
+    z-index:1000;
+}
+
+div.portrait_slides a.next img{
+    position:absolute;
+    top:240px;
+    left:320px;
+    z-index:1000;
+}
+
+div.slides div.caption {
+	z-index:500;
+	position:absolute;
+	bottom:-25px;
+	left:0;
+	height:30px;
+	padding:5px 20px 20px 20px;
+	background:#000;
+	background:rgba(0,0,0,.5);
+	font-size:1.3em;
+	line-height:1.33;
+	color:#fff;
+	border-top:1px solid #000;
+	text-shadow:none;
+}
+
+div.landscape_slides div.caption{
+	width:440px;
+}
+
+div.portrait_slides div.caption{
+	width:270px;
+}
+
+/*
+	Pagination
+*/
+
+.pagination {
+	margin:16px auto 0;
+	width:100px;
+}
+
+.pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url(/assets/images/projects/pagination.png);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+}
+
+div.hide{
+    display:none;
+}
+
+div.detail{
+    padding-top:40px;
 }
