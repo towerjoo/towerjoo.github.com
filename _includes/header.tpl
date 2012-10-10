@@ -11,7 +11,7 @@
     <a href="/portfolio.html">Portfolios</a>
     <a href="/about.html">About</a>
     <a href="/misc.html">Misc</a>
-	<a href="javascript:void(0)" onclick="showhelp()" title="Keyboard shortcuts are supported, press ? to show the help">
+	<a style="margin-top:10px" href="javascript:void(0)" onclick="showhelp()" title="Keyboard shortcuts are supported, press ? to show the help">
 		<img src="/assets/images/keyboard.png" id="keyboard"></img>
 	</a>
     </div>

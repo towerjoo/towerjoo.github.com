@@ -311,7 +311,7 @@ li.listing-item time, li.listing-seperator time {
 color: #999999; }
 li.listing-seperator {
     font-weight: bold; }
-#side_top{position:fixed;bottom:0;z-index:1000;right:0;}
+#side_top{position:fixed;bottom:0;z-index:1000;left:0;}
 #side_top a{text-decoration: none;size:15px;color:gray;}
 
 #main{
@@ -410,7 +410,7 @@ table.shortcut{
 #topnav{
     position:fixed;
     z-index:100000;
-    right:50px;
+    left:0;
     top:50%;
 }
 #topnav a{
