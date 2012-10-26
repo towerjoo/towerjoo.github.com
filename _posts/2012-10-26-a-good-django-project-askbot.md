@@ -1,13 +1,13 @@
 ---
 layout: post
-title: ¿ªÔ´µÄÀàStackOverflowµÄÏîÄ¿askbot
+title: å¼€æºçš„ç±»StackOverflowçš„é¡¹ç›®askbot
 category: tech
 tags: django
 ---
 
-[askbot][askbot]ÊÇÀàËÆÓÚ[StackOverflow][StackOverflow]µÄ»ùÓÚ
-[Django][Django]µÄÎÊ´ğÀàÍøÕ¾£¬Ëù²»Í¬µÄÊÇ£¬ËüÊÇ¿ªÔ´µÄ¡£
+[askbot][askbot]æ˜¯ç±»ä¼¼äº[StackOverflow][StackOverflow]çš„åŸºäº
+[Django][Django]çš„é—®ç­”ç±»ç½‘ç«™ï¼Œæ‰€ä¸åŒçš„æ˜¯ï¼Œå®ƒæ˜¯å¼€æºçš„ã€‚
 
-ËäÈ»×Ô¼ºÒ²Ğ´¹ı²»ÉÙµÄ[Django][Django]´úÂë£¬µ«¿´¹ı[askbot][askbot]
-ºó£¬Ò²¾ÍÖªµÀÁË×Ô¼ºµÄ²î¾à¡£ÎÈ¶¨ĞÔÓëÁé»îĞÔ£¬´úÂëµÄ¿É¶ÁĞÔµÈ¶¼Ôì¾Í
-ÁË[askbot][askbot]ÊÇ[Django][Django]µÄ·Ç³£ÖµµÃÑ§Ï°µÄÏîÄ¿¡£
+è™½ç„¶è‡ªå·±ä¹Ÿå†™è¿‡ä¸å°‘çš„[Django][Django]ä»£ç ï¼Œä½†çœ‹è¿‡[askbot][askbot]
+åï¼Œä¹Ÿå°±çŸ¥é“äº†è‡ªå·±çš„å·®è·ã€‚ç¨³å®šæ€§ä¸çµæ´»æ€§ï¼Œä»£ç çš„å¯è¯»æ€§ç­‰éƒ½é€ å°±
+äº†[askbot][askbot]æ˜¯[Django][Django]çš„éå¸¸å€¼å¾—å­¦ä¹ çš„é¡¹ç›®ã€‚
