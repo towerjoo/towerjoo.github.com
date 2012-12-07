@@ -12,6 +12,7 @@ custom:
         reading: 阅读模式
         non-tech: 人生模式
         tech: 技术模式
+        tiantian: 你若安好便是晴天
     categories:
       - name:  reading
         title: 阅读模式
