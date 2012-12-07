@@ -22,6 +22,9 @@ custom:
       - name:  tech
         title: 技术模式
 
+      - name:  tiantian
+        title: 你若安好便是晴天
+
 meta:
     authors:
       - name: Tower Joo
