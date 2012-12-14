@@ -561,3 +561,7 @@ div.detail{
     font-weight:700;
     color:blue;
 }
+
+div.gist pre{
+    color: #5389E8;
+}
