@@ -3,6 +3,7 @@ layout: post
 title: 《定位》与财管类书籍
 category: reading
 tags: 定位 财管
+screen: /assets/images/dingwei.jpg
 ---
 
 最近有空读了下[定位][dingwei]这本书，除了对此书有一些小想法外，对于

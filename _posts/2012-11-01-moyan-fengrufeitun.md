@@ -3,12 +3,15 @@ layout: post
 title: 读丰乳肥臀
 category: reading
 tags: 莫言 丰乳肥臀 诺贝尔奖
+screen: /assets/images/fengru.jpg
 ---
 
 刚刚读完了莫言的《丰乳肥臀》，说点自己的感受。之前是没有读过莫言的作品的，
 只是看过张艺谋的《红高粱》，就像之前的一篇博文[莫言和丰乳肥臀][莫言和丰乳肥臀]，
 有机会阅读莫言的作品就是因为诺贝尔奖的名号，不过所谓“盛名之下，其实难副”也是
 比较常见的，那莫言之于我是否也是如此？
+
+![fengru](/assets/images/fengru.jpg)
 
 # 故事
 

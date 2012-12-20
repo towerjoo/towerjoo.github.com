@@ -3,6 +3,7 @@ layout: post
 title: 《浪潮之巅》之我见
 category: reading
 tags: 阅读 IT历史 吴军
+screen: /assets/images/langchaozhidian.jpg
 ---
 
 周末正好西安下雨，一个人在家里，刚好得闲，便看完了吴军博士的《浪潮之巅》，这是一本科技

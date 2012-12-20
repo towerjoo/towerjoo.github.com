@@ -3,6 +3,7 @@ layout: post
 title: 《冰与火之歌》——科幻的第一次亲密接触
 category: reading
 tags: 科幻 冰与火之歌 阅读
+screen: /assets/images/song_of_ice_and_fire1.jpg
 ---
 
 

@@ -3,6 +3,7 @@ layout: post
 title: 经济学原理
 category: reading
 tags: 经济 曼昆
+screen: /assets/images/weiguanjingjixue.jpg
 ---
 
 

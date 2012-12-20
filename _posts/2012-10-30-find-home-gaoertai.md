@@ -3,6 +3,7 @@ layout: post
 title: 寻找家园
 category: reading
 tags: 寻找家园 高尔泰 文革 自传
+screen: /assets/images/jiayuan.jpg
 ---
 
 高尔泰的[寻找家园][寻找家园]终是读完了，感受汇聚一点，便是想说一些感谢的话，

@@ -3,6 +3,7 @@ layout: post
 title: 三体永生
 category: reading
 tags: 三体 科幻
+screen: /assets/images/xingkong.jpg
 ---
 
 三体于昨天算是看完了，感叹于大刘的想象力和“构图能力”（如果小说是图的话），

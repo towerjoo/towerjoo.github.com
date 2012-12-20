@@ -3,6 +3,7 @@ layout: post
 title: 莫言和丰乳肥臀
 category: reading
 tags: 莫言 诺贝尔奖 丰乳肥臀
+screen: /assets/images/fengru.jpg
 ---
 
 祖国终于可以公开地讨论诺奖得主了，而此奖或多或少地有些出人意料，记得在

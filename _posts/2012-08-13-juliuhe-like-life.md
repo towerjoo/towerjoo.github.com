@@ -3,6 +3,7 @@ layout: post
 title: 巨流河般的人生
 category: reading
 tags:  巨流河 齐邦媛
+screen: /assets/images/juliuhe.jpg
 ---
 
 

@@ -3,6 +3,7 @@ layout: post
 title: 自发与塔布效应-读《悟空传》
 category: reading
 tags:  悟空传
+screen: /assets/images/wukongzhuan.jpg
 ---
 
 ![悟空传](/assets/images/wukongzhuan.jpg)

@@ -3,6 +3,7 @@ layout: post
 title: 三十年沉浮
 category: reading
 tags: 阅读 激荡三十年 吴晓波
+screen: /assets/images/jidang.jpg
 ---
 
 ![激荡三十年](/assets/images/jidang.jpg)

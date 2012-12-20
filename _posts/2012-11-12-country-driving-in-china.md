@@ -3,6 +3,7 @@ layout: post
 title: 与何伟寻路中国
 category: reading
 tags: 何伟 中国 文化 生活 基层
+screen: /assets/images/xunluzhongguo.jpg
 ---
 
 彼得*海斯勒，中文名是何伟，是《纽约人》驻北京的记者，在中国有了多年的生活

@@ -3,6 +3,7 @@ layout: post
 title: 你的灯亮着吗？
 category: reading
 tags: 方法 阅读 解决问题
+screen: /assets/images/lights_on.jpg
 ---
 
 最近在电脑上阅读了文字版（没有图）的《你的灯亮着吗》，是讲对于问题解答过程

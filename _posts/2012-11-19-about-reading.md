@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于阅读
-category: reading
+category: non-tech
 tags: 阅读方法 青番茄 图书馆 kindle
 ---
 

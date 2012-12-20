@@ -3,6 +3,7 @@ layout: post
 title: 读《怪诞行为学》
 category: reading
 tags: 经济学 非理性 行为学
+screen: /assets/images/guaidan.jpg
 ---
 
 [《怪诞行为学》][《怪诞行为学》]是最近刚通过iPod Touch读完的，有些感想记录在这里当做
