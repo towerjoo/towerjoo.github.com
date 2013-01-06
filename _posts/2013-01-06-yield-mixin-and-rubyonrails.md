@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 
+title: Ruby初学体会（与Python类比）
 category: tech
-tags: 
+tags: python ruby yield mixin
 ---
 
 最近学习了下Ruby，学习过程是对比着Python的，因为对于Python还是比较熟悉的，
