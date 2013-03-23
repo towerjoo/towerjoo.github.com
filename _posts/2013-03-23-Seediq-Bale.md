@@ -5,7 +5,7 @@ category: non-tech
 tags: 电影 史诗 台湾
 ---
 
-![莫那鲁道][莫那鲁道](/assets/images/saideke.jpg)
+![莫那鲁道](/assets/images/saideke.jpg)
 
 不成熟的自己老是有一种偏见——从名字来判断一个电影、书籍的好坏——
 这种偏见竟是这样的强烈，每每让我错过了好些经典的电影，诸如[賽德克·巴萊][賽德克·巴萊]。
