@@ -22,7 +22,7 @@ Startup的介入，在线教育已经是一片欣欣向荣之势，就如当下�
 Macroeconomist，基于自己对于经济学的兴趣，以及对于在线教育真正的一次完整体验。这门课程已经
 于3.25开始了，我也于31日开始了自己的学习航程，so far so good.
 
-在写这篇博文时，已经有了计划提高英语口语的打算，顺便想到了与Coursera课程结合的可能性。Melbourne
+在写这篇博文时，已经有了[计划提高英语口语][计划提高英语口语]的打算，顺便想到了与Coursera课程结合的可能性。Melbourne
 University的教授，一口纯正的英式口音，自也是学习口语的好资源。
 
 最后，期待这样的Online Education Service能够发展的非常好，无论是助推终身学习的公益愿景，或者盈利的
@@ -41,4 +41,4 @@ University的教授，一口纯正的英式口音，自也是学习口语的好�
 [edX]: https://www.edx.org/
 [已经挺多]: http://www.google.com.tw/#newwindow=1&site=&source=hp&q=coursera+vs.+udacity+vs.+edx&oq=coursera+vs.+udacity+vs.+edx&gs_l=hp.3...1698.9876.0.9987.28.19.0.0.0.0.0.0..0.0...0.0...1c.1.7.hp.tv3QwwHLaDg&bav=on.2,or.&bvm=bv.44442042,d.dGY&fp=2d4722cd59eb0000&biw=1653&bih=933
 [Coursera]: https://www.coursera.org/
-
+[计划提高英语口语]: http://towerjoo.github.com/blog/2013/04/01/oral-english-improvement-plan/ 

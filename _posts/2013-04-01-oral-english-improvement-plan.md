@@ -51,7 +51,7 @@ tags: 英语 口语 计划 提高
 
 ### Coursera结合听写
 
-因为最近也在通过[Cousera][Cousera]学习Macroeconomics(墨尔本大学的教授，口音很伦敦），所以英语口语的学习可以与此
+因为[最近][最近]也在通过[Cousera][Cousera]学习Macroeconomics(墨尔本大学的教授，口音很伦敦），所以英语口语的学习可以与此
 相结合，有如下简单计划：
 
 1. 无字幕听lecture video一遍，确认主旨
@@ -102,4 +102,4 @@ tags: 英语 口语 计划 提高
 [Seinfeld]: http://www.imdb.com/title/tt0098904/
 [经典的背诵篇章]: http://ishare.iask.sina.com.cn/cate/
 [口语测评]: http://www.e2say.com/steveapply/daily.asp
-
+[最近]: http://towerjoo.github.com/blog/2013/04/01/open-course-learning/
