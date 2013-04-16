@@ -9,7 +9,7 @@ tags: 寻找无双 目标与过程
 虽然在创作时间上可能更先于前面2部，简单说有几个主要的原因：
 普适性的抽象，情节的有趣以及文字表述的特点。
 
-![wushuang](/assets/images/xuanzhaowushuang.jpg)
+![wushuang](/assets/images/xunzhaowushuang.jpg)
 
 ## 普适性的抽象
 
