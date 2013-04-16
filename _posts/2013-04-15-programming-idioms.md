@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 
+title: 常见的编程idioms
 category: tech
-tags: 
+tags: RAII DIP IoC 
 ---
 
 
@@ -25,22 +25,14 @@ in Python, 因为与C#类似，与using相似，Python使用with statement来实
 
 一个RAII的常见例子:
 
-with open("file.c") as fp:
-    cont = fp.read()
-    print cont
+<script src="https://gist.github.com/towerjoo/5395943.js"></script>
+
 
 上面是使用with的RAII示例，能够保证在with block后，文件资源能够得以正确释放。
 
 等价于:
 
-fp = None
-try:
-    fp = open("file.c")
-    cont = fp.read()
-    print cont
-finally:
-    if fp:
-        fp.close()
+<script src="https://gist.github.com/towerjoo/5395955.js"></script>
     
 
 ## Programming to Interface, not Implementation
@@ -56,41 +48,7 @@ finally:
 
 那么有如下的设计：
 
-interface IPest
-{
-   void annoy() ;
-}
-
-class Fly extends IPest
-{
-   void annoy() 
-    {
-    }
-}
-
-class Telemarketer extends IPest
-{
-   void annoy() 
-    {
-    }
-
-}
-
-class Game
-{
-    void createAnnoy(IPest pest){
-        pest.annoy();
-    }
-
-    void main()
-    {
-        game = Game();
-        IPest p = Fly();
-        game.createAnnoy(p);
-        IPest p2 = Telemarketer();
-        game.createAnnoy(p2);
-    }
-}
+<script src="https://gist.github.com/towerjoo/5395963.js"></script>
 
 上面代码中的createAnnoy(IPest pest)其中的参数为接口IPest而非具体的类（实现），
 这即是所谓的Programming to interface, not implementation
