@@ -8,7 +8,7 @@ tags: RAII DIP IoC
 
 ## RAII
 
-[RAII], 也就是Resources Acquisition is Initialization, 对应的中文术语没有固定的，所以
+[RAII][RAII], 也就是Resources Acquisition is Initialization, 对应的中文术语没有固定的，所以
 我们还是称为RAII。这个概念是C++的创始人提出并应用于C++，继而后续很多语言也开始使用
 这个模式，例如C#, Python等。
 
@@ -41,7 +41,7 @@ in Python, 因为与C#类似，与using相似，Python使用with statement来实
 这样的好处是易见的，抽象带来的灵活性（注意在人类历史上，抽象总是优于具象，是
 人类发展的标志之一），以及后期的维护性（重构等的成本）。
 
-在[SO]上有个不错的帖子给出的示例还是比较贴切的，大致如下：
+在[SO][SO]上有个不错的帖子给出的示例还是比较贴切的，大致如下：
 
 场景：一个游戏，需要在人物吃饭时引入一些烦人的事件。
 目前在游戏中设定的烦人事件包括：苍蝇，推销电话。
@@ -55,4 +55,34 @@ in Python, 因为与C#类似，与using相似，Python使用with statement来实
 
 
 ## Dependency Inversion Principle
+
+[DIP][DIP]，依赖倒转原则是解决依赖的一个重要手段，通常有如下2个内容：
+
+* High-level modules should not depend on low-level modules. Both should depend on abstractions.
+* Abstractions should not depend upon details. Details should depend upon abstractions.
+
+这里的High-level modules指的是policy setting, low level指的是dependency modules，通俗地讲
+high-level module就是处于依赖树更高级别的module，而low level则是更低层级别的module，例如：
+
+UI -> UI Listeners -> Log Writer
+                       ||
+                       \/
+                  -------------------------------
+                  |             |               |
+                  File          stdout          Email
+
+像上面的Log Writer相比于Email就是high level, Email就是low level.
+
+当然，[DIP][DIP]也与上面的Programming to Interface not Implementation是相关的，还是解耦的重要手段。
+
+
+## 参考资料
+1. [SO][SO]
+2. [RAII][RAII]
+3. [DIP][DIP]
+
+
+[SO]: http://stackoverflow.com/questions/383947/what-does-it-mean-to-program-to-an-interface
+[RAII]: http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
+[DIP]: http://en.wikipedia.org/wiki/Dependency_inversion_principle
 
