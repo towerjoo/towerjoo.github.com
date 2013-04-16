@@ -80,9 +80,10 @@ UI -> UI Listeners -> Log Writer
 1. [SO][SO]
 2. [RAII][RAII]
 3. [DIP][DIP]
+4. [Dependency Injection Demystified][DIP2]
 
 
 [SO]: http://stackoverflow.com/questions/383947/what-does-it-mean-to-program-to-an-interface
 [RAII]: http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
 [DIP]: http://en.wikipedia.org/wiki/Dependency_inversion_principle
-
+[DIP2]: http://www.jamesshore.com/Blog/Dependency-Injection-Demystified.html
