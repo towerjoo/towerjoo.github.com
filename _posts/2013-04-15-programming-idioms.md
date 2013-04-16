@@ -64,7 +64,7 @@ in Python, 因为与C#类似，与using相似，Python使用with statement来实
 这里的High-level modules指的是policy setting, low level指的是dependency modules，通俗地讲
 high-level module就是处于依赖树更高级别的module，而low level则是更低层级别的module，例如：
 
-<p>
+<pre>
 UI -> UI Listeners -> Log Writer
                        ||
                        \/
@@ -72,7 +72,7 @@ UI -> UI Listeners -> Log Writer
                   |             |               |
                   File          stdout          Email
 
-</p>
+</pre>
 像上面的Log Writer相比于Email就是high level, Email就是low level.
 
 当然，[DIP][DIP]也与上面的Programming to Interface not Implementation是相关的，还是解耦的重要手段。
