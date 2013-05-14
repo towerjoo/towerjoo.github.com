@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 
+title: 编译原理系列之词法分析相关重要算法
 category: tech
-tags: 
+tags: KMP DFA NFA
 ---

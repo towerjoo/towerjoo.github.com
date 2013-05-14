@@ -34,7 +34,7 @@ tags: compiler lexical-analysis FSM
 
 例如C语言变量的正则表达式为：
 
-V = [a-zA-Z_][a-zA-Z0-9_]*
+V = [a-zA-Z\_][a-zA-Z0-9\_]*
 
 而此正则表达式的FSM为：
 
