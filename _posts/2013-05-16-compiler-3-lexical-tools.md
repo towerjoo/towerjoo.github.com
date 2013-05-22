@@ -46,6 +46,6 @@ real        {integer}("."{integer})?{exponant}?
 
 ## 参考资料
 
-# [An example: a little expression interpreter][An example: a little expression interpreter]
+1. [An example: a little expression interpreter][An example: a little expression interpreter]
 
 [An example: a little expression interpreter]: http://pltplp.net/lex-yacc/example.html.en
