@@ -5,7 +5,7 @@ permalink: /blog/:year/:month/:day/:title
 exclude:
   - README.md
 
-host: towerjoo.github.com
+host: towerjoo.github.io
 
 custom:
     category:
