@@ -12,7 +12,7 @@ tags: WiX MSI CI
 
 当然，今天不谈政治，不谈生活，只谈乌托邦的技术。
 
-![wix](/assets/images/wix_logo.jpg)
+![wix](/assets/images/wix_logo.png)
 
 ## Windows下程序的分发
 
