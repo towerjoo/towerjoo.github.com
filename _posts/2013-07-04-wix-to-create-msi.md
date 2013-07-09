@@ -84,6 +84,22 @@ wxs是作为WiX项目的源文件，后续的编译、链接都是基于此文�
 
 这块目前仍在研究，待研究清楚，再更新。
 
+[更新2013年7月9日]
+
+对于一般的应用场景，进行[大版本升级][大版本升级]即可，而无须考虑所谓的patch升级，如此场景，WiX提供了简便的方法，即：
+
+<pre>
+<MajorUpgrade DowngradeErrorMessage="!(loc.Install_OldVersion)" />
+</pre>
+
+上面的代码即可保证，**只请允许从低版本向高版本升级，而不允许从高版本向低版本降级**。
+
+升降级相关的处理上，有如下几点需要特别注意：
+
+1. [MSI][MSI]的版本号有效位为三位，即xxx.xxx.xxxxx，如果有更多位，则会忽略，其中三个部分分别为：major version, minor version
+   和build number, 有效范围分别为[0,255],[0,255],[0,65535]
+2. Product Id="*" 用于生成一个随机的Id, **对于大版本升级，每次升级需要更新Product Id**,具体参考[Changing the Product Code][Changing the Product Code]
+
 ### 关于CI服务器的集成
 
 Jenkins是业内用得比较多的CI服务器，如果是Windows项目，则CI服务器可配置在Windows服务器上，在安装必要的依赖
@@ -101,6 +117,8 @@ Jenkins是业内用得比较多的CI服务器，如果是Windows项目，则CI�
 6. [MSI][MSI]
 7. [各类繁多][各类繁多]
 8. [不少的内容][不少的内容]
+9. [大版本升级][大版本升级]
+10. [Changing the Product Code][Changing the Product Code]
 
 
 [Multi-Language MSI Packages without Setup.exe Launcher]: http://www.installsite.org/cgi-bin/frames.cgi?url=http%3A%2F%2Fwww.installsite.org%2Fpages%2Fen%2Fmsi%2Farticles%2Fembeddedlang%2Findex.htm
@@ -111,4 +129,5 @@ Jenkins是业内用得比较多的CI服务器，如果是Windows项目，则CI�
 [MSI]: http://en.wikipedia.org/wiki/Windows_Installer
 [各类繁多]: http://en.wikipedia.org/wiki/List_of_installation_software
 [不少的内容]: https://www.google.com.hk/search?newwindow=1&safe=strict&biw=1600&bih=872&q=Wix+tutorial&oq=Wix+tutorial&gs_l=serp.3..35i39j0j0i30l8.2808507.2810277.0.2810463.12.8.0.0.0.0.369.692.3-2.2.0...0.0.0..1c.1.17.serp.wETC5A6bWiM
-
+[Changing the Product Code]: http://msdn.microsoft.com/en-US/library/aa367850.aspx
+[大版本升级]: http://msdn.microsoft.com/library/aa369786.aspx
