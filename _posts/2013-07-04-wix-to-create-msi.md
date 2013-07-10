@@ -88,9 +88,7 @@ wxs是作为WiX项目的源文件，后续的编译、链接都是基于此文�
 
 对于一般的应用场景，进行[大版本升级][大版本升级]即可，而无须考虑所谓的patch升级，如此场景，WiX提供了简便的方法，即：
 
-<pre>
-<MajorUpgrade DowngradeErrorMessage="!(loc.Install_OldVersion)" />
-</pre>
+    <MajorUpgrade DowngradeErrorMessage="!(loc.Install_OldVersion)" />
 
 上面的代码即可保证，**只请允许从低版本向高版本升级，而不允许从高版本向低版本降级**。
 
