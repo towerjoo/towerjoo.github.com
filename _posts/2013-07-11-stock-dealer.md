@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 
+title: 入市之前
 category: reading
-tags: 
+tags: 股票 操盘 顺势而为
 ---
 
 一直以来，比较认可几句话，一是“离钱越近的职业越是挣钱”，一是“职业大致
