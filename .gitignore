@@ -4,3 +4,4 @@ _site
 *~
 .c9revisions
 *.out
+.DS_Store
