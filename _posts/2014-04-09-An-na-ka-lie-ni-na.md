@@ -10,7 +10,7 @@ tags: 托尔斯泰 安娜卡列宁娜 人性
 阳台上的藤椅上，心口很是郁积着一些想法，而此刻竟无法与说，望着不远处南北奔行的汽车，已经泛绿的秦岭山，
 心中不能平静。
 
-![anna][anna](/assets/images/anan.jpg)
+![anna](/assets/images/anan.jpg)
 
 ## 故事
 
