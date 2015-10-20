@@ -14,7 +14,7 @@ tags: 财精 改革开放 冲突
 是不太乐意的，读过的读者或许也不会乐意，因为优秀的小说自有其自身的价值，
 就像让关公与秦琼，比不如不比。
 
-![dajingdongqu](/assets/images/dajingdongqu.jpg)
+![dajiangdongqu](/assets/images/dajiangdongqu.jpg)
 
 ## 小说
 
