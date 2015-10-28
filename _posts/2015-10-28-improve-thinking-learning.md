@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 
+title: Learning & Thinking
 category: non-tech
-tags: 
+tags: learning thinking MOOC
 ---
 
 Recently I just finished two MOOC courses, i.e [Learn How to Learn][Learn How to Learn] and [Think 101: Think Again][Think 101: Think Again].
