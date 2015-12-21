@@ -42,7 +42,9 @@ tags: 凤凰卫视 记者 媒体
 
 ## 参考资料
 
-1. [现场][现场]: http://book.douban.com/subject/25779397/
+1. [现场][现场]
+
+[现场]: http://book.douban.com/subject/25779397/
 
 
 
