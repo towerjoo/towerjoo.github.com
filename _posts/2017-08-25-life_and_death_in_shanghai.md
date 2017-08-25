@@ -2,7 +2,7 @@
 layout: post
 title: Life and Death in Shanghai
 category: reading
-tags: Wenge, bibiography
+tags: Wenge, autobiography
 ---
 
 It's been a long time since the last article. This kind of laziness is not because I stop reading, but because I found it's hard for me to say something meaningful, something useful. So I just shut up and keep quiet, even though my study is full of books I plan to read.
