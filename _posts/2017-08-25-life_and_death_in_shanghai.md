@@ -13,7 +13,7 @@ Those ten years are gradually forgotten by the Chinese, since the victims have m
 
 And also, this topic is still a taboo in mainland and you cannot access it in any possible mediums. Even it's mentioned, it's always been under scrutiny by officials, so as a citizen, you can never access the truth. So days ago, I want to HK, and visited several book stores, where books can be published more freely, and I checked some books about this history, including this one.(and bought anouther book named "Wild Swans" from ChengPin bookstore).
 
-![life and death)(/assets/images/life_and_death.jpg)
+![life and death](/assets/images/life_and_death.jpg)
 
 The story is simple and detailed what happened to the author herself and her daughter. It's so detailed, you know exactly what happened in the detention the author was kept. And you know how an ordinary people can be denounced, tortured and even starve to death. You were required to admit the denouncement which might not be the case, if you didn't, your families, your colleagues, would be asked to speak against you, or even say lies to put you in the non-existing accusion. This was just against the humanity, since it asked the closest family to accuse his/her family with a non-existing cause. If you refused to do so, you'll be tolerated too, no matter physically or mentally. So Meiping(author's daughter) were murdered finally.
 
