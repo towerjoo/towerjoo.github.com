@@ -12,6 +12,7 @@ custom:
         reading: 阅读模式
         non-tech: 人生模式
         tiantian: 你若安好便是晴天
+        traveling: 旅行
     categories:
       - name:  reading
         title: 阅读模式
@@ -21,10 +22,13 @@ custom:
 
       - name:  tiantian
         title: 你若安好便是晴天
+        
+      - name:  traveling
+        title: 旅行
 
 meta:
     authors:
-      - name: Tower Joo
+      - name: Zhu Tao
         email: zhutao.iscas@gmail.com
         gravatar: 1cd8c12591616d8c22aaa624f8c07834
 
