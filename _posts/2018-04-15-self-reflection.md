@@ -8,7 +8,7 @@ tags: self-reflection reading
 avc blog's author Fred Wilson writes posts every day for years without any interruption.
 As he mentioned it's just like a history recorder or something to reflect himself or his decisions.
 
-I cannot agree more with him. Nowadays, under such a overwhelming information age, we're so scared to be
+I cannot agree more with him. Nowadays, under such an overwhelming information age, we're so scared to be
 forgotten behind, so we consume so much information each day, whatever it can benifit you or not. So as 
 someone mentioned about productivity, the first thing is to assure that the direction is correct, or
 whatever your speed it might lead you to a worse condition. And such a blog-writing can benifit you so much
@@ -21,7 +21,7 @@ The content might be about self-reflection as I mentioned, or some interesting s
 I read that might be helpful to share, or even some findings around myself. Sometimes it might be like rambling, 
 sometimes it might be very serious and logical.
 
---
+----
 
 Last week, I started to read more books instead of consuming articles. This change seems helpful so far, for the books'
 more logic/systematic arrangement of content, which means the authors are more careful about his writing. So in the long run,
