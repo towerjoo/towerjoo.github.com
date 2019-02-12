@@ -5,8 +5,8 @@ category: non-tech
 tags: thoughts
 ---
 
-Walking around, or surf around on the Internet, there are always some random thoughts
-springing out, which will hold me closely and the typical outcome is that I have to read
+Walking around on the streets, or surfing around on the Internet, there are always some random thoughts
+springing out, which usually hold me closely and the typical outcome is that I have to read
 more about that to know the existing research on that, or I have to quit entirely.
 
 ## Left wing and right wing
@@ -34,11 +34,11 @@ when it comes to country, we don't like it, and we favor the equality/fairness o
 
 For a company, a person gets promoted typically because he did a really good job to the company's revenue(or the stakeholder's
 interest). 
-when it comes to company, we hope the official can do a good job for the public instead of his upper level manager. And we don't
+when it comes to country, we hope the official can do a good job for the public instead of his upper level manager. And we don't
 hope he got raised because he just brought interest to the powerholders.
 
 So maybe in most perspectives, we cannot simply compare company and country, due to their different scale. But can we compare
-giant company with a company, e.g Facebook versus UK? Huawei versus China?
+giant company with a country, e.g Facebook versus UK? Huawei versus China?
 
 I don't know. And I should read more about this, and it's obvious that there exists lots of researches about the company management
 and country management, and also the comparison between the two subjects.
