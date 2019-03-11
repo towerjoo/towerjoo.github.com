@@ -5,7 +5,7 @@ category: non-tech
 tags: Hemingway classic
 ---
 
-[toll](/assets/images/toll.jpg)
+![toll](/assets/images/toll.jpg)
 
 Hemingway is the writer that I love very much and enjoy reading his master pieces so much. He is some guy
 who just reminds me the writers in Russian gold time, even though he is much later than those guys.
