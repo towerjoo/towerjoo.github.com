@@ -22,8 +22,8 @@ important and cannot justify the war itself or the killing it caused.
 
 The soldier was walking along the mountain, and he was shot, and his letters were found and read by Jordan. And as we
 expect(or beyond our expectation), he has a lovely wife and several kids, and the worried parents who are asking about
-his situations. He was not a beast, and he was not a alien, and he is just a human as we are. So he died, in a very young
-age, for nothing. It might cause some discomfort in his mind but it passed very quickly, and he could jump out and focus
+his situations. He was not a beast, and he was not an alien, and he is just a human as we are. So he died, in a very young
+age, for nothing. It might cause some discomfort in Jordan's mind but it passed very quickly, and he could jump out and focus
 on the bridge blowing again.
 
 Love or sex, Jordan never expects something in a war or in such an operation. But it did happen, so unexpectedly. Thus, it
