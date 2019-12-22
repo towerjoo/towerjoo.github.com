@@ -20,7 +20,7 @@ if options.category and options.name:
     post_name = "%s-%s.md" % (today, options.name)
     post_name = os.path.join("_posts", post_name)
     if os.path.exists(post_name):
-        print "%s already exists!" % post_name
+        print("%s already exists!" % post_name)
         parser.print_help()
         sys.exit(0)
     else:
@@ -29,10 +29,10 @@ if options.category and options.name:
         fh = open(post_name, "w")
         fh.write(cont)
         fh.close()
-        print "%s created successfully!" % post_name
+        print("%s created successfully!" % post_name)
         sys.exit(0)
 else:
-    print "You must specify category of the post, and also the name of the file"
+    print("You must specify category of the post, and also the name of the file")
     parser.print_help()
     sys.exit(0)
 
