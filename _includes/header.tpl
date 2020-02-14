@@ -11,9 +11,9 @@
     <div id="header_nav">
     <a href="/category.html">Category</a>
     <a href="/archive.html">Archive</a>
-    <a href="/projects.html">Projects</a>
+    <!--<a href="/projects.html">Projects</a>-->
     <a href="/about.html">About</a>
-    <a href="/misc.html">Misc</a>
+    <!--<a href="/misc.html">Misc</a>-->
     </div>
     <div id="search_box">
     <form action="/search/" class="block block-search">
