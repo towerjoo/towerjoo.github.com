@@ -6,3 +6,5 @@ _site
 *.out
 .DS_Store
 *.swo
+credential.py
+__pycache__
