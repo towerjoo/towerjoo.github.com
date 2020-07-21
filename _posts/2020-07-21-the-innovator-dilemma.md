@@ -2,7 +2,7 @@
 layout: post
 title: 创新者的窘境
 category: reading
-tags: reading, business, management
+tags: reading business management
 ---
 
 近期读英文著作多一些，所以更多的内容写在了[英文博客](https://blog.jackzhu.info/)之中，然而不可偏隅一方，所谓中西博采，所以间隔也开始读一些中文的书籍，例如这本著名的『创新者的窘境』。
