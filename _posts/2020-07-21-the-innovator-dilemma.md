@@ -7,7 +7,7 @@ tags: reading, business, management
 
 近期读英文著作多一些，所以更多的内容写在了[英文博客](https://blog.jackzhu.info/)之中，然而不可偏隅一方，所谓中西博采，所以间隔也开始读一些中文的书籍，例如这本著名的『创新者的窘境』。
 
-![innovation](../assets/images/innovation.png)
+![innovation](/assets/images/innovation.png)
 
 作者不久前去世的，看到HN中的一些热帖，还有Ben Thompson的纪念博文，可以切身感受到一个故去大家的风范和在读者和学生中的影响。于是看了看购置已久但是不曾打开的这本中文版的著作，在一些踌躇和犹豫中打开了——踌躇和犹豫是基于一直以来对于商业著作的印象，那就是100字可以表达清楚的东西通常最终洋洋洒洒到数十万字，而归根结底还是那一百多字的价值。
 
