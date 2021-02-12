@@ -8,3 +8,4 @@ _site
 *.swo
 credential.py
 __pycache__
+.clj-kondo
