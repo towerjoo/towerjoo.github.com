@@ -1,0 +1,37 @@
+markdown: kramdown
+rouge: true
+safe: false
+permalink: /blog/:year/:month/:day/:title
+exclude:
+  - README.md
+
+host: towerjoo.github.io
+
+custom:
+    category:
+        reading: 阅读模式
+        non-tech: 人生模式
+        tiantian: 你若安好便是晴天
+        traveling: 旅行
+    categories:
+      - name:  reading
+        title: 阅读模式
+
+      - name:  non-tech
+        title: 人生模式
+
+      - name:  tiantian
+        title: 你若安好便是晴天
+        
+      - name:  traveling
+        title: 旅行
+
+meta:
+    authors:
+      - name: Zhu Tao
+        email: zhutao.iscas@gmail.com
+        gravatar: 1cd8c12591616d8c22aaa624f8c07834
+
+    gravatar:
+        base: http://www.gravatar.com/avatar/
+        param: ?s=
