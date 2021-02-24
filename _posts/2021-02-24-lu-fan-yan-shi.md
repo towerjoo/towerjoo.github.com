@@ -3,7 +3,7 @@ layout: post
 title: 陆犯焉识
 date: 2021-02-24
 Author: Jack Zhu
-tags: [严歌苓 人生]
+tags: [严歌苓, 人生]
 comments: true
 ---
 

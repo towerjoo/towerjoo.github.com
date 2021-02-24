@@ -9,3 +9,4 @@ _site
 credential.py
 __pycache__
 .clj-kondo
+.jekyll-cache

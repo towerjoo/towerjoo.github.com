@@ -22,14 +22,16 @@ favicon: https://raw.githubusercontent.com/jackzhu2050/jackzhu2050.github.io/mas
 
 # 菜单中的按钮
 navigation:
-  - name: Home
+  - name: 主页
     url: /
-  - name: About
+  - name: 关于
     url: /about
-  - name: Archive
+  - name: 存档
     url: /archive
-  - name: Tags
+  - name: 标签
     url: /tags
+  - name: English
+    url: https://blog.jackzhu.info
 
 # 每页的文章数
 paginate: 8
@@ -45,7 +47,7 @@ footer-links:
   email: jackzhu2050@gmail.com
   facebook: #https://www.facebook.com/<>
   flickr: #https://www.flickr.com/<>
-  github: https://github.com/towerjoo #https://github.com/<>
+  github: towerjoo #https://github.com/<>
   instagram: #https://instagram.com/<>
   linkedin: #https://www.linkedin.com/in/<>
   pinterest: #https://www.pinterest.com/<>
@@ -56,7 +58,7 @@ footer-links:
   youtube: # channel/<your_long_string> or user/<user-name>
 
 # 站点页脚的文字
-footer-text: Copyright (c) 2020 Jack Zhu
+footer-text: Copyright (c) 2021 Jack Zhu
 
 # 评论，注意，请不要同时添加多种不同的评论区
 
