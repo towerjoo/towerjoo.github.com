@@ -12,7 +12,7 @@ comments: true
 突然发现所引用的古籍文字是很难对应起来, 于是还是读起了赵复三先生翻译的版本,
 这才看着古文与其思想的联系, 思考着我们自己民族构建的哲学体系.
 
-![confucious](/assets/images/confucius2.png)
+![confucius](/assets/images/confucius2.png)
 
 很多在当下看算是常识的哲学思想, 诸如儒家的仁义, 道家的无为, 墨家的兼爱,
 以及程朱的理学和陆王的心学, 可是倘若回到作者的那个时代,
