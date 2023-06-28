@@ -12,7 +12,7 @@ comments: true
 的变动和来由，后者则更贴近“真实”，即所谓大众的真实，毕竟普罗大众的感受才是一个时代更加
 真实的写照。
 
-![forbidden city](/assets/images/forbidden-city.png)
+![forbidden-city](/assets/images/forbidden-city.png)
 
 《饥饿的盛世》，矛盾的名字之下，也大体可划归在大历史的门类，毕竟作者的视点是那个
 无人不知的“千古一帝”，还有传说中的GDP巨大的盛世中华，于是一个合理的问题便是：除了所谓
